@@ -37,10 +37,6 @@ const STEPS = [
     { id: "nom_entreprise", q: "Nom de l’entreprise / marque", type: "text", req: true, ph: "Ex. ABC Hair" },
     { id: "responsable", q: "Nom et fonction du responsable", type: "text", req: true, ph: "Ex. Awa Koné, Gérante" },
     { id: "telephone", q: "Téléphone / WhatsApp professionnel", type: "tel", req: true, ph: "Ex. +225 07 00 00 00 00", attr: 'inputmode="tel" autocomplete="tel"' },
-    // Adresse e-mail : sert à envoyer au client une copie de son questionnaire.
-    // Pour la rendre facultative, remplacez « req: true » par « req: false ».
-    { id: "email", q: "Adresse e-mail", type: "email", req: true, ph: "Ex. contact@abchair.com", attr: 'inputmode="email" autocomplete="email"',
-      hint: "Une copie de votre questionnaire vous sera envoyée à cette adresse." },
     { id: "adresse", q: "Adresse / localisation", type: "text", ph: "Ex. Cocody, Abidjan" },
     { id: "reseaux", q: "Réseaux sociaux utilisés", type: "check", opts: ["Instagram", "Facebook", "TikTok", "WhatsApp Business", "Autre"] },
     { id: "identite", q: "Disposez-vous déjà d’un logo et d’une identité visuelle ?", type: "radio", opts: ["Oui", "Non", "À créer par DST TECHNOLOGIE"] }
@@ -164,12 +160,12 @@ function fieldHTML(f) {
   const ariaReq = f.req ? ' aria-required="true"' : "";
 
   switch (f.type) {
-    case "text": case "tel": case "email": case "number": case "date": case "time": {
+    case "text": case "tel": case "number": case "date": case "time": {
       const val = f.type === "date" && !v ? "" : (v || "");
       return `<div class="field" data-field="${f.id}">
-        <label class="label" for="${f.id}">${f.q}${star}</label>${f.hint ? `<p class="hint" id="hint-${f.id}">${f.hint}</p>` : ""}
+        <label class="label" for="${f.id}">${f.q}${star}</label>
         <input class="input" id="${f.id}" name="${f.id}" type="${f.type}" value="${esc(val)}"
-          ${f.ph ? `placeholder="${esc(f.ph)}"` : ""} ${f.attr || ""}${ariaReq} aria-describedby="${f.hint ? `hint-${f.id} ` : ""}err-${f.id}">${err}</div>`;
+          ${f.ph ? `placeholder="${esc(f.ph)}"` : ""} ${f.attr || ""}${ariaReq} aria-describedby="err-${f.id}">${err}</div>`;
     }
     case "textarea":
       return `<div class="field" data-field="${f.id}">
@@ -363,10 +359,6 @@ function validateStep() {
       if (!v) msg = "Veuillez indiquer un numéro de téléphone ou WhatsApp.";
       else if (!/^\+?[\d\s().-]{8,18}$/.test(v) || v.replace(/\D/g, "").length < 8) msg = "Numéro invalide : saisissez au moins 8 chiffres (ex. +225 07 00 00 00 00).";
     }
-    if (!msg && f.id === "email") {
-      if (!v && f.req) msg = "Veuillez indiquer votre adresse e-mail : une copie du questionnaire vous y sera envoyée.";
-      else if (v && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) msg = "Adresse e-mail invalide (exemple : nom@domaine.com).";
-    }
     if (!msg && f.id === "nb_admins" && v && Number(v) < 1) msg = "Indiquez un nombre supérieur ou égal à 1.";
     if (out) out.textContent = msg;
     if (box) box.classList.toggle("invalid", !!msg);
@@ -508,7 +500,7 @@ async function buildPdf() {
   y += 32;
 
   /* Encadré « en un coup d'œil » */
-  const info = [["Entreprise", a.nom_entreprise], ["Responsable", a.responsable], ["Téléphone / WhatsApp", a.telephone], ["E-mail", a.email],
+  const info = [["Entreprise", a.nom_entreprise], ["Responsable", a.responsable], ["Téléphone / WhatsApp", a.telephone],
     ["Budget prévu", a.budget], ["Délai souhaité", a.delai], ["Date de validation", display({ id: "date_validation", type: "date" })]];
   const bh = Math.ceil(info.length / 2) * 15 + 4;
   fill(C.gray); doc.roundedRect(M, y, CW, bh, 3, 3, "F");
@@ -607,18 +599,13 @@ async function submitQuestionnaire() {
     const pdf = doc.output("datauristring").split(",")[1]; // PDF encodé en base64
     // Pas d'en-tête personnalisé : compatible avec envoyer.php et avec les scripts Google (pas de « preflight »).
     const res = await fetch(CONFIG.endpoint, { method: "POST", body: JSON.stringify({
-      entreprise: a.nom_entreprise || "", responsable: a.responsable || "", telephone: a.telephone || "", email: a.email || "",
+      entreprise: a.nom_entreprise || "", responsable: a.responsable || "", telephone: a.telephone || "",
       budget: a.budget || "", delai: a.delai || "", filename: pdfName(), pdf
     }) });
     if (!res.ok) throw new Error("HTTP " + res.status);
     let r = null; try { r = await res.json(); } catch (e) { /* réponse non JSON */ }
     if (!r || r.ok !== true) throw new Error(r && r.error ? r.error : "réponse inattendue du serveur");
-    // r.copie = true : le serveur confirme avoir envoyé la copie au client
-    const okStyle = 'style="background:#eaf7f0;border-color:#b6e2c9;color:#145a37"';
-    out.innerHTML = ready
-      + `<p class="notice" ${okStyle}>Votre demande a bien été transmise à DST Technologie.${r.copie === true
-          ? ` Une copie vous a été envoyée à <strong>${esc(a.email)}</strong> (pensez à vérifier vos courriers indésirables).` : ""}</p>`
-      + (a.email && r.copie !== true ? `<p class="notice">La copie par e-mail n’a pas pu vous être envoyée : téléchargez le PDF ci-dessus pour la conserver.</p>` : "");
+    out.innerHTML = ready + `<p class="notice" style="background:#eaf7f0;border-color:#b6e2c9;color:#145a37">Votre demande a bien été transmise à DST Technologie.</p>`;
     if (btn) btn.textContent = "Demande envoyée ✓";
   } catch (err) {
     if (btn) { btn.disabled = false; btn.textContent = "Envoyer ma demande à DST Technologie"; }

@@ -25,7 +25,7 @@ INSTALLATION EN 5 ETAPES
 
 4) Verifier que le service d'envoi fonctionne
    Ouvrez  https://votresite.com/questionnaire/envoyer.php
-   Vous devez voir :  {"ok":true,"message":"Service actif","copie_client":true,"whatsapp":false}
+   Vous devez voir :  {"ok":true,"message":"Service actif"}
    (Si vous voyez "envoyer.php n'est pas configure", refaites l'etape 1.)
 
 5) Faire un test reel
@@ -33,39 +33,6 @@ INSTALLATION EN 5 ETAPES
    et cliquez sur "Envoyer ma demande a DST Technologie".
    L'e-mail "Nouveau questionnaire client - nom de l'entreprise" arrive avec le PDF en piece jointe.
    Pensez a regarder les spams la premiere fois.
-
-COPIE ENVOYEE AU CLIENT
-   Le formulaire demande l'adresse e-mail du client (etape 1). Apres l'envoi, le client recoit un
-   e-mail "Votre questionnaire a bien ete envoye" avec son PDF en piece jointe. Quand il clique sur
-   "Repondre", sa reponse vous arrive directement. Vous aussi, vous pouvez repondre au client depuis
-   l'e-mail recu : "Repondre" ecrit au client.
-   - Reglages dans envoyer.php : $COPIE_CLIENT (true/false), $NOM_ENTREPRISE (nom dans le message).
-   - Protections : 2 copies maximum par adresse et par jour, et $COPIE_MAX_PAR_JOUR copies par jour
-     au total (50 par defaut), pour que le formulaire ne serve pas a envoyer du courrier indesirable.
-   - Pour rendre l'e-mail facultatif, dans script.js remplacez  req: true  par  req: false  sur la
-     ligne du champ "email".
-
-ALERTE WHATSAPP (optionnelle) - service gratuit CallMeBot
-   A chaque questionnaire recu, vous recevez sur WhatsApp : entreprise, responsable, telephone et
-   budget (le detail complet est dans le PDF envoye par e-mail).
-   1) Ajoutez ce numero a vos contacts WhatsApp :  +34 644 78 13 70
-      (numero indique par CallMeBot le 29/09/2026 : verifiez-le sur https://www.callmebot.com/blog/free-api-whatsapp-messages/ )
-   2) Envoyez-lui ce message WhatsApp, exactement :  I allow callmebot to send me messages
-   3) Vous recevez en reponse votre cle (apikey) - jusqu'a 2 minutes (sinon, reessayez apres 24 h).
-   4) Dans envoyer.php, renseignez :
-        $WHATSAPP_ACTIF  = true;
-        $WHATSAPP_NUMERO = "+225XXXXXXXXXX";   <- VOTRE numero WhatsApp, avec l'indicatif
-        $WHATSAPP_CLE    = "votre_cle";
-   5) Ouvrez  https://votresite.com/questionnaire/envoyer.php  : vous devez voir "whatsapp":true
-      (cela confirme les reglages ; le vrai test est l'envoi d'un questionnaire).
-   A SAVOIR :
-   - CallMeBot est un service gratuit tiers, NON officiel WhatsApp, pour usage personnel : il envoie
-     uniquement des messages texte a VOTRE numero. Ces informations (nom, telephone, budget) transitent
-     par leurs serveurs. Si cela ne vous convient pas, laissez $WHATSAPP_ACTIF = false.
-   - Le service peut etre indisponible ou changer : l'e-mail reste le canal principal, et un echec de
-     WhatsApp n'empeche jamais l'envoi du questionnaire.
-   - Votre hebergement doit autoriser les appels sortants (cURL) : c'est le cas de la plupart.
-   - Pour une solution officielle (WhatsApp Business), demandez une adaptation.
 
 INTEGRATION DANS WORDPRESS
    Le plus simple : ajoutez un bouton ou un lien "Remplir le questionnaire" (page ou menu :
