@@ -380,6 +380,28 @@ function build(node, scope, out) {
 
 /* ============ 7. AFFICHAGE ============ */
 let templateRoot = null, appEl = null;
+let lastPage = null, io = null;
+const revealed = new Set();   // rang des blocs déjà apparus (pour ne pas rejouer l'animation à chaque clic)
+const openFaq = new Set();    // questions de la FAQ ouvertes
+
+function setupReveal() {
+  const nodes = Array.from(appEl.querySelectorAll('.rv'));
+  if (lastPage !== state.page) { revealed.clear(); lastPage = state.page; }
+  if (io) { io.disconnect(); io = null; }
+  nodes.forEach((n, i) => { if (revealed.has(i)) n.classList.add('in'); });
+  const rest = nodes.filter((n, i) => !revealed.has(i));
+  if (!('IntersectionObserver' in window)) { rest.forEach(n => n.classList.add('in')); return; }
+  io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      revealed.add(nodes.indexOf(e.target));
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  rest.forEach(n => io.observe(n));
+}
+
 function render() {
   if (!templateRoot) return;
   // On retient l'élément actif (son rang parmi les éléments de même type) pour le retrouver après l'affichage
@@ -394,6 +416,8 @@ function render() {
   const scope = computeVals();
   templateRoot.childNodes.forEach(c => build(c, scope, frag));
   appEl.replaceChildren(frag);
+  setupReveal();
+  appEl.querySelectorAll('details[data-k]').forEach(d => { if (openFaq.has(d.dataset.k)) d.open = true; });
   if (window.scrollY !== y) window.scrollTo({ top: y, behavior: 'instant' });
   if (focus && focus.index >= 0) {
     const el = appEl.querySelectorAll(focus.tag)[focus.index];
@@ -408,6 +432,7 @@ function render() {
 document.addEventListener('DOMContentLoaded', () => {
   appEl = document.getElementById('app');
   templateRoot = document.getElementById('tpl').content;
+  appEl.addEventListener('toggle', (e) => { const d = e.target; if (d && d.matches && d.matches('details[data-k]')) { if (d.open) openFaq.add(d.dataset.k); else openFaq.delete(d.dataset.k); } }, true);
   window.addEventListener('hashchange', () => syncRoute(true));
   window.addEventListener('resize', () => {
     const wasDesktop = state.w >= 960, w = window.innerWidth;
