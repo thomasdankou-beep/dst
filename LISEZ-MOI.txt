@@ -1,0 +1,102 @@
+DST TECHNOLOGIE - QUESTIONNAIRE CLIENT (boutique en ligne de perruques)
+=======================================================================
+
+CONTENU DU DOSSIER
+  index.html, style.css, script.js   Le questionnaire (12 etapes)
+  envoyer.php                        Envoie le PDF par e-mail depuis votre hebergement
+  assets/                            Le logo (a ajouter) et la bibliotheque PDF (assets/vendor)
+
+INSTALLATION EN 5 ETAPES
+
+1) Configurer l'adresse e-mail
+   Ouvrez envoyer.php avec le Bloc-notes et remplacez, en haut du fichier :
+     $DESTINATAIRE = "contact@votredomaine.com";   <- l'adresse qui RECOIT les questionnaires
+     $EXPEDITEUR   = "contact@votredomaine.com";   <- une adresse de VOTRE nom de domaine
+   Le plus simple : mettre votre adresse pro dans les deux lignes.
+
+2) Ajouter le logo
+   Placez votre logo dans :  assets/logo-dst-technologie.png
+   (Il s'affiche en haut de la page et dans le PDF. Sans logo, le nom "DST TECHNOLOGIE" est affiche.)
+
+3) Mettre le dossier en ligne
+   Dans le gestionnaire de fichiers de votre hebergeur (ou en FTP) :
+   - creez le dossier  public_html/questionnaire/
+   - envoyez-y tout le contenu de ce dossier (ou envoyez le ZIP puis cliquez sur "Extraire").
+
+4) Verifier que le service d'envoi fonctionne
+   Ouvrez  https://votresite.com/questionnaire/envoyer.php
+   Vous devez voir :  {"ok":true,"message":"Service actif","copie_client":true,"whatsapp":false}
+   (Si vous voyez "envoyer.php n'est pas configure", refaites l'etape 1.)
+
+5) Faire un test reel
+   Ouvrez  https://votresite.com/questionnaire/  , remplissez un questionnaire jusqu'au bout
+   et cliquez sur "Envoyer ma demande a DST Technologie".
+   L'e-mail "Nouveau questionnaire client - nom de l'entreprise" arrive avec le PDF en piece jointe.
+   Pensez a regarder les spams la premiere fois.
+
+COPIE ENVOYEE AU CLIENT
+   Le formulaire demande l'adresse e-mail du client (etape 1). Apres l'envoi, le client recoit un
+   e-mail "Votre questionnaire a bien ete envoye" avec son PDF en piece jointe. Quand il clique sur
+   "Repondre", sa reponse vous arrive directement. Vous aussi, vous pouvez repondre au client depuis
+   l'e-mail recu : "Repondre" ecrit au client.
+   - Reglages dans envoyer.php : $COPIE_CLIENT (true/false), $NOM_ENTREPRISE (nom dans le message).
+   - Protections : 2 copies maximum par adresse et par jour, et $COPIE_MAX_PAR_JOUR copies par jour
+     au total (50 par defaut), pour que le formulaire ne serve pas a envoyer du courrier indesirable.
+   - Pour rendre l'e-mail facultatif, dans script.js remplacez  req: true  par  req: false  sur la
+     ligne du champ "email".
+
+ALERTE WHATSAPP (optionnelle) - service gratuit CallMeBot
+   A chaque questionnaire recu, vous recevez sur WhatsApp : entreprise, responsable, telephone et
+   budget (le detail complet est dans le PDF envoye par e-mail).
+   1) Ajoutez ce numero a vos contacts WhatsApp :  +34 644 78 13 70
+      (numero indique par CallMeBot le 29/09/2026 : verifiez-le sur https://www.callmebot.com/blog/free-api-whatsapp-messages/ )
+   2) Envoyez-lui ce message WhatsApp, exactement :  I allow callmebot to send me messages
+   3) Vous recevez en reponse votre cle (apikey) - jusqu'a 2 minutes (sinon, reessayez apres 24 h).
+   4) Dans envoyer.php, renseignez :
+        $WHATSAPP_ACTIF  = true;
+        $WHATSAPP_NUMERO = "+225XXXXXXXXXX";   <- VOTRE numero WhatsApp, avec l'indicatif
+        $WHATSAPP_CLE    = "votre_cle";
+   5) Ouvrez  https://votresite.com/questionnaire/envoyer.php  : vous devez voir "whatsapp":true
+      (cela confirme les reglages ; le vrai test est l'envoi d'un questionnaire).
+   A SAVOIR :
+   - CallMeBot est un service gratuit tiers, NON officiel WhatsApp, pour usage personnel : il envoie
+     uniquement des messages texte a VOTRE numero. Ces informations (nom, telephone, budget) transitent
+     par leurs serveurs. Si cela ne vous convient pas, laissez $WHATSAPP_ACTIF = false.
+   - Le service peut etre indisponible ou changer : l'e-mail reste le canal principal, et un echec de
+     WhatsApp n'empeche jamais l'envoi du questionnaire.
+   - Votre hebergement doit autoriser les appels sortants (cURL) : c'est le cas de la plupart.
+   - Pour une solution officielle (WhatsApp Business), demandez une adaptation.
+
+INTEGRATION DANS WORDPRESS
+   Le plus simple : ajoutez un bouton ou un lien "Remplir le questionnaire" (page ou menu :
+   Apparence > Menus > Liens personnalises) vers  https://votresite.com/questionnaire/
+
+   Variante (dans une page) : bloc "HTML personnalise" avec
+     <iframe src="/questionnaire/" title="Questionnaire client DST"
+             style="width:100%;height:1600px;border:0"></iframe>
+
+SI L'E-MAIL N'ARRIVE PAS
+   - Message "Aucun serveur n'est encore configure..." : le site charge un ANCIEN script.js.
+     Remplacez TOUS les fichiers sur l'hebergement par ceux de ce dossier (index.html, style.css,
+     script.js, envoyer.php, assets/vendor), puis rechargez la page avec Ctrl+F5.
+     Verification : ouvrez https://votresite.com/questionnaire/script.js , faites Ctrl+F et cherchez
+     "envoyer.php" : la ligne  endpoint: "envoyer.php"  doit apparaitre vers le haut du fichier.
+   - Message "L'envoi a echoue (HTTP 404)" : envoyer.php n'est pas dans le meme dossier que index.html.
+   - Message "envoyer.php n'est pas configure" : remplacez l'adresse e-mail en haut de envoyer.php.
+   - Regardez le dossier spam / courrier indesirable.
+   - Message "Le serveur n'a pas pu envoyer l'e-mail" : demandez au support de votre hebergeur
+     d'activer l'envoi d'e-mails PHP (fonction mail()).
+   - Dans l'espace de votre hebergeur, cherchez "Email Deliverability" / "Delivrabilite" et verifiez
+     que SPF et DKIM sont valides.
+   - En dernier recours, le client peut telecharger le PDF (bouton du recapitulatif) et vous l'envoyer.
+
+MODIFIER LE QUESTIONNAIRE
+   Toutes les questions sont dans script.js, dans la liste "STEPS" (texte des questions, options,
+   champs obligatoires). Les couleurs sont dans style.css (variables au tout debut du fichier).
+
+REMARQUES
+   - Les reponses du client sont enregistrees sur son appareil (localStorage) : s'il ferme la page,
+     le bouton "Continuer mon questionnaire" les restaure.
+   - envoyer.php refuse les envois venant d'un autre site et limite a 10 envois / 10 minutes / visiteur
+     (reglable avec $LIMITE).
+   - Bibliotheque PDF : jsPDF (licence MIT), incluse dans assets/vendor.

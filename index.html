@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Questionnaire client – DST TECHNOLOGIE</title>
+  <meta name="description" content="Questionnaire client DST TECHNOLOGIE – création d’une boutique en ligne de perruques.">
+  <meta name="theme-color" content="#0b1f4b">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+  <a class="skip" href="#stage">Aller au questionnaire</a>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="hero">
+    <div class="wrap">
+      <!-- Placez votre logo dans assets/logo-dst-technologie.png -->
+      <img class="logo" src="assets/logo-dst-technologie.png" alt="DST Technologie"
+           onerror="this.style.display='none'">
+      <p class="brand">DST TECHNOLOGIE</p>
+      <h1>QUESTIONNAIRE CLIENT</h1>
+      <p class="subtitle">Création d’une boutique en ligne de perruques</p>
+      <p class="lead">Ce questionnaire permet à DST Technologie de comprendre votre activité, vos besoins et vos priorités afin de définir précisément le périmètre du projet et de préparer un devis personnalisé.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <noscript><p class="notice">JavaScript est nécessaire pour utiliser ce questionnaire.</p></noscript>
+
+    <!-- Barre de progression (remplie par script.js) -->
+    <div class="progress" id="progress" hidden>
+      <div class="progress-top">
+        <span id="progressLabel">Étape 1 / 12</span>
+        <span id="progressPct">0 %</span>
+      </div>
+      <div class="bar" role="progressbar" aria-label="Progression du questionnaire"
+           aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bar">
+        <div class="bar-fill" id="barFill"></div>
+      </div>
+      <ol class="dots" id="dots" aria-hidden="true"></ol>
+    </div>
+
+    <!-- Zone principale : accueil, étapes, récapitulatif (rendue par script.js) -->
+    <section class="panel" id="stage" tabindex="-1" aria-live="polite"></section>
+  </main>
+
+  <footer class="foot">
+    <p><strong>DST TECHNOLOGIE</strong> — Votre partenaire digital pour la réussite de votre entreprise</p>
+  </footer>
+
+  <!-- Bibliothèque jsPDF (locale) : génère le PDF du questionnaire -->
+  <script src="assets/vendor/jspdf.umd.min.js?v=3"></script>
+  <script src="script.js?v=3"></script>
+</body>
+</html>

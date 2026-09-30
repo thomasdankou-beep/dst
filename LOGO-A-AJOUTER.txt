@@ -1,0 +1,6 @@
+Placez ici votre logo, avec exactement ce nom :
+
+    logo-dst-technologie.png
+
+Il s'affichera en haut du questionnaire et dans le PDF envoye par e-mail.
+Vous pouvez supprimer ce fichier une fois le logo en place.
