@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-  <meta name="description" content="DST Technologie, agence digitale et solutions technologiques : sites web, e-commerce, réservation et paiement en ligne (Wave, Orange Money, MTN Money, Moov Money), CRM, SEO et solutions sur mesure.">
-  <link rel="stylesheet" href="_ds/modernist-b943c901-d95c-485c-9609-82c7f40d0a63/styles.css">
-  <script src="_ds/modernist-b943c901-d95c-485c-9609-82c7f40d0a63/_ds_bundle.js"></script>
-  <script src="./image-slot.js"></script>
+<title>DST Technologie — Votre partenaire digital</title>
+<meta name="description" content="DST Technologie, agence digitale et solutions technologiques : sites web, e-commerce, réservation et paiement en ligne (Wave, Orange Money, MTN Money, Moov Money), CRM, SEO et solutions sur mesure.">
+<meta name="theme-color" content="#0062E6">
+<link rel="icon" href="assets/logo-dst-technologie.png">
+<link rel="stylesheet" href="_ds/modernist-b943c901-d95c-485c-9609-82c7f40d0a63/styles.css">
   <style>
     :root {
       --color-bg: #F4F6FA; --color-surface: #E8ECF3; --color-text: #001B5E;
@@ -29,8 +25,14 @@
     a:not(.btn) { color: var(--color-accent-600); }
     a:not(.btn):hover { color: var(--color-accent-700); }
   </style>
-</helmet>
+</head>
+<body>
+<noscript><p style="padding:24px;font-family:sans-serif">JavaScript est nécessaire pour afficher ce site. Contactez-nous : 05 03 20 66 66 · dsttechnologie.com</p></noscript>
 
+<!-- Le site est affiché par app.js à partir du gabarit ci-dessous. Pour changer un texte, modifiez-le directement ici. -->
+<div id="app"></div>
+
+<template id="tpl">
 <div style="min-height:100vh; display:flex; flex-direction:column;">
 
 <header style="position:sticky; top:0; z-index:40; background:var(--color-bg);">
@@ -739,283 +741,8 @@
 </sc-if>
 
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;servicesLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Onglets&quot;,&quot;Grille&quot;],&quot;default&quot;:&quot;Onglets&quot;,&quot;tsType&quot;:&quot;'Onglets' | 'Grille'&quot;,&quot;section&quot;:&quot;Accueil&quot;},&quot;formMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Multi-étapes&quot;,&quot;Page unique&quot;],&quot;default&quot;:&quot;Multi-étapes&quot;,&quot;tsType&quot;:&quot;'Multi-étapes' | 'Page unique'&quot;,&quot;section&quot;:&quot;Devis&quot;},&quot;mobileBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Mobile&quot;}}">
-const WA_NUM = '2250503206666';
-const SERVICES = [
-  { id: 'web', label: 'Site web', title: 'Création de sites web', long: 'Un site qui présente clairement votre activité, inspire confiance et transforme vos visiteurs en clients, sur mobile comme sur ordinateur.', features: ['Design aux couleurs de votre marque', 'Affichage optimisé pour le mobile', 'Boutons d’appel et WhatsApp intégrés', 'Bases du référencement Google'] },
-  { id: 'ecommerce', label: 'E-commerce', title: 'E-commerce', long: 'Une boutique en ligne où vos clients parcourent votre catalogue, commandent et paient à toute heure, sans attendre votre réponse.', features: ['Catalogue produits avec photos et prix', 'Panier et commande en ligne', 'Paiement mobile money et carte', 'Suivi des commandes et livraisons'] },
-  { id: 'reservation', label: 'Réservation en ligne', title: 'Réservation en ligne', long: 'Fini les allers-retours de messages : vos clients choisissent la prestation et le créneau, vous recevez une réservation confirmée.', features: ['Agenda de vos disponibilités', 'Confirmation de rendez-vous', 'Acompte en ligne en option', 'Historique des réservations'] },
-  { id: 'paiement', label: 'Paiement en ligne', title: 'Paiement en ligne', long: 'Encaissez directement sur votre site avec les moyens de paiement que vos clients utilisent déjà au quotidien.', listTitle: 'Moyens de paiement intégrés', features: ['Wave', 'Orange Money', 'MTN Money', 'Moov Money', 'Carte bancaire'] },
-  { id: 'digitalisation', label: 'Digitalisation', title: 'Digitalisation des entreprises', long: 'Cahiers, fichiers Excel, messages éparpillés : nous transformons vos tâches manuelles en outils simples qui vous font gagner du temps.', features: ['Analyse de vos processus actuels', 'Formulaires et tableaux de bord', 'Automatisation des tâches répétitives', 'Prise en main accompagnée'] },
-  { id: 'crm', label: 'CRM & gestion clients', title: 'CRM & gestion clients', long: 'Retrouvez en un instant l’historique de chaque client : ses commandes, ses paiements, ses rendez-vous et vos échanges.', features: ['Fiches clients centralisées', 'Suivi des commandes et paiements', 'Historique des rendez-vous', 'Relances et fidélisation'] },
-  { id: 'surmesure', label: 'Solution sur mesure', title: 'Solutions sur mesure', long: 'Votre activité a ses propres règles. Nous concevons la plateforme qui les respecte, de l’idée à la mise en ligne.', features: ['Étude détaillée de vos besoins', 'Plateformes web et outils métier', 'Évolutions au rythme de votre croissance', 'Accompagnement après le lancement'] },
-  { id: 'seo', label: 'SEO / Référencement', title: 'SEO / Référencement', long: 'Nous améliorons la visibilité de votre entreprise sur Google pour que les clients qui cherchent vos services vous trouvent, vous.', features: ['Audit de votre visibilité', 'Optimisation des pages et contenus', 'Fiche d’établissement Google', 'Suivi du positionnement'] },
-];
-const CONSEIL = { id: 'conseil', label: 'Je ne sais pas encore, conseillez-moi', title: 'À définir avec un conseiller' };
-const SECTORS = [
-  { name: 'Commerçants', hint: 'Catalogue, commandes et paiement mobile' },
-  { name: 'Salons de coiffure', hint: 'Réservation et acompte en ligne' },
-  { name: 'Vendeuses de perruques', hint: 'Boutique en ligne et livraison' },
-  { name: 'Boutiques', hint: 'Vente en ligne et fidélisation' },
-  { name: 'Prestataires événementiels', hint: 'Vitrine, galerie et demandes de devis' },
-  { name: 'Entreprises', hint: 'Digitalisation et outils sur mesure' },
-  { name: 'Restaurateurs', hint: 'Menu en ligne et commandes' },
-  { name: 'Professionnels indépendants', hint: 'Site vitrine et prise de rendez-vous' },
-  { name: 'Entrepreneurs', hint: 'Lancement de votre activité en ligne' },
-];
-const BUDGETS = ['Moins de 300 000 FCFA', '300 000 – 750 000 FCFA', '750 000 – 1 500 000 FCFA', 'Plus de 1 500 000 FCFA', 'Je ne sais pas encore'];
-const DELAIS = ['Dès que possible', 'Dans le mois', 'Dans les 3 mois', 'Pas de date précise'];
-const SITES = ['Oui', 'Non', 'Réseaux sociaux uniquement'];
-const PREFS = ['WhatsApp', 'Appel', 'Email'];
-const STEP_LABELS = ['Besoin', 'Activité', 'Budget', 'Coordonnées'];
-const PAGES = ['accueil', 'services', 'realisations', 'contact'];
-const TITLES = {
-  accueil: 'DST Technologie — Votre partenaire digital',
-  services: 'Services — DST Technologie',
-  realisations: 'Réalisations — DST Technologie',
-  contact: 'Contact & devis — DST Technologie',
-};
-const CASES = {
-  salon: ['reservation', 'paiement', 'crm'],
-  perruques: ['ecommerce', 'paiement'],
-  restaurant: ['ecommerce', 'paiement'],
-  evenementiel: ['web', 'crm'],
-  boutique: ['crm', 'digitalisation'],
-  entreprise: ['surmesure', 'digitalisation'],
-};
-const emptyForm = () => ({ services: [], secteur: '', description: '', site: '', budget: '', delai: '', nom: '', entreprise: '', tel: '', email: '', pref: 'WhatsApp' });
+</template>
 
-class Component extends DCLogic {
-  state = { tab: 0, page: 'accueil', w: window.innerWidth || 1280, menuOpen: false, step: 0, sent: false, errors: {}, form: emptyForm() };
-  formRef = React.createRef();
-
-  componentDidMount() {
-    this._onHash = () => this.syncRoute(true);
-    this._onResize = () => this.setState({ w: window.innerWidth });
-    window.addEventListener('hashchange', this._onHash);
-    window.addEventListener('resize', this._onResize);
-    this.syncRoute(false);
-  }
-  componentDidUpdate() {
-    const t = TITLES[this.state.page];
-    if (document.title !== t) document.title = t;
-  }
-  componentWillUnmount() {
-    window.removeEventListener('hashchange', this._onHash);
-    window.removeEventListener('resize', this._onResize);
-  }
-
-  route() {
-    const seg = (window.location.hash || '').replace(/^#\/?/, '').split(/[/?]/)[0];
-    return PAGES.includes(seg) ? seg : 'accueil';
-  }
-  syncRoute(scroll) {
-    const page = this.route();
-    document.title = TITLES[page];
-    this.setState({ page, menuOpen: false }, () => {
-      if (this._pending) {
-        const id = this._pending;
-        this._pending = null;
-        window.scrollTo({ top: 0, behavior: 'instant' });
-        requestAnimationFrame(() => this.scrollToId('svc-' + id));
-      } else if (scroll) {
-        window.scrollTo({ top: 0, behavior: 'instant' });
-      }
-    });
-  }
-  go(page) {
-    const target = page === 'accueil' ? '#/' : '#/' + page;
-    const current = window.location.hash || '#/';
-    if (current === target) this.syncRoute(true);
-    else window.location.hash = target;
-  }
-  scrollToId(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
-  }
-  openService(id) {
-    if (this.state.page === 'services') { this.scrollToId('svc-' + id); return; }
-    this._pending = id;
-    this.go('services');
-  }
-  goDevis(services) {
-    this.setState(s => ({ step: 0, sent: false, errors: {}, menuOpen: false, form: services ? { ...s.form, services: [...services] } : s.form }));
-    this.go('contact');
-  }
-
-  setField(k, v) {
-    this.setState(s => ({ form: { ...s.form, [k]: v }, errors: { ...s.errors, [k]: '' } }));
-  }
-  toggleService(id) {
-    this.setState(s => {
-      const cur = s.form.services;
-      const next = cur.includes(id) ? cur.filter(x => x !== id) : [...cur, id];
-      return { form: { ...s.form, services: next }, errors: { ...s.errors, services: '' } };
-    });
-  }
-  validate(steps) {
-    const f = this.state.form, e = {};
-    if (steps.includes(0) && !f.services.length) e.services = 'Choisissez au moins une option.';
-    if (steps.includes(1) && !f.secteur) e.secteur = 'Indiquez votre secteur d’activité.';
-    if (steps.includes(3)) {
-      if (f.nom.trim().length < 2) e.nom = 'Indiquez votre nom.';
-      if (f.tel.replace(/\D/g, '').length < 8) e.tel = 'Indiquez un numéro valide, par exemple 05 03 20 66 66.';
-      if (f.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim())) e.email = 'Cette adresse email semble incomplète.';
-    }
-    this.setState({ errors: e });
-    return Object.keys(e).length === 0;
-  }
-  toFormTop() {
-    const el = this.formRef.current;
-    if (!el) return;
-    const top = el.getBoundingClientRect().top;
-    if (top < 80) window.scrollTo({ top: top + window.scrollY - 100, behavior: 'smooth' });
-  }
-  next() {
-    if (!this.validate([this.state.step])) return;
-    this.setState(s => ({ step: Math.min(3, s.step + 1) }), () => this.toFormTop());
-  }
-  back() {
-    this.setState(s => ({ step: Math.max(0, s.step - 1), errors: {} }), () => this.toFormTop());
-  }
-  submit(single) {
-    if (!this.validate(single ? [0, 1, 2, 3] : [3])) return;
-    this.setState({ sent: true }, () => this.toFormTop());
-  }
-
-  svcTitle(id) {
-    if (id === CONSEIL.id) return CONSEIL.title;
-    const s = SERVICES.find(x => x.id === id);
-    return s ? s.title : id;
-  }
-  recapRows() {
-    const f = this.state.form;
-    return [
-      ['Besoin', f.services.map(id => this.svcTitle(id)).join(', ')],
-      ['Secteur', f.secteur],
-      ['Projet', f.description.trim()],
-      ['Site actuel', f.site],
-      ['Budget', f.budget],
-      ['Délai', f.delai],
-      ['Nom', f.nom.trim()],
-      ['Entreprise', f.entreprise.trim()],
-      ['Téléphone', f.tel.trim()],
-      ['Email', f.email.trim()],
-      ['Contact préféré', f.pref],
-    ].filter(r => r[1]).map(([k, v]) => ({ k, v }));
-  }
-
-  renderVals() {
-    const s = this.state, f = s.form, p = s.page;
-    const single = (this.props.formMode ?? 'Multi-étapes') === 'Page unique';
-    const photo = (this.props.heroVisual ?? 'Interface') === 'Photo';
-    const desktop = s.w >= 960;
-
-    const cur = {};
-    PAGES.forEach(k => { cur[k] = p === k ? 'page' : 'false'; });
-    const open = {};
-    SERVICES.forEach(x => { open[x.id] = (e) => { if (e && e.preventDefault) e.preventDefault(); this.openService(x.id); }; });
-    const caseDevis = {};
-    Object.keys(CASES).forEach(k => { caseDevis[k] = () => this.goDevis(CASES[k]); });
-
-    const services = SERVICES.map((x, i) => ({
-      ...x,
-      num: String(i + 1).padStart(2, '0'),
-      domId: 'svc-' + x.id,
-      listTitle: x.listTitle || 'Ce que comprend ce service',
-      devis: () => this.goDevis([x.id]),
-    }));
-    const svcIndex = services.map(x => ({ num: x.num, title: x.title, jump: () => this.scrollToId(x.domId) }));
-
-    const tile = (on) => ({
-      bd: on ? 'var(--color-accent)' : 'var(--color-divider)',
-      bg: on ? 'var(--color-accent-100)' : 'transparent',
-    });
-    const svcOpts = [...SERVICES, CONSEIL].map(o => {
-      const on = f.services.includes(o.id);
-      return {
-        label: o.label, selected: on, aria: on ? 'true' : 'false', ...tile(on),
-        boxBd: on ? 'var(--color-accent)' : 'var(--color-neutral-500)',
-        boxBg: on ? 'var(--color-accent)' : 'transparent',
-        toggle: () => this.toggleService(o.id),
-      };
-    });
-    const radios = (key, list) => list.map(label => {
-      const on = f[key] === label;
-      return { label, checked: on, ...tile(on), pick: () => this.setField(key, label) };
-    });
-
-    const on = {};
-    ['description', 'nom', 'entreprise', 'tel', 'email'].forEach(k => { on[k] = (e) => this.setField(k, e.target.value); });
-    const err = {}, hasErr = {}, bdr = {};
-    ['services', 'secteur', 'nom', 'tel', 'email'].forEach(k => {
-      err[k] = s.errors[k] || '';
-      hasErr[k] = !!s.errors[k];
-      bdr[k] = s.errors[k] ? 'var(--color-accent-700)' : 'var(--color-divider)';
-    });
-
-    const steps = STEP_LABELS.map((label, i) => {
-      const now = i === s.step, done = i < s.step;
-      return {
-        num: '0' + (i + 1), label,
-        bar: now ? 'var(--color-accent)' : done ? 'var(--color-accent-2)' : 'var(--color-divider)',
-        fg: now || done ? 'var(--color-text)' : 'var(--color-neutral-700)',
-      };
-    });
-    const vis = (i) => !s.sent && (single || s.step === i);
-
-    const recap = this.recapRows();
-    const msg = 'Bonjour DST Technologie, je souhaite recevoir un devis.\n' + recap.map(r => r.k + ' : ' + r.v).join('\n');
-    const firstName = f.nom.trim().split(/\s+/)[0] || '';
-
-    return {
-      isHome: p === 'accueil', isServices: p === 'services', isReal: p === 'realisations', isContact: p === 'contact',
-      showClose: p !== 'contact',
-      desktop, mobile: !desktop,
-      menuOpen: s.menuOpen, menuClosed: !s.menuOpen, menuPanel: s.menuOpen && !desktop, menuAria: s.menuOpen ? 'true' : 'false',
-      toggleMenu: () => this.setState(st => ({ menuOpen: !st.menuOpen })),
-      closeMenu: () => this.setState({ menuOpen: false }),
-      cur, open, caseDevis,
-      goDevis: () => this.goDevis(),
-      heroInterface: !photo, heroPhoto: photo,
-      sectors: SECTORS,
-      services, svcIndex,
-      formRef: this.formRef,
-      single,
-      steps,
-      show: { stepper: !single && !s.sent, s1: vis(0), s2: vis(1), s3: vis(2), s4: vis(3) },
-      svcOpts,
-      sectorOpts: radios('secteur', [...SECTORS.map(x => x.name), 'Autre secteur']),
-      siteOpts: radios('site', SITES),
-      budgetOpts: radios('budget', BUDGETS),
-      delaiOpts: radios('delai', DELAIS),
-      prefOpts: PREFS.map(label => ({ label, checked: f.pref === label, pick: () => this.setField('pref', label) })),
-      f, on, err, hasErr, bdr,
-      nav: {
-        bar: !s.sent,
-        back: !single && !s.sent && s.step > 0,
-        noBack: !s.sent && (single || s.step === 0),
-        next: !single && !s.sent && s.step < 3,
-        submit: !s.sent && (single || s.step === 3),
-      },
-      next: () => this.next(),
-      back: () => this.back(),
-      submit: () => this.submit(single),
-      sent: s.sent,
-      greet: firstName ? ' ' + firstName : '',
-      recap,
-      waDevis: 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(msg),
-      edit: () => this.setState({ sent: false, step: single ? 0 : 3 }),
-      svcTabs: (this.props.servicesLayout ?? 'Onglets') === 'Onglets',
-      svcGrid: (this.props.servicesLayout ?? 'Onglets') !== 'Onglets',
-      tabs: SERVICES.map((x, i) => { const a = i === s.tab; return { num: String(i + 1).padStart(2, '0'), title: x.title, aria: a ? 'true' : 'false', bg: a ? 'var(--color-accent-100)' : 'transparent', fg: a ? 'var(--color-accent-800)' : 'var(--color-text)', bar: a ? 'inset 6px 0 0 var(--color-accent)' : 'none', pick: () => this.setState({ tab: i }) }; }),
-      tabSel: (() => { const x = SERVICES[s.tab] || SERVICES[0]; return { num: String((s.tab || 0) + 1).padStart(2, '0'), title: x.title, long: x.long, features: x.features, devis: () => this.goDevis([x.id]), more: (e) => { if (e && e.preventDefault) e.preventDefault(); this.openService(x.id); } }; })(),
-      showMobileBar: (this.props.mobileBar ?? true) && !desktop,
-    };
-  }
-}
-</script>
+<script src="app.js" defer></script>
 </body>
 </html>
