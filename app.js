@@ -5,7 +5,7 @@
 
 /* ============ 1. DONNÉES ============ */
 const WA_NUM = '2250503206666';
-const OPTIONS = { formMode: 'Multi-étapes', servicesLayout: 'Onglets', mobileBar: true }; // formMode : 'Multi-étapes' | 'Page unique' ; servicesLayout : 'Onglets' | 'Grille'
+const OPTIONS = { formMode: 'Multi-étapes', servicesLayout: 'Grille', mobileBar: true }; // formMode : 'Multi-étapes' | 'Page unique' ; servicesLayout : 'Grille' (cartes illustrées) | 'Onglets'
 const IMG_EXT = ['jpg', 'jpeg', 'png', 'webp']; // photos : assets/images/<id>.jpg (voir LISEZ-MOI)
 
 const SERVICES = [
@@ -17,6 +17,24 @@ const SERVICES = [
   { id: 'crm', label: 'CRM & gestion clients', title: 'CRM & gestion clients', long: 'Retrouvez en un instant l’historique de chaque client : ses commandes, ses paiements, ses rendez-vous et vos échanges.', features: ['Fiches clients centralisées', 'Suivi des commandes et paiements', 'Historique des rendez-vous', 'Relances et fidélisation'] },
   { id: 'surmesure', label: 'Solution sur mesure', title: 'Solutions sur mesure', long: 'Votre activité a ses propres règles. Nous concevons la plateforme qui les respecte, de l’idée à la mise en ligne.', features: ['Étude détaillée de vos besoins', 'Plateformes web et outils métier', 'Évolutions au rythme de votre croissance', 'Accompagnement après le lancement'] },
   { id: 'seo', label: 'SEO / Référencement', title: 'SEO / Référencement', long: 'Nous améliorons la visibilité de votre entreprise sur Google pour que les clients qui cherchent vos services vous trouvent, vous.', features: ['Audit de votre visibilité', 'Optimisation des pages et contenus', 'Fiche d’établissement Google', 'Suivi du positionnement'] },
+];
+const SHORT = {
+  web: 'Sites vitrines modernes, rapides et optimisés.',
+  ecommerce: 'Présentez et vendez vos produits en ligne, à toute heure.',
+  reservation: 'Vos clients prennent rendez-vous directement depuis votre site.',
+  paiement: 'Wave, Orange Money, MTN Money, Moov Money et carte bancaire.',
+  digitalisation: 'Vos processus manuels deviennent des outils numériques.',
+  crm: 'Clients, commandes, paiements et rendez-vous au même endroit.',
+  surmesure: 'Des plateformes adaptées aux besoins spécifiques de votre entreprise.',
+  seo: 'Améliorez la visibilité de votre entreprise sur Google.',
+};
+SERVICES.forEach((x) => { x.short = SHORT[x.id]; });
+const PAYS = [
+  { label: 'Wave', color: '#1DC8F2' },
+  { label: 'Orange Money', color: '#FF7900' },
+  { label: 'MTN Money', color: '#FFCC00' },
+  { label: 'Moov Money', color: '#0093DD' },
+  { label: 'Carte bancaire', color: '#2A3A8C' },
 ];
 const CONSEIL = { id: 'conseil', label: 'Je ne sais pas encore, conseillez-moi', title: 'À définir avec un conseiller' };
 const SECTORS = [
@@ -30,6 +48,19 @@ const SECTORS = [
   { name: 'Professionnels indépendants', hint: 'Site vitrine et prise de rendez-vous' },
   { name: 'Entrepreneurs', hint: 'Lancement de votre activité en ligne' },
 ];
+const ICO = (p, n = 22) => `<svg width="${n}" height="${n}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const SECTOR_ICONS = [
+  ICO('<path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/>'),                                   // commerçants
+  ICO('<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88"/><path d="M14.47 14.48 20 20"/><path d="M8.12 8.12 12 12"/>'),       // salons de coiffure
+  ICO('<path d="M5 14V10a7 7 0 0 1 14 0v4"/><path d="M5 14c0 3 1 5 3 6"/><path d="M19 14c0 3-1 5-3 6"/><path d="M9 11c2 0 4-1 6-3"/>'),                             // perruques
+  ICO('<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>'),                                      // boutiques
+  ICO('<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/>'),                            // événementiel
+  ICO('<rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/><path d="M10 21v-3h4v3"/>'),                     // entreprises
+  ICO('<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>'),                        // restaurateurs
+  ICO('<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>'),                                                // indépendants
+  ICO('<path d="M12 2c3 2 5 6 5 10l-2 3H9l-2-3c0-4 2-8 5-10z"/><circle cx="12" cy="9" r="1.5"/><path d="M9 15l-2 4 3-1"/><path d="M15 15l2 4-3-1"/>'),             // entrepreneurs
+];
+SECTORS.forEach((x, i) => { x.icon = SECTOR_ICONS[i]; });
 const BUDGETS = ['Moins de 300 000 FCFA', '300 000 – 750 000 FCFA', '750 000 – 1 500 000 FCFA', 'Plus de 1 500 000 FCFA', 'Je ne sais pas encore'];
 const DELAIS = ['Dès que possible', 'Dans le mois', 'Dans les 3 mois', 'Pas de date précise'];
 const SITES = ['Oui', 'Non', 'Réseaux sociaux uniquement'];
@@ -53,7 +84,7 @@ const CASES = {
 const emptyForm = () => ({ services: [], secteur: '', description: '', site: '', budget: '', delai: '', nom: '', entreprise: '', tel: '', email: '', pref: 'WhatsApp' });
 
 /* ============ 2. ÉTAT ============ */
-let state = { tab: 0, page: 'accueil', w: window.innerWidth || 1280, menuOpen: false, step: 0, sent: false, errors: {}, form: emptyForm() };
+let state = { tab: 0, page: 'accueil', w: window.innerWidth || 1280, menuOpen: false, step: 0, sent: false, errors: {}, form: emptyForm(), demo: { step: 0, pay: '' } };
 const formRef = { current: null };
 let pendingScroll = null;
 
@@ -170,6 +201,22 @@ function recapRows() {
   ].filter(r => r[1]).map(([k, v]) => ({ k, v }));
 }
 
+/* ============ DÉMO INTERACTIVE (page d'accueil) ============
+   Le visiteur peut « commander » sur le faux téléphone ; sans action de sa part, la démo se joue toute seule. */
+let demoManual = false, demoTimer = null, pressedAt = 0;
+const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function demoSet(step, pay) { setState({ demo: { step, pay: pay || '' } }); }
+function demoTick() {
+  clearTimeout(demoTimer);
+  const busy = demoManual || state.page !== 'accueil' || document.hidden || window.scrollY > 900 || Date.now() - pressedAt < 1200 || document.querySelector('.phone:hover');
+  if (demoManual) return;
+  if (busy) { demoTimer = setTimeout(demoTick, 1500); return; }
+  const d = state.demo;
+  if (d.step === 0) { demoSet(1); demoTimer = setTimeout(demoTick, 2300); }
+  else if (d.step === 1) { demoSet(2, 'Wave'); demoTimer = setTimeout(demoTick, 4600); }
+  else { demoSet(0); demoTimer = setTimeout(demoTick, 3200); }
+}
+
 /* ============ 5. VALEURS UTILISÉES PAR LE GABARIT ============ */
 function computeVals() {
   const s = state, f = s.form, p = s.page;
@@ -239,7 +286,17 @@ function computeVals() {
   });
   const tx = SERVICES[s.tab] || SERVICES[0];
 
+  const dm = s.demo;
+  const demo = {
+    s0: dm.step === 0, s1: dm.step === 1, s2: dm.step === 2, notS2: dm.step !== 2,
+    payLabel: dm.pay,
+    start: () => { demoManual = true; demoSet(1); },
+    reset: () => { demoManual = true; demoSet(0); },
+    pays: PAYS.map(x => ({ label: x.label, color: x.color, pick: () => { demoManual = true; demoSet(2, x.label); } })),
+  };
+
   return {
+    demo,
     isHome: p === 'accueil', isServices: p === 'services', isReal: p === 'realisations', isContact: p === 'contact',
     showClose: p !== 'contact',
     desktop, mobile: !desktop,
@@ -300,22 +357,35 @@ function lookup(expr, scope) {
 const truthy = (v) => !!v && v !== 'false';
 const interpolate = (str, scope) => str.replace(BIND, (_, e) => { const v = lookup(e, scope); return v == null || v === false ? '' : String(v); });
 
-function imageSlot(el) { // remplace <image-slot id="…"> : affiche assets/images/<id>.(jpg|png|webp) s'il existe, sinon un cadre vide
-  const id = el.getAttribute('id') || '';
+const slotCache = new Map();   // les photos déjà construites sont réutilisées à chaque affichage (pas de clignotement)
+const keepCache = new Map();
+let usedSlots = new Set(), keepUsed = new Set();
+
+function makeSlot(el, id) { // remplace <image-slot id="…"> : affiche assets/images/<id>.(jpg|png|webp) s'il existe, sinon un cadre vide
   const box = document.createElement('div');
-  box.style.cssText = 'position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;box-sizing:border-box;font-size:14px;color:var(--color-neutral-700);';
+  box.style.cssText = 'position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;box-sizing:border-box;font-size:14px;color:var(--ink-3);background:var(--soft);';
   const cap = document.createElement('span');
-  cap.textContent = el.getAttribute('placeholder') || '';
+  cap.textContent = el.getAttribute('placeholder') || el.getAttribute('alt') || '';
   box.appendChild(cap);
   const img = document.createElement('img');
-  img.alt = '';
-  img.loading = 'lazy';
-  img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;';
+  img.alt = el.getAttribute('alt') || '';
+  img.decoding = 'async';
+  if (el.getAttribute('eager') === null) img.loading = 'lazy';
+  img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s;';
+  if (el.getAttribute('pos')) img.style.objectPosition = el.getAttribute('pos');
   let i = 0;
   img.onload = () => { img.style.opacity = '1'; cap.style.display = 'none'; };
   img.onerror = () => { i++; if (i < IMG_EXT.length) img.src = 'assets/images/' + id + '.' + IMG_EXT[i]; };
   img.src = 'assets/images/' + id + '.' + IMG_EXT[0];
   box.appendChild(img);
+  return box;
+}
+function imageSlot(el) {
+  const id = el.getAttribute('id') || '';
+  const first = !!id && !usedSlots.has(id);
+  if (first) { usedSlots.add(id); if (slotCache.has(id)) return slotCache.get(id); }
+  const box = makeSlot(el, id);
+  if (first) slotCache.set(id, box);
   return box;
 }
 
@@ -353,6 +423,14 @@ function build(node, scope, out) {
   }
   if (tag === 'image-slot') { out.appendChild(imageSlot(node)); return; }
 
+  // data-keep="clé" : élément statique construit une seule fois puis réutilisé (logo, etc.)
+  const keepKey = node.getAttribute('data-keep');
+  let keepFirst = false;
+  if (keepKey && !keepUsed.has(keepKey)) {
+    keepUsed.add(keepKey); keepFirst = true;
+    if (keepCache.has(keepKey)) { out.appendChild(keepCache.get(keepKey)); return; }
+  }
+
   const el = node.namespaceURI === 'http://www.w3.org/1999/xhtml' ? document.createElement(tag) : document.createElementNS(node.namespaceURI, tag);
   let hover = null, ref = null;
   for (const a of Array.from(node.attributes)) {
@@ -361,6 +439,8 @@ function build(node, scope, out) {
     if (name === 'style-hover') { hover = val; continue; }
     const single = SINGLE.exec(val);
     if (name === 'ref' && single) { ref = lookup(single[1], scope); continue; }
+    if (name === 'data-keep') continue;
+    if (name === 'data-html' && single) { el.innerHTML = String(lookup(single[1], scope) ?? ''); continue; }
     if (name === 'onclick' && single) { const fn = lookup(single[1], scope); if (fn) el.addEventListener('click', fn); continue; }
     if (name === 'onchange' && single) {
       const fn = lookup(single[1], scope);
@@ -375,6 +455,7 @@ function build(node, scope, out) {
   if (el.tagName === 'TEXTAREA' && node.getAttribute('value')) el.value = interpolate(node.getAttribute('value'), scope);
   if (hover) applyHover(el, hover);
   if (ref) ref.current = el;
+  if (keepFirst) keepCache.set(keepKey, el);
   out.appendChild(el);
 }
 
@@ -412,6 +493,7 @@ function render() {
     if (typeof ae.selectionStart === 'number') { try { focus.s = ae.selectionStart; focus.e = ae.selectionEnd; } catch (e) {} }
   }
   const y = window.scrollY;
+  usedSlots = new Set(); keepUsed = new Set();
   const frag = document.createDocumentFragment();
   const scope = computeVals();
   templateRoot.childNodes.forEach(c => build(c, scope, frag));
@@ -433,6 +515,8 @@ document.addEventListener('DOMContentLoaded', () => {
   appEl = document.getElementById('app');
   templateRoot = document.getElementById('tpl').content;
   appEl.addEventListener('toggle', (e) => { const d = e.target; if (d && d.matches && d.matches('details[data-k]')) { if (d.open) openFaq.add(d.dataset.k); else openFaq.delete(d.dataset.k); } }, true);
+  // pendant un clic ou un appui, la démo automatique attend (sinon le clic pourrait se perdre)
+  ['pointerdown', 'keydown'].forEach((t) => document.addEventListener(t, () => { pressedAt = Date.now(); }, true));
   window.addEventListener('hashchange', () => syncRoute(true));
   window.addEventListener('resize', () => {
     const wasDesktop = state.w >= 960, w = window.innerWidth;
@@ -440,4 +524,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if ((w >= 960) !== wasDesktop) render(); // on ne reconstruit la page que si l'on change de mise en page (mobile / ordinateur)
   });
   syncRoute(false);
+  if (!reducedMotion) demoTimer = setTimeout(demoTick, 3500);
 });

@@ -1,44 +1,45 @@
-Photos libres de droits (licences CC0 / domaine public), trouvées via Openverse.
-Remplacez-les à tout moment par vos propres photos en gardant les mêmes noms de fichiers.
+Photos libres de droits (licence CC0 / domaine public), trouvées via Openverse.
+Aucune attribution n'est obligatoire ; les auteurs sont cités par courtoisie.
+Vous pouvez remplacer chaque photo par la vôtre en gardant le même nom de fichier.
 
 hero-banner.jpg
-  Titre : Business People
-  Auteur : Direct Media
-  Licence : CC0 (libre de droits, sans attribution obligatoire)
-  Source : https://stocksnap.io/photo/business-people-IS1XRUWYW4
+  Titre : Smiling Woman
+  Auteur : Matt Moloney
+  Licence : CC0 (domaine public)
+  Source : https://stocksnap.io/photo/smiling-woman-W6GFOSFAXA
 
 real-salon.jpg
-  Titre : Hairdressers
-  Auteur : adornhairdressers
-  Licence : PDM (libre de droits, sans attribution obligatoire)
-  Source : https://www.flickr.com/photos/156298865@N08/40975936752
-
-real-perruques.jpg
-  Titre : Colorful wigs
-  Auteur : inconnu
-  Licence : CC0 (libre de droits, sans attribution obligatoire)
-  Source : https://www.rawpixel.com/image/6029747/colorful-wigs-free-public-domain-cc0-photo
+  Titre : Braided Hair
+  Auteur : Candace McDaniel
+  Licence : CC0 (domaine public)
+  Source : https://stocksnap.io/photo/braided-hair-HUJXWX58V4
 
 real-restaurant.jpg
-  Titre : Restaurant Food
-  Auteur : Jay Wennington
-  Licence : CC0 (libre de droits, sans attribution obligatoire)
-  Source : https://stocksnap.io/photo/restaurant-food-47E77904CB
+  Titre : Restaurant Kitchen
+  Auteur : Michael Browning
+  Licence : CC0 (domaine public)
+  Source : https://stocksnap.io/photo/restaurant-kitchen-0HCMIT272C
 
 real-evenementiel.jpg
-  Titre : (sans titre)
-  Auteur : inconnu
-  Licence : CC0 (libre de droits, sans attribution obligatoire)
-  Source : https://www.rawpixel.com/image/5963763/free-public-domain-cc0-photo
+  Titre : Night Sparklers
+  Auteur : Andreas Rønningen
+  Licence : CC0 (domaine public)
+  Source : https://stocksnap.io/photo/night-sparklers-JYTTZMY9SC
 
 real-boutique.jpg
-  Titre : Clothes Suits
-  Auteur : Clark Street Mercantile
-  Licence : CC0 (libre de droits, sans attribution obligatoire)
-  Source : https://stocksnap.io/photo/clothes-suits-XRVSDKCWZ7
+  Titre : Market Store
+  Auteur : Jerry Kiesewetter
+  Licence : CC0 (domaine public)
+  Source : https://stocksnap.io/photo/market-store-DO8KTRN3OF
 
-real-entreprise.jpg
-  Titre : Seo Ppc
-  Auteur : Serpstat
-  Licence : CC0 (libre de droits, sans attribution obligatoire)
-  Source : https://stocksnap.io/photo/seo-ppc-9699Y6WKLD
+real-perruques.jpg et demo-product.jpg (recadrage de la même photo)
+  Titre : Colorful wigs
+  Auteur : inconnu (Rawpixel)
+  Licence : CC0 (domaine public)
+  Source : https://www.rawpixel.com/image/6029747/colorful-wigs-free-public-domain-cc0-photo
+
+closing-photo.jpg
+  Titre : Browsing Smartphone
+  Auteur : Kristin Hardwick
+  Licence : CC0 (domaine public)
+  Source : https://stocksnap.io/photo/browsing-smartphone-NPZ8V3BNYB

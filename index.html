@@ -6,9 +6,26 @@
 <title>DST Technologie — Votre partenaire digital</title>
 <meta name="description" content="DST Technologie, agence digitale et solutions technologiques : sites web, e-commerce, réservation et paiement en ligne (Wave, Orange Money, MTN Money, Moov Money), CRM, SEO et solutions sur mesure.">
 <meta name="theme-color" content="#061340">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DST Technologie — Vendez. Réservez. Encaissez.">
+<meta property="og:description" content="Sites web, boutiques en ligne, réservation et paiement mobile money (Wave, Orange Money, MTN, Moov) : nous digitalisons votre activité.">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="assets/logo-dst-technologie.png">
+<link rel="preload" as="image" href="assets/images/hero-banner.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "DST Technologie",
+  "description": "Agence digitale et solutions technologiques : sites web, e-commerce, réservation et paiement en ligne (Wave, Orange Money, MTN Money, Moov Money), CRM, SEO et solutions sur mesure.",
+  "url": "https://dsttechnologie.com/",
+  "telephone": "+2250503206666",
+  "areaServed": "CI",
+  "knowsLanguage": "fr"
+}
+</script>
 <style>
 :root {
   --ink: #0A1B4D; --ink-2: #4A5577; --ink-3: #7B86A6;
@@ -68,7 +85,7 @@ button { font-family: inherit; }
 .tag.green { background: #E6F6E4; color: var(--green-dark); }
 
 /* en-tête */
-.top { position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.86); backdrop-filter: saturate(1.6) blur(14px); -webkit-backdrop-filter: saturate(1.6) blur(14px); border-bottom: 1px solid var(--line); }
+.top { position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.86); -webkit-backdrop-filter: saturate(1.6) blur(14px); backdrop-filter: saturate(1.6) blur(14px); -webkit-backdrop-filter: saturate(1.6) blur(14px); border-bottom: 1px solid var(--line); }
 .top .bar { display: flex; align-items: center; gap: 24px; padding-top: 10px; padding-bottom: 10px; }
 .top .logo { margin-right: auto; display: block; line-height: 0; }
 .top .logo img { height: 56px; width: auto; }
@@ -308,7 +325,7 @@ textarea.input { min-height: 120px; resize: vertical; }
 .foot a:hover { color: #8BE07F; }
 .foot .tel { font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; }
 .foot .legal { border-top: 1px solid rgba(255,255,255,.14); padding-top: 20px; padding-bottom: 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 13px; color: #8FA3CF; }
-.mbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px; background: rgba(255,255,255,.94); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
+.mbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px; background: rgba(255,255,255,.94); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
 .mbar .btn { min-height: 52px; padding: 0 14px; font-size: 15px; }
 .top .mpanel nav { display: flex; flex-direction: column; gap: 0; }
 .top .mpanel nav a { border-radius: 0; padding: 16px 0; background: none; color: var(--ink); }
@@ -332,7 +349,7 @@ body { letter-spacing: -0.003em; }
 
 .hero { background: radial-gradient(1000px 560px at 88% -12%, rgba(0,138,243,.6), transparent 60%), radial-gradient(760px 520px at -8% 115%, rgba(71,183,63,.3), transparent 55%), radial-gradient(500px 300px at 50% 50%, rgba(0,98,230,.25), transparent 70%), linear-gradient(165deg, #040E33 0%, #0A2468 100%); }
 .hero h1 { font-size: clamp(44px, 6.6vw, 88px); line-height: .98; letter-spacing: -0.04em; }
-.badge { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 12px; border-radius: 99px; background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(8px); font-size: 13px; font-weight: 600; color: #DCE8FF; letter-spacing: .02em; }
+.badge { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 12px; border-radius: 99px; background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.18); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); font-size: 13px; font-weight: 600; color: #DCE8FF; letter-spacing: .02em; }
 .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #63E26A; box-shadow: 0 0 0 0 rgba(99,226,106,.7); animation: pulse 2.2s infinite; }
 @keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(99,226,106,0); } 100% { box-shadow: 0 0 0 0 rgba(99,226,106,0); } }
 .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 40px 0 0; padding: 18px 0 0; border-top: 1px solid rgba(255,255,255,.16); }
@@ -341,7 +358,7 @@ body { letter-spacing: -0.003em; }
 .stats dd { margin: 4px 0 0; font-size: 12.5px; line-height: 1.35; color: #A9BEE6; }
 @media (max-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); gap: 18px 0; } }
 .hero .photo { border-radius: 32px; border: 1px solid rgba(255,255,255,.22); box-shadow: 0 40px 80px -30px rgba(0,0,0,.65), 0 0 0 10px rgba(255,255,255,.05); }
-.float { backdrop-filter: blur(10px); background: rgba(255,255,255,.94); }
+.float { -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); background: rgba(255,255,255,.94); }
 
 .feats { margin-top: -64px; }
 .feat { transition: transform .25s, box-shadow .25s, border-color .25s; position: relative; overflow: hidden; }
@@ -364,7 +381,7 @@ body { letter-spacing: -0.003em; }
 .prob.sol { background: linear-gradient(135deg, #0A2468, #0062E6 70%, #008AF3); }
 .sector:hover { box-shadow: 0 18px 40px -20px rgba(10,27,77,.35); }
 .section.dark { background: radial-gradient(800px 400px at 10% 0%, rgba(0,138,243,.3), transparent 60%), linear-gradient(160deg, #040E33, #0A2468); }
-.why > div { backdrop-filter: blur(6px); transition: transform .25s, background .25s; }
+.why > div { -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: transform .25s, background .25s; }
 .why > div:hover { transform: translateY(-6px); background: rgba(255,255,255,.12); }
 .steps { position: relative; }
 .steps li { transition: transform .25s, box-shadow .25s; }
@@ -395,10 +412,209 @@ body { letter-spacing: -0.003em; }
 .closing { background: radial-gradient(800px 420px at 100% 0%, rgba(140,210,255,.5), transparent 60%), radial-gradient(600px 400px at 0% 100%, rgba(71,183,63,.35), transparent 60%), linear-gradient(135deg, #0A2468, #0062E6 65%, #008AF3); }
 .foot { background: #040E33; }
 
+/* ===== v4 : démo interactive, cartes illustrées, conversation, maquettes ===== */
+@keyframes fadeup { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes pop { 0% { transform: scale(.6); opacity: 0; } 60% { transform: scale(1.08); opacity: 1; } 100% { transform: scale(1); } }
+@keyframes pulseBtn { 0%, 100% { box-shadow: 0 10px 18px -8px rgba(0,98,230,.8); } 50% { box-shadow: 0 10px 18px -8px rgba(0,98,230,.8), 0 0 0 7px rgba(0,138,243,.18); } }
+.btn-wa { background: #25D366; color: #fff; box-shadow: 0 10px 24px -10px rgba(37,211,102,.8); }
+.btn-wa:hover { background: #1FBE5B; color: #fff; transform: translateY(-2px); }
+
+/* bannière : photo + téléphone */
+.hero .wrap { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); }
+@media (max-width: 940px) { .hero .wrap { grid-template-columns: 1fr; } }
+.hero .visual { position: relative; width: 100%; max-width: 560px; margin-inline: auto; padding-bottom: 28px; }
+.hero .photo { aspect-ratio: 1 / 1.06; border-radius: 34px; }
+.hero .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(4,14,51,.55)); pointer-events: none; }
+.phone { position: absolute; right: -16px; bottom: -6px; z-index: 3; width: clamp(214px, 22vw, 262px); aspect-ratio: 9 / 18.4; padding: 9px; border-radius: 40px; background: #0A1024; box-shadow: 0 44px 80px -26px rgba(0,0,0,.75), inset 0 0 0 1px rgba(255,255,255,.12); }
+.phone::before { content: ""; position: absolute; top: 15px; left: 50%; width: 62px; height: 6px; margin-left: -31px; border-radius: 9px; background: #0A1024; z-index: 2; }
+.pscreen { height: 100%; border-radius: 31px; background: #fff; overflow: hidden; display: flex; flex-direction: column; color: var(--ink); font-size: 12px; line-height: 1.3; }
+.pbar { display: flex; justify-content: space-between; align-items: center; padding: 12px 18px 4px; font-weight: 800; font-size: 11px; }
+.sig { display: inline-flex; align-items: flex-end; gap: 2px; height: 10px; }
+.sig i { width: 3px; background: var(--ink); border-radius: 1px; }
+.sig i:nth-child(1) { height: 3px; } .sig i:nth-child(2) { height: 5px; } .sig i:nth-child(3) { height: 7px; } .sig i:nth-child(4) { height: 10px; }
+.pview { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 10px; padding: 8px 14px 16px; animation: fadeup .4s both; }
+.shophead { display: flex; align-items: center; gap: 9px; }
+.shophead b { display: block; font-size: 12.5px; } .shophead small { font-size: 10px; color: var(--ink-3); }
+.av { width: 30px; height: 30px; flex: none; border-radius: 50%; background: var(--grad); color: #fff; display: grid; place-items: center; font-size: 10.5px; font-weight: 800; }
+.pimg { position: relative; flex: 1 1 auto; min-height: 96px; border-radius: 16px; overflow: hidden; background: var(--soft); }
+.prow { display: flex; justify-content: space-between; align-items: flex-end; gap: 8px; }
+.prow b { display: block; font-size: 12.5px; line-height: 1.2; } .prow small { font-size: 10px; color: var(--ink-3); }
+.price { text-align: right; font-weight: 800; font-size: 16px; line-height: 1; letter-spacing: -0.02em; }
+.price small { display: block; margin-top: 2px; font-size: 9px; font-weight: 800; color: var(--ink-3); letter-spacing: .04em; }
+.pbtn { appearance: none; border: 0; border-radius: 99px; background: var(--grad); color: #fff; font: 800 13.5px var(--font); padding: 13px; cursor: pointer; animation: pulseBtn 2s infinite; }
+.ptitle { margin: 6px 0 0; font-weight: 800; font-size: 17px; letter-spacing: -0.02em; }
+.psub { margin: 0; font-size: 12px; color: var(--ink-2); }
+.pays { display: flex; flex-direction: column; gap: 7px; margin-top: 4px; }
+.paytile { display: flex; align-items: center; gap: 10px; border: 1.5px solid var(--line); background: #fff; border-radius: 13px; padding: 10px 12px; font: 700 12.5px var(--font); color: var(--ink); cursor: pointer; text-align: left; transition: border-color .15s, background .15s; }
+.paytile span { flex: 1; } .paytile i { width: 14px; height: 14px; flex: none; border-radius: 50%; } .paytile svg { color: var(--ink-3); width: 13px; height: 13px; }
+.paytile:hover { border-color: var(--blue); background: var(--soft); }
+.pview.done { align-items: center; justify-content: center; text-align: center; gap: 8px; }
+.okring { width: 62px; height: 62px; border-radius: 50%; background: #E6F6E4; color: var(--green-dark); display: grid; place-items: center; animation: pop .55s both; }
+.okring svg { width: 28px; height: 28px; stroke-width: 3; }
+.pnote { margin: 4px 0 0; font-size: 11px; font-weight: 800; color: var(--green-dark); background: #E6F6E4; border-radius: 99px; padding: 5px 12px; }
+.plink { background: none; border: 0; color: var(--blue); font: 700 12px var(--font); cursor: pointer; margin-top: 6px; text-decoration: underline; }
+.demo-tip { position: absolute; top: -13px; left: 50%; z-index: 4; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 7px; background: #fff; color: var(--ink); font: 800 11px var(--font); padding: 6px 12px; border-radius: 99px; box-shadow: 0 8px 18px -8px rgba(0,0,0,.5); white-space: nowrap; }
+.demo-tip i { width: 7px; height: 7px; border-radius: 50%; background: #25D366; animation: pulse 2.2s infinite; }
+.float.b { z-index: 4; right: -14px; top: 9%; }
+.float.b:has(.ic.ok) { animation: pop .55s both, bob 6s ease-in-out .6s infinite; }
+.float .ic.ok { background: #E6F6E4; color: var(--green-dark); }
+@media (max-width: 700px) {
+  .hero .visual { padding-bottom: 0; }
+  .phone { position: relative; right: auto; bottom: auto; margin: -110px auto 0; width: 244px; }
+  .float.b { right: 6px; top: 6%; }
+}
+
+/* ça vous parle ? */
+.probwrap { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 40px clamp(28px, 5vw, 72px); align-items: start; }
+@media (max-width: 940px) { .probwrap { grid-template-columns: 1fr; } .pr { position: static !important; } }
+.plist { list-style: none; margin: 0 0 26px; padding: 0; border-top: 1px solid var(--line); }
+.plist li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.plist .num { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; background: var(--grad); color: #fff; font-weight: 800; font-size: 14px; }
+.plist h3 { font-size: clamp(19px, 1.8vw, 23px); line-height: 1.2; margin-bottom: 6px; }
+.plist p { color: var(--ink-2); font-size: 15.5px; }
+.card.sol { background: linear-gradient(135deg, #0A2468, #0062E6 70%, #008AF3); border: 0; color: #fff; padding: 28px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; box-shadow: 0 24px 50px -20px rgba(0,98,230,.8); }
+.card.sol .eyebrow { color: #CFE3FF; } .card.sol h3 { color: #fff; font-size: clamp(20px, 1.9vw, 25px); }
+.pr { position: sticky; top: 96px; display: flex; flex-direction: column; gap: 14px; }
+.tagline { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.chat { border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-lg); }
+.chh { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #075E54; color: #fff; }
+.chh .av { background: #25D366; } .chh b { display: block; font-size: 14px; } .chh small { font-size: 11px; opacity: .8; }
+.unread { margin-left: auto; min-width: 28px; height: 28px; padding: 0 8px; display: grid; place-items: center; border-radius: 99px; background: #25D366; font-weight: 800; font-size: 12px; }
+.chb { background: #ECE5DD; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.m { margin: 0; max-width: 84%; padding: 8px 11px 5px; border-radius: 4px 12px 12px 12px; background: #fff; color: #111; font-size: 14px; line-height: 1.35; box-shadow: 0 1px 1px rgba(0,0,0,.14); }
+.m time { display: block; text-align: right; margin-top: 2px; font-size: 10px; color: #7A8A80; }
+.m.out { align-self: flex-end; border-radius: 12px 4px 12px 12px; background: #DCF8C6; }
+.flow { display: flex; align-items: center; gap: 12px; margin: 0; color: var(--blue); font-size: 13px; }
+.flow i { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--blue-2)); } .flow i:last-child { background: linear-gradient(270deg, transparent, var(--blue-2)); }
+.okcard { padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; border-color: #BFE3BD; }
+.okh { display: flex; justify-content: space-between; align-items: center; }
+.okcard ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; font-size: 14.5px; font-weight: 600; }
+.okcard li { display: flex; align-items: center; gap: 9px; } .okcard li svg { color: var(--green-dark); flex: none; }
+
+/* services : cartes illustrées */
+.bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.bt { display: flex; flex-direction: column; overflow: hidden; min-height: 330px; color: var(--ink); text-decoration: none; }
+.bt.w2 { grid-column: span 2; }
+.bt:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -28px rgba(10,27,77,.45); border-color: #9CC3FF; }
+.bvis { flex: 1; min-height: 176px; display: flex; align-items: center; justify-content: center; padding: 20px; background: radial-gradient(400px 200px at 80% 0%, rgba(0,138,243,.14), transparent 70%), linear-gradient(160deg, #EEF4FF, #F8FBFF); border-bottom: 1px solid var(--line); transition: background .3s; }
+.btxt { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 6px; }
+.btxt .n { font-size: 12px; font-weight: 800; color: var(--blue); } .btxt h3 { font-size: 20px; } .btxt p { font-size: 14.5px; color: var(--ink-2); }
+@media (max-width: 1000px) { .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .bento { grid-template-columns: 1fr; } .bt.w2 { grid-column: auto; } }
+.mv { width: 100%; max-width: 330px; }
+.mv-web { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: 0 14px 34px -14px rgba(10,27,77,.45); }
+.mv-web .b3 { display: flex; align-items: center; gap: 5px; padding: 8px 10px; background: #F1F5FC; border-bottom: 1px solid var(--line); }
+.mv-web .b3 i { width: 8px; height: 8px; border-radius: 50%; background: #C9D5EC; }
+.mv-web .b3 span { margin-left: 8px; flex: 1; background: #fff; border-radius: 99px; padding: 3px 10px; font-size: 10px; color: var(--ink-3); }
+.mv-web .mh { padding: 16px 14px 10px; display: flex; flex-direction: column; gap: 7px; }
+.mv-web .mh b { height: 11px; width: 72%; border-radius: 4px; background: var(--ink); } .mv-web .mh b.s { height: 8px; width: 50%; background: #C9D5EC; }
+.mv-web .mh em { align-self: flex-start; margin-top: 4px; font-style: normal; background: var(--grad); color: #fff; font-size: 10px; font-weight: 800; padding: 5px 12px; border-radius: 99px; }
+.mv-web .mr { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 14px 14px; } .mv-web .mr i { height: 32px; border-radius: 8px; background: #E3ECFB; }
+.mv-shop { position: relative; display: flex; gap: 12px; max-width: 290px; }
+.prod { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; padding: 10px; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 12px 26px -14px rgba(10,27,77,.45); }
+.pi { height: 66px; border-radius: 9px; background: linear-gradient(135deg, #FF8BB8, #FF5E7E); } .pi.p2 { background: linear-gradient(135deg, #FFD36B, #FF9F43); }
+.prod b { font-size: 11.5px; line-height: 1.2; } .prod small { font-size: 11px; font-weight: 800; color: var(--blue); }
+.prod em { font-style: normal; text-align: center; background: var(--ink); color: #fff; font-size: 10px; font-weight: 800; padding: 5px; border-radius: 8px; }
+.sk { display: block; background: #DCE5F5; border-radius: 4px; } b.sk { width: 80%; height: 9px; } small.sk { width: 50%; height: 8px; }
+.cartb { position: absolute; top: -12px; right: -8px; background: var(--green); color: #fff; font-size: 10px; font-weight: 800; padding: 4px 9px; border-radius: 99px; box-shadow: 0 8px 16px -8px rgba(38,122,42,.9); }
+.mv-cal { max-width: 250px; display: flex; flex-direction: column; gap: 10px; padding: 12px; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 12px 26px -14px rgba(10,27,77,.45); }
+.days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; } .days span { padding: 6px 0; text-align: center; border-radius: 8px; font-size: 10px; font-weight: 700; color: var(--ink-3); } .days .on { background: var(--grad); color: #fff; }
+.slots { display: flex; gap: 6px; } .slots span { flex: 1; padding: 6px 0; text-align: center; border: 1px solid var(--line); border-radius: 8px; font-size: 11px; font-weight: 700; } .slots .on { border-color: var(--blue); background: var(--soft); color: var(--blue-dark); }
+.conf { display: flex; align-items: center; gap: 6px; padding: 7px 9px; border-radius: 8px; background: #E6F6E4; color: var(--green-dark); font-size: 11px; font-weight: 800; }
+.mv-pay { max-width: 240px; display: flex; flex-direction: column; gap: 7px; }
+.pr2 { display: flex; align-items: center; gap: 10px; padding: 9px 12px; background: #fff; border: 1px solid var(--line); border-radius: 11px; font-size: 12px; font-weight: 700; box-shadow: 0 10px 20px -14px rgba(10,27,77,.5); }
+.pr2 i { width: 14px; height: 14px; border-radius: 50%; } .pr2 em { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 99px; background: #E6F6E4; color: var(--green-dark); font-size: 10px; font-style: normal; }
+.mv-dig { display: flex; align-items: center; gap: 12px; max-width: 300px; }
+.from { display: flex; flex-direction: column; gap: 6px; } .from s { padding: 6px 10px; background: #fff; border: 1px dashed #C4D0E6; border-radius: 8px; font-size: 12px; font-weight: 700; color: var(--ink-3); }
+.arr { font-size: 22px; font-weight: 800; color: var(--blue); }
+.to { flex: 1; display: flex; flex-direction: column; gap: 7px; padding: 12px; background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 12px 26px -14px rgba(10,27,77,.45); }
+.to b { font-size: 12px; } .to i { display: block; height: 8px; border-radius: 99px; background: var(--grad); }
+.mv-crm { max-width: 310px; display: flex; flex-direction: column; gap: 12px; padding: 14px; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 12px 26px -14px rgba(10,27,77,.45); }
+.cust { display: flex; align-items: center; gap: 10px; } .cust b { display: block; font-size: 13px; } .cust small { font-size: 11px; color: var(--ink-2); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.mv-custom { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; }
+.blk { padding: 12px 16px; border-radius: 12px; color: #fff; font-size: 12px; font-weight: 800; box-shadow: 0 12px 22px -12px rgba(10,27,77,.6); }
+.blk.b1 { background: #0A2468; } .blk.b2 { background: #0062E6; } .blk.b3 { background: #2E9E33; }
+.mv-custom > span { color: var(--blue); font-weight: 800; }
+.mv-seo { display: flex; flex-direction: column; gap: 8px; max-width: 330px; }
+.sbar { padding: 8px 14px; background: #fff; border: 1px solid var(--line); border-radius: 99px; font-size: 12px; color: var(--ink-2); box-shadow: 0 10px 20px -14px rgba(10,27,77,.5); }
+.res { display: flex; flex-direction: column; gap: 4px; padding: 10px 12px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.res small { font-size: 10.5px; color: var(--green-dark); } .res b { font-size: 13px; color: var(--blue-dark); } .res .tag { align-self: flex-start; }
+.res.best { border-color: #9CC3FF; box-shadow: 0 12px 26px -14px rgba(0,98,230,.6); }
+.res small.sk { width: 40%; height: 7px; } .res b.sk { width: 85%; height: 9px; }
+
+/* notre façon de faire */
+.approach { margin-top: clamp(48px, 6vw, 80px); padding-top: clamp(36px, 5vw, 56px); border-top: 1px solid rgba(255,255,255,.16); }
+.approach h3 { margin-bottom: 26px; font-size: clamp(24px, 2.6vw, 32px); color: #fff; }
+.apgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 14px; }
+.ap { display: grid; grid-template-columns: 26px minmax(0, 1fr); column-gap: 14px; row-gap: 6px; padding: 20px 22px; border-radius: 16px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); }
+.ap .no { grid-column: 1; grid-row: 1; color: #FF8A8A; font-weight: 800; } .ap s { grid-column: 2; grid-row: 1; color: #AEBFE6; text-decoration-color: #FF8A8A; font-weight: 600; }
+.ap .yes { grid-column: 1; grid-row: 2; color: #8BE07F; font-weight: 800; } .ap p { grid-column: 2; grid-row: 2; color: #fff; font-weight: 600; font-size: 16px; }
+
+/* secteurs */
+.sico { width: 44px; height: 44px; display: grid; place-items: center; margin-bottom: 4px; border-radius: 14px; background: var(--soft); color: var(--blue); transition: background .25s, color .25s; }
+.sector:hover .sico { background: var(--grad); color: #fff; }
+.sector.cta { cursor: pointer; }
+
+/* réalisations : photos + maquettes */
+.case .shot { position: relative; }
+.ov { position: absolute; inset: 0; display: flex; padding: 14px; pointer-events: none; }
+.ov-bl { align-items: flex-end; justify-content: flex-start; } .ov-tr { align-items: flex-start; justify-content: flex-end; }
+.gl { max-width: 80%; display: flex; flex-direction: column; gap: 5px; padding: 11px 13px; border-radius: 14px; background: rgba(255,255,255,.93); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 16px 34px -14px rgba(0,0,0,.6); animation: bob 7s ease-in-out infinite; }
+.gl small { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.gl b { font-size: 13.5px; line-height: 1.25; color: var(--ink); } .gl .tag { align-self: flex-start; font-size: 11px; }
+.gl .r2 { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; } .gl .r2 em { font-style: normal; font-weight: 800; color: var(--ink); }
+.gl .r2 i { padding: 5px 11px; border-radius: 99px; background: var(--grad); color: #fff; font-size: 11px; font-style: normal; font-weight: 800; }
+.shot.dashshot { display: flex; align-items: center; justify-content: center; padding: clamp(14px, 4%, 26px); background: radial-gradient(400px 220px at 85% 0%, rgba(0,138,243,.2), transparent 70%), linear-gradient(160deg, #EEF4FF, #fff); }
+.dash { width: 100%; height: 100%; display: flex; flex-direction: column; gap: 12px; padding: 14px; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 20px 44px -22px rgba(10,27,77,.55); }
+.dh { display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; } .kpis div { padding: 8px 10px; border-radius: 10px; background: var(--soft); } .kpis small { display: block; font-size: 10px; font-weight: 700; color: var(--ink-2); } .kpis b { font-size: 20px; letter-spacing: -0.02em; }
+.bars { flex: 1; min-height: 40px; display: flex; align-items: flex-end; gap: 7px; padding: 4px 2px; } .bars i { flex: 1; border-radius: 6px 6px 2px 2px; background: linear-gradient(180deg, #008AF3, #0062E6); }
+.dl { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; font-size: 11.5px; font-weight: 600; } .dl li { display: flex; align-items: center; gap: 6px; } .dl li svg { color: var(--green-dark); } .dl .wait { color: #B26A00; }
+
+/* appel final */
+.closing h2 { max-width: 16ch; font-size: clamp(38px, 6vw, 84px); }
+
+/* ajustements bannière v4.1 */
+.hero .visual { aspect-ratio: 1 / 1.04; max-width: 540px; padding-bottom: 0; }
+.hero .photo { position: absolute; left: 0; top: 0; width: 86%; height: 84%; aspect-ratio: auto; }
+.phone { right: 0; bottom: 0; width: 43%; min-width: 196px; max-width: 250px; }
+.float.b { left: -20px; right: auto; top: auto; bottom: 11%; }
+.pname b { display: block; font-size: 13px; line-height: 1.2; } .pname small { font-size: 10px; color: var(--ink-3); }
+.pprice { display: flex; align-items: baseline; gap: 5px; margin-top: -4px; }
+.pprice strong { font-size: 22px; font-weight: 800; letter-spacing: -0.03em; } .pprice small { font-size: 10px; font-weight: 800; color: var(--ink-3); }
+.stats { gap: 0 22px; }
+@media (max-width: 700px) {
+  .hero .visual { aspect-ratio: auto; }
+  .hero .photo { position: relative; width: 100%; height: auto; aspect-ratio: 4 / 3.4; }
+  .phone { position: relative; right: auto; bottom: auto; width: 236px; max-width: none; margin: -120px auto 0; }
+  .float.b { left: 8px; bottom: auto; top: 10px; }
+}
+
+/* appel final avec photo */
+.ov-tl { align-items: flex-start; justify-content: flex-start; } .ov-br { align-items: flex-end; justify-content: flex-end; }
+.closing .wrap.cl { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 48px clamp(32px, 5vw, 72px); align-items: center; }
+.closing .ctext { display: flex; flex-direction: column; gap: 24px; }
+.cphoto { position: relative; aspect-ratio: 4 / 3.3; border-radius: 30px; overflow: hidden; background: var(--navy-2); border: 1px solid rgba(255,255,255,.3); box-shadow: 0 44px 80px -30px rgba(0,0,0,.6); }
+@media (max-width: 900px) { .closing .wrap.cl { grid-template-columns: 1fr; } }
+
+/* mobile : page plus courte */
+@media (max-width: 560px) {
+  .sectors { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .sector { padding: 18px 16px; min-height: 140px; }
+  .sector h3 { font-size: 16px; } .sector p { font-size: 13px; }
+  .bvis { min-height: 150px; padding: 16px; }
+  .bt { min-height: 0; }
+  .pagehead h1 { font-size: clamp(32px, 9vw, 44px); }
+}
+
+.float.b { max-width: 46%; }
+.top .mpanel .btn-wa, .mbar .btn-wa { color: #fff; }
+
 </style>
 </head>
 <body>
-<noscript><p style="padding:24px;font-family:sans-serif">JavaScript est nécessaire pour afficher ce site. Contactez-nous : 05 03 20 66 66 · dsttechnologie.com</p></noscript>
+<noscript><div style="padding:32px;font-family:sans-serif;max-width:640px;margin:0 auto"><h1 style="font-size:28px">DST Technologie — Votre partenaire digital</h1><p>Sites web, boutiques en ligne, réservation et paiement mobile money (Wave, Orange Money, MTN Money, Moov Money), CRM et solutions sur mesure.</p><p>JavaScript est nécessaire pour afficher ce site complet. En attendant : <a href="tel:+2250503206666">05 03 20 66 66</a> · <a href="https://wa.me/2250503206666">WhatsApp</a> · <a href="https://dsttechnologie.com/">dsttechnologie.com</a></p></div></noscript>
 
 <!-- Le site est affiché par app.js à partir du gabarit ci-dessous. Pour changer un texte, modifiez-le directement ici. -->
 <div id="app"></div>
@@ -407,7 +623,7 @@ body { letter-spacing: -0.003em; }
 <div class="app">
 <header class="top">
   <div class="wrap bar">
-    <a class="logo" href="#/" aria-label="DST Technologie, accueil"><img src="assets/logo-dst-technologie.png" alt="DST Technologie"></a>
+    <a class="logo" href="#/" aria-label="DST Technologie, accueil"><img data-keep="logo-h" width="240" height="148" src="assets/logo-dst-technologie.png" alt="DST Technologie"></a>
     <sc-if value="{{ desktop }}">
       <nav aria-label="Navigation principale">
         <a href="#/" aria-current="{{ cur.accueil }}">Accueil</a>
@@ -440,7 +656,7 @@ body { letter-spacing: -0.003em; }
       </nav>
       <div class="cta">
         <button type="button" class="btn btn-primary" onClick="{{ goDevis }}">Demander un devis</button>
-        <a class="btn btn-outline" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp · 05 03 20 66 66</a>
+        <a class="btn btn-wa" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp · 05 03 20 66 66</a>
       </div>
     </div>
   </sc-if>
@@ -448,30 +664,60 @@ body { letter-spacing: -0.003em; }
 
 <sc-if value="{{ isHome }}">
 <main data-screen-label="Accueil" style="flex:1;">
+
 <section class="hero"><div class="wrap">
-  <div>
-    <p class="badge rv"><span class="dot"></span>Agence digitale &amp; solutions technologiques</p>
-    <h1 class="rv">Votre partenaire <em>digital.</em></h1>
-    <p class="sub rv">Votre entreprise mérite plus qu’une présence en ligne. Elle mérite une véritable solution digitale. DST Technologie transforme vos idées et votre activité en solutions digitales modernes qui vous permettent de mieux vendre, mieux gérer vos clients et développer votre entreprise.</p>
-    <div class="cta rv"><button type="button" class="btn btn-light" onClick="{{ goDevis }}">Demander un devis<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button><a class="btn btn-ghost-light" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Parler à un conseiller</a></div>
-    <dl class="stats rv"><div><dt>8</dt><dd>services digitaux</dd></div><div><dt>4</dt><dd>paiements mobile money</dd></div><div><dt>24h/24</dt><dd>vos ventes restent ouvertes</dd></div><div><dt>4</dt><dd>étapes jusqu’au lancement</dd></div></dl>
+  <div class="copy">
+    <p class="badge rv"><span class="dot"></span>DST Technologie · Votre partenaire digital</p>
+    <h1 class="rv">Vendez. Réservez. <em>Encaissez.</em></h1>
+    <p class="sub rv">Site web, boutique en ligne, rendez-vous et paiement mobile money : nous digitalisons votre activité pour que vos clients vous trouvent, commandent et paient à toute heure, même à 23h47.</p>
+    <div class="cta rv"><button type="button" class="btn btn-light" onClick="{{ goDevis }}">Demander un devis<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button><a class="btn btn-wa" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Parler à un conseiller</a></div>
+    <dl class="stats rv">
+      <div><dt>8</dt><dd>services digitaux</dd></div>
+      <div><dt>4</dt><dd>paiements mobile money</dd></div>
+      <div><dt>24h/24</dt><dd>vos ventes restent ouvertes</dd></div>
+      <div><dt>4</dt><dd>étapes jusqu’au lancement</dd></div>
+    </dl>
   </div>
   <div class="visual rv">
-    <div class="photo"><image-slot id="hero-banner" placeholder="Photo : entrepreneurs ou équipe DST au travail"></image-slot></div>
-    <div class="float a"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg></span><span><strong>Nouvelle commande</strong>65 000 FCFA · Wave</span></div>
-    <div class="float b"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></span><span><strong>Rendez-vous confirmé</strong>Samedi 10:00</span></div>
+    <div class="photo"><image-slot id="hero-banner" eager alt="Une entrepreneuse souriante" pos="22% 30%"></image-slot></div>
+    <div class="float b">
+      <sc-if value="{{ demo.s2 }}"><span class="ic ok"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><span><strong>Nouvelle commande</strong>65 000 FCFA · {{ demo.payLabel }}</span></sc-if>
+      <sc-if value="{{ demo.notS2 }}"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><span><strong>Côté vendeur</strong>Vos commandes arrivent ici</span></sc-if>
+    </div>
+    <div class="phone" role="group" aria-label="Démonstration interactive : commander et payer sur mobile">
+      <span class="demo-tip"><i></i>Démo interactive</span>
+      <div class="pscreen">
+        <div class="pbar"><span>23:47</span><span class="sig"><i></i><i></i><i></i><i></i></span></div>
+        <sc-if value="{{ demo.s0 }}"><div class="pview">
+          <div class="shophead"><span class="av">AH</span><span><b>Awa Hair</b><small>Boutique en ligne</small></span></div>
+          <div class="pimg"><image-slot id="demo-product" alt="Perruques colorées"></image-slot></div>
+          <div class="pname"><b>Perruque lace frontal</b><small>Livraison disponible</small></div>
+          <div class="pprice"><strong>65 000</strong><small>FCFA</small></div>
+          <button type="button" class="pbtn" onClick="{{ demo.start }}">Commander</button>
+        </div></sc-if>
+        <sc-if value="{{ demo.s1 }}"><div class="pview">
+          <p class="ptitle">Comment payer ?</p>
+          <p class="psub">Total <b>65 000 FCFA</b></p>
+          <div class="pays"><sc-for list="{{ demo.pays }}" as="o"><button type="button" class="paytile" onClick="{{ o.pick }}"><i style="background:{{ o.color }}"></i><span>{{ o.label }}</span><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></sc-for></div>
+        </div></sc-if>
+        <sc-if value="{{ demo.s2 }}"><div class="pview done">
+          <span class="okring"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <p class="ptitle">Commande confirmée</p>
+          <p class="psub">Payée avec <b>{{ demo.payLabel }}</b></p>
+          <p class="pnote">Reçu envoyé sur WhatsApp</p>
+          <button type="button" class="plink" onClick="{{ demo.reset }}">Rejouer la démo</button>
+        </div></sc-if>
+      </div>
+    </div>
   </div>
 </div></section>
 
 <section class="feats"><div class="wrap"><div class="grid">
-  <div class="card feat rv"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span><h3>Sites web &amp; e-commerce</h3><p>Une vitrine professionnelle et une boutique ouverte 24h/24.</p></div>
-  <div class="card feat rv"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></span><h3>Paiement mobile intégré</h3><p>Wave, Orange Money, MTN Money, Moov Money et carte bancaire.</p></div>
-  <div class="card feat rv"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h3>Clients &amp; commandes organisés</h3><p>Un CRM simple pour suivre clients, commandes et rendez-vous.</p></div>
+  <div class="card feat rv"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span><h3>Un site qui inspire confiance</h3><p>Une vitrine professionnelle et une boutique ouverte 24h/24.</p></div>
+  <div class="card feat rv"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></span><h3>Le paiement mobile, intégré</h3><p>Wave, Orange Money, MTN Money, Moov Money et carte bancaire.</p></div>
+  <div class="card feat rv"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h3>Clients et commandes rangés</h3><p>Un CRM simple pour suivre clients, commandes et rendez-vous.</p></div>
 </div></div></section>
-
-<div class="pay" aria-label="Paiements intégrés"><div class="marq"><div class="track">
-  <span class="pill"><i></i>Wave</span><span class="pill"><i></i>Orange Money</span><span class="pill"><i></i>MTN Money</span><span class="pill"><i></i>Moov Money</span><span class="pill"><i></i>Carte bancaire</span><span class="pill"><i></i>Wave</span><span class="pill"><i></i>Orange Money</span><span class="pill"><i></i>MTN Money</span><span class="pill"><i></i>Moov Money</span><span class="pill"><i></i>Carte bancaire</span><span class="pill"><i></i>Wave</span><span class="pill"><i></i>Orange Money</span><span class="pill"><i></i>MTN Money</span><span class="pill"><i></i>Moov Money</span><span class="pill"><i></i>Carte bancaire</span><span class="pill"><i></i>Wave</span><span class="pill"><i></i>Orange Money</span><span class="pill"><i></i>MTN Money</span><span class="pill"><i></i>Moov Money</span><span class="pill"><i></i>Carte bancaire</span>
-</div></div></div>
+<div class="pay" aria-label="Paiements intégrés"><div class="marq"><div class="track"><span class="pill"><i></i>Wave</span><span class="pill"><i></i>Orange Money</span><span class="pill"><i></i>MTN Money</span><span class="pill"><i></i>Moov Money</span><span class="pill"><i></i>Carte bancaire</span><span class="pill"><i></i>Wave</span><span class="pill"><i></i>Orange Money</span><span class="pill"><i></i>MTN Money</span><span class="pill"><i></i>Moov Money</span><span class="pill"><i></i>Carte bancaire</span><span class="pill"><i></i>Wave</span><span class="pill"><i></i>Orange Money</span><span class="pill"><i></i>MTN Money</span><span class="pill"><i></i>Moov Money</span><span class="pill"><i></i>Carte bancaire</span><span class="pill"><i></i>Wave</span><span class="pill"><i></i>Orange Money</span><span class="pill"><i></i>MTN Money</span><span class="pill"><i></i>Moov Money</span><span class="pill"><i></i>Carte bancaire</span></div></div></div>
 
 <section id="qui-sommes-nous" class="section"><div class="wrap about rv">
   <div>
@@ -484,23 +730,39 @@ body { letter-spacing: -0.003em; }
   </div>
   <div class="text">
     <p class="eyebrow "><span class="n">01</span><span>Qui sommes-nous ?</span></p>
-    <h2 class="h2">Un partenaire technologique pour votre entreprise.</h2>
-    <p class="lead">DST Technologie accompagne les entreprises, commerçants, entrepreneurs et prestataires dans leur transformation digitale. Nous transformons une activité traditionnelle en une activité plus moderne, visible, accessible et organisée.</p>
-    <ul class="ticks">
-      <li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Plus de visibilité sur Google</li><li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Des ventes possibles 24h/24</li><li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Des clients et commandes mieux organisés</li><li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Des paiements adaptés au marché local</li>
-    </ul>
+    <h2 class="h2">Être trouvé, choisi et payé. En ligne, à toute heure.</h2>
+    <p class="lead">DST Technologie accompagne commerçants, entrepreneurs, entreprises et prestataires dans leur transformation digitale. Une activité traditionnelle devient plus moderne, visible, accessible et organisée.</p>
+    <ul class="ticks"><li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Trouvé sur Google, pas seulement sur les réseaux</li><li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Des ventes possibles 24h/24</li><li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Clients et commandes enfin rangés</li><li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Des paiements adaptés au marché local</li></ul>
     <div><a class="btn btn-primary" href="#/services">Découvrir nos services<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
   </div>
 </div></section>
 
 <section id="probleme" class="section alt"><div class="wrap">
-  <div class="head rv"><p class="eyebrow "><span class="n">02</span><span>Votre problème</span></p><h2 class="h2">Vous vous reconnaissez ?</h2>
-    <p class="lead">Chaque jour, des entreprises perdent des clients et du temps, simplement parce que leur activité n’est pas encore digitalisée.</p></div>
-  <div class="grid probs"><div class="card prob rv"><span class="num">01</span><h3>Vos clients vous trouvent difficilement ?</h3><p>Sans site ni présence sur Google, vos futurs clients trouvent d’abord vos concurrents.</p></div><div class="card prob rv"><span class="num">02</span><h3>Vous dépendez uniquement de WhatsApp, Facebook, Instagram ou TikTok ?</h3><p>Votre visibilité dépend d’algorithmes que vous ne contrôlez pas.</p></div><div class="card prob rv"><span class="num">03</span><h3>Vous prenez encore vos commandes manuellement ?</h3><p>Chaque commande notée à la main est un oubli ou une erreur possible.</p></div><div class="card prob rv"><span class="num">04</span><h3>Vous perdez du temps à gérer vos clients ?</h3><p>Messages, relances, historiques : ce temps-là, vous ne le passez pas à vendre.</p></div><div class="card prob rv"><span class="num">05</span><h3>Vous souhaitez vendre 24h/24 ?</h3><p>Votre boutique ferme le soir. Votre site, lui, continue de vendre.</p></div>
-    <div class="card prob sol rv"><p class="eyebrow" style="margin:0">La solution</p><h3>DST Technologie construit la solution digitale qui règle chacun de ces problèmes.</h3><button type="button" class="btn btn-light btn-sm" onClick="{{ goDevis }}">Trouver ma solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div>
+  <div class="head rv"><p class="eyebrow "><span class="n">02</span><span>Votre problème</span></p><h2 class="h2">Ça vous parle ?</h2>
+    <p class="lead">Chaque jour, des entreprises perdent des clients. Pas faute de talent : simplement parce que leur activité n’est pas encore digitalisée.</p></div>
+  <div class="probwrap">
+    <div class="pl">
+      <ol class="plist"><li class="rv"><span class="num">01</span><div><h3>On ne vous trouve pas sur Google.</h3><p>Sans site, vos futurs clients tombent d’abord sur vos concurrents.</p></div></li><li class="rv"><span class="num">02</span><div><h3>Tout dépend des réseaux sociaux.</h3><p>WhatsApp, Instagram, TikTok : un algorithme change, et votre visibilité avec. Un site, c’est chez vous.</p></div></li><li class="rv"><span class="num">03</span><div><h3>Les commandes se notent à la main.</h3><p>Chaque message oublié est une vente qui s’en va.</p></div></li><li class="rv"><span class="num">04</span><div><h3>Vous passez vos journées à répondre.</h3><p>Prix, stock, relances, historique : ce temps-là, vous ne le passez pas à vendre.</p></div></li><li class="rv"><span class="num">05</span><div><h3>Votre boutique ferme le soir.</h3><p>Votre site, lui, continue de vendre.</p></div></li></ol>
+      <div class="card sol rv"><p class="eyebrow">La solution</p><h3>DST Technologie construit la solution digitale qui règle chacun de ces problèmes.</h3><button type="button" class="btn btn-light btn-sm" onClick="{{ goDevis }}">Trouver ma solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div>
+    </div>
+    <div class="pr rv">
+      <p class="tagline">Sans outil digital, à 23h52…</p>
+      <div class="chat" role="img" aria-label="Exemple de conversation WhatsApp : des clients attendent une réponse tard le soir">
+        <div class="chh"><span class="av">WA</span><span><b>WhatsApp</b><small>Messages de clients</small></span><span class="unread">27</span></div>
+        <div class="chb">
+          <p class="m in">Bonjour, vous avez encore la perruque en 14 pouces ?<time>22:41</time></p>
+          <p class="m in">C’est combien ? Vous livrez ?<time>22:43</time></p>
+          <p class="m in">J’ai envoyé 5 000 par Wave pour réserver<time>23:10</time></p>
+          <p class="m in">Allô ?? Vous êtes là ?<time>23:52</time></p>
+          <p class="m out">Bonjour ! Désolée, je réponds seulement ce matin…<time>08:05</time></p>
+        </div>
+      </div>
+      <p class="flow"><i></i><b>Avec un site DST</b><i></i></p>
+      <div class="card okcard"><div class="okh"><b>Commande reçue</b><span class="tag green">Payée</span></div>
+        <ul><li><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Le client choisit, commande et paie seul</li><li><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Vous validez et livrez</li><li><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Le reçu part sur WhatsApp</li></ul></div>
+    </div>
   </div>
 </div></section>
-
 
 <sc-if value="{{ svcTabs }}">
 <section id="services" class="section alt"><div class="wrap">
@@ -522,43 +784,46 @@ body { letter-spacing: -0.003em; }
 </sc-if>
 <sc-if value="{{ svcGrid }}">
 <section id="services" class="section alt"><div class="wrap">
-  <div class="head row"><div><p class="eyebrow "><span class="n">03</span><span>Services</span></p><h2 class="h2">Tout ce qu’il faut pour digitaliser votre activité.</h2></div>
+  <div class="head row rv"><div><p class="eyebrow "><span class="n">03</span><span>Services</span></p><h2 class="h2">Tout ce qu’il faut pour digitaliser votre activité.</h2></div>
     <a class="btn btn-outline btn-sm" href="#/services">Voir le détail des services<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
-  <div class="grid sgrid"><sc-for list="{{ services }}" as="s"><a class="card scard" href="#/services" onClick="{{ s.open }}"><span class="n">{{ s.num }}</span><h3>{{ s.title }}</h3><p>{{ s.long }}</p></a></sc-for></div>
+  <div class="bento"><a class="card bt w2 rv" href="#/services" onClick="{{ open.web }}"><div class="bvis"><div class="mv mv-web"><div class="b3"><i></i><i></i><i></i><span>votre-marque.com</span></div><div class="mh"><b></b><b class="s"></b><em>Commander</em></div><div class="mr"><i></i><i></i><i></i></div></div></div><div class="btxt"><span class="n">01</span><h3>Création de sites web</h3><p>Sites vitrines modernes, rapides et optimisés.</p></div></a><a class="card bt  rv" href="#/services" onClick="{{ open.ecommerce }}"><div class="bvis"><div class="mv mv-shop"><div class="prod"><span class="pi p1"></span><b>Perruque lace frontal</b><small>65 000 FCFA</small><em>Ajouter</em></div><div class="prod"><span class="pi p2"></span><b class="sk"></b><small class="sk"></small></div><span class="cartb">Panier · 1</span></div></div><div class="btxt"><span class="n">02</span><h3>E-commerce</h3><p>Présentez et vendez vos produits en ligne, à toute heure.</p></div></a><a class="card bt  rv" href="#/services" onClick="{{ open.reservation }}"><div class="bvis"><div class="mv mv-cal"><div class="days"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span class="on">S</span><span>D</span></div><div class="slots"><span>09:00</span><span class="on">10:00</span><span>11:30</span></div><div class="conf"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Rendez-vous confirmé</div></div></div><div class="btxt"><span class="n">03</span><h3>Réservation en ligne</h3><p>Vos clients prennent rendez-vous directement depuis votre site.</p></div></a><a class="card bt  rv" href="#/services" onClick="{{ open.paiement }}"><div class="bvis"><div class="mv mv-pay"><div class="pr2"><i style="background:#1DC8F2"></i>Wave<em><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Payé</em></div><div class="pr2"><i style="background:#FF7900"></i>Orange Money</div><div class="pr2"><i style="background:#FFCC00"></i>MTN Money</div><div class="pr2"><i style="background:#0093DD"></i>Moov Money</div></div></div><div class="btxt"><span class="n">04</span><h3>Paiement en ligne</h3><p>Wave, Orange Money, MTN Money, Moov Money et carte bancaire.</p></div></a><a class="card bt  rv" href="#/services" onClick="{{ open.digitalisation }}"><div class="bvis"><div class="mv mv-dig"><div class="from"><s>Cahier</s><s>Excel</s><s>Messages</s></div><span class="arr">→</span><div class="to"><b>Tableau en ligne</b><i style="width:84%"></i><i style="width:58%"></i><i style="width:70%"></i></div></div></div><div class="btxt"><span class="n">05</span><h3>Digitalisation des entreprises</h3><p>Vos processus manuels deviennent des outils numériques.</p></div></a><a class="card bt w2 rv" href="#/services" onClick="{{ open.crm }}"><div class="bvis"><div class="mv mv-crm"><div class="cust"><span class="av">AK</span><span><b>Aïcha K.</b><small>3 commandes · 1 rendez-vous</small></span></div><div class="chips"><span class="tag">Commandes</span><span class="tag green">Paiements</span><span class="tag">Rendez-vous</span></div></div></div><div class="btxt"><span class="n">06</span><h3>CRM &amp; gestion clients</h3><p>Clients, commandes, paiements et rendez-vous au même endroit.</p></div></a><a class="card bt w2 rv" href="#/services" onClick="{{ open.surmesure }}"><div class="bvis"><div class="mv mv-custom"><div class="blk b1">Étude</div><span>→</span><div class="blk b2">Conception</div><span>→</span><div class="blk b3">Lancement</div></div></div><div class="btxt"><span class="n">07</span><h3>Solutions sur mesure</h3><p>Des plateformes adaptées aux besoins spécifiques de votre entreprise.</p></div></a><a class="card bt w2 rv" href="#/services" onClick="{{ open.seo }}"><div class="bvis"><div class="mv mv-seo"><div class="sbar">salon de coiffure près de moi</div><div class="res best"><small>votre-salon.com</small><b>Votre salon · Réservation en ligne</b><span class="tag green">Visible sur Google</span></div><div class="res"><small class="sk"></small><b class="sk"></b></div></div></div><div class="btxt"><span class="n">08</span><h3>SEO / Référencement</h3><p>Améliorez la visibilité de votre entreprise sur Google.</p></div></a></div>
 </div></section>
 </sc-if>
-
 
 <section class="section dark"><div class="wrap">
   <div class="head rv"><p class="eyebrow light"><span class="n">04</span><span>Pourquoi DST Technologie ?</span></p><h2 class="h2">Plus qu’un site web : une entreprise transformée.</h2>
     <p class="lead">DST Technologie transforme une activité traditionnelle en une activité plus moderne, visible, accessible et organisée grâce au numérique.</p></div>
-  <div class="grid why rv"><div><span class="sq" style="background:var(--blue)"></span><h3>Moderne.</h3><p>Une image professionnelle qui inspire confiance dès la première visite.</p></div><div><span class="sq" style="background:var(--blue-2)"></span><h3>Visible.</h3><p>Vos clients vous trouvent sur Google, pas seulement sur les réseaux sociaux.</p></div><div><span class="sq" style="background:var(--green)"></span><h3>Accessible.</h3><p>Vos clients commandent, réservent et paient à toute heure, depuis leur téléphone.</p></div><div><span class="sq" style="background:#fff"></span><h3>Organisée.</h3><p>Clients, commandes et paiements suivis au même endroit, sans cahier ni fichier perdu.</p></div></div>
+  <div class="grid why rv"><div><span class="sq" style="background:var(--blue-2)"></span><h3>Moderne.</h3><p>Une image professionnelle qui inspire confiance dès la première visite.</p></div><div><span class="sq" style="background:#6CC1FF"></span><h3>Visible.</h3><p>Vos clients vous trouvent sur Google, pas seulement sur les réseaux sociaux.</p></div><div><span class="sq" style="background:var(--green)"></span><h3>Accessible.</h3><p>Vos clients commandent, réservent et paient à toute heure, depuis leur téléphone.</p></div><div><span class="sq" style="background:#fff"></span><h3>Organisée.</h3><p>Clients, commandes et paiements suivis au même endroit, sans cahier ni fichier perdu.</p></div></div>
+  <div class="approach"><h3 class="rv">Notre façon de faire, autrement</h3><div class="apgrid"><div class="ap rv"><span class="no">✕</span><s>Du jargon technique</s><span class="yes">✓</span><p>Des explications en mots simples, sans baratin.</p></div><div class="ap rv"><span class="no">✕</span><s>Un portfolio vide ou flou</s><span class="yes">✓</span><p>Des exemples concrets par métier, que vous pouvez visualiser.</p></div><div class="ap rv"><span class="no">✕</span><s>Dix façons de nous joindre</s><span class="yes">✓</span><p>Deux chemins clairs : un devis détaillé, ou un message WhatsApp.</p></div><div class="ap rv"><span class="no">✕</span><s>Des paiements venus d’ailleurs</s><span class="yes">✓</span><p>Wave, Orange Money, MTN Money et Moov Money, pensés pour le marché local.</p></div></div></div>
 </div></section>
 
 <section id="pour-qui" class="section"><div class="wrap">
-  <div class="head rv"><p class="eyebrow "><span class="n">05</span><span>Pour qui ?</span></p><h2 class="h2" style="max-width:24ch">Quel que soit votre secteur, nous construisons une solution adaptée à votre activité.</h2></div>
+  <div class="head rv"><p class="eyebrow "><span class="n">05</span><span>Pour qui ?</span></p><h2 class="h2" style="max-width:24ch">Quel que soit votre secteur, nous construisons la solution qui vous correspond.</h2></div>
   <div class="grid sectors">
-    <sc-for list="{{ sectors }}" as="sec"><div class="card sector rv"><h3>{{ sec.name }}</h3><p>{{ sec.hint }}</p></div></sc-for>
-    <button type="button" class="card sector cta" onClick="{{ goDevis }}"><span>Votre secteur n’est pas listé ?</span><span>Parlons-en<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></button>
+    <sc-for list="{{ sectors }}" as="sec"><div class="card sector rv"><span class="sico" data-html="{{ sec.icon }}"></span><h3>{{ sec.name }}</h3><p>{{ sec.hint }}</p></div></sc-for>
+    <button type="button" class="card sector cta rv" onClick="{{ goDevis }}"><span>Votre secteur n’est pas listé ?</span><span>Parlons-en<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></button>
   </div>
 </div></section>
 
 <section id="processus" class="section alt"><div class="wrap">
-  <div class="head rv"><p class="eyebrow "><span class="n">06</span><span>Comment ça marche ?</span></p><h2 class="h2">Un processus simple, de la première discussion à la mise en ligne.</h2></div>
+  <div class="head rv"><p class="eyebrow "><span class="n">06</span><span>Comment ça marche ?</span></p><h2 class="h2">De la première discussion à la mise en ligne : quatre étapes simples.</h2></div>
   <ol class="steps"><li class="rv"><span class="no">01</span><h3>Échange</h3><p>Vous nous expliquez votre activité, vos clients et vos besoins.</p></li><li class="rv"><span class="no">02</span><h3>Analyse</h3><p>Nous étudions votre activité et définissons la meilleure solution.</p></li><li class="rv"><span class="no">03</span><h3>Création</h3><p>Nous concevons et développons votre solution, avec votre validation à chaque étape.</p></li><li class="rv"><span class="no">04</span><h3>Lancement</h3><p>Votre solution est mise en ligne. Nous restons à vos côtés pour la faire évoluer.</p></li></ol>
   <div style="margin-top:44px"><button type="button" class="btn btn-primary" onClick="{{ goDevis }}">Commencer par l’échange<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div>
 </div></section>
 
 <section id="faq" class="section alt"><div class="wrap faq">
-  <div class="head" style="margin-bottom:0"><p class="eyebrow "><span class="n">08</span><span>Questions fréquentes</span></p><h2 class="h2">Les réponses à vos questions.</h2>
-    <p class="lead">Une autre question ? Écrivez-nous sur WhatsApp, un conseiller vous répond.</p><div><a class="btn btn-primary btn-sm" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Poser ma question</a></div></div>
-  <div class="faqlist"><details class="faqi rv" data-k="0"><summary>Quels moyens de paiement puis-je proposer à mes clients ?<span class="pm"></span></summary><p>Wave, Orange Money, MTN Money, Moov Money et carte bancaire, intégrés directement à votre site.</p></details><details class="faqi rv" data-k="1"><summary>Mes clients peuvent-ils commander quand ma boutique est fermée ?<span class="pm"></span></summary><p>Oui. Votre site continue de vendre 24h/24 : vos clients commandent, réservent et paient à toute heure, depuis leur téléphone.</p></details><details class="faqi rv" data-k="2"><summary>Comment se déroule un projet avec DST Technologie ?<span class="pm"></span></summary><p>En quatre étapes : un échange pour comprendre votre activité, une analyse pour choisir la meilleure solution, la création avec votre validation à chaque étape, puis le lancement.</p></details><details class="faqi rv" data-k="3"><summary>Comment obtenir un devis ?<span class="pm"></span></summary><p>Répondez à quelques questions dans le formulaire de devis. Un conseiller vous contacte ensuite avec une proposition adaptée à votre activité.</p></details><details class="faqi rv" data-k="4"><summary>Mon secteur n’est pas dans la liste, est-ce un problème ?<span class="pm"></span></summary><p>Non. Nous construisons une solution adaptée à votre activité, quel que soit votre secteur. Parlons-en.</p></details></div>
+  <div class="head rv" style="margin-bottom:0"><p class="eyebrow "><span class="n">08</span><span>Questions fréquentes</span></p><h2 class="h2">Les réponses à vos questions.</h2>
+    <p class="lead">Une autre question ? Écrivez-nous sur WhatsApp, un conseiller vous répond.</p><div><a class="btn btn-wa" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Poser ma question</a></div></div>
+  <div class="faqlist"><details class="faqi rv" data-k="0"><summary>Combien coûte un projet ?<span class="pm"></span></summary><p>Cela dépend de ce dont vous avez besoin : un site vitrine n’a pas le même prix qu’une boutique avec paiement et rendez-vous. Dites-nous votre besoin et votre budget dans le formulaire : vous recevez un devis détaillé, adapté à votre activité.</p></details><details class="faqi rv" data-k="1"><summary>Quels moyens de paiement puis-je proposer à mes clients ?<span class="pm"></span></summary><p>Wave, Orange Money, MTN Money, Moov Money et carte bancaire, intégrés directement à votre site.</p></details><details class="faqi rv" data-k="2"><summary>Mes clients peuvent-ils commander quand ma boutique est fermée ?<span class="pm"></span></summary><p>Oui. Votre site continue de vendre 24h/24 : vos clients commandent, réservent et paient à toute heure, depuis leur téléphone.</p></details><details class="faqi rv" data-k="3"><summary>Comment se déroule un projet avec DST Technologie ?<span class="pm"></span></summary><p>En quatre étapes : un échange pour comprendre votre activité, une analyse pour choisir la meilleure solution, la création avec votre validation à chaque étape, puis le lancement.</p></details><details class="faqi rv" data-k="4"><summary>Comment obtenir un devis ?<span class="pm"></span></summary><p>Répondez à quelques questions dans le formulaire de devis. Un conseiller vous contacte ensuite avec une proposition adaptée à votre activité.</p></details><details class="faqi rv" data-k="5"><summary>Mon secteur n’est pas dans la liste, est-ce un problème ?<span class="pm"></span></summary><p>Non. Nous construisons une solution adaptée à votre activité, quel que soit votre secteur. Parlons-en.</p></details></div>
 </div></section>
+<!-- À AJOUTER quand vous aurez de vrais avis clients : une section « Témoignages » (nom, entreprise, phrase, photo avec accord écrit).
+     Les vrais témoignages et les tarifs « à partir de » sont ce qui rassure le plus les visiteurs. -->
 
 <section id="apercu-realisations" class="section"><div class="wrap">
-  <div class="head row"><div><p class="eyebrow "><span class="n">07</span><span>Réalisations</span></p><h2 class="h2">Des solutions pensées pour votre secteur.</h2></div>
+  <div class="head row rv"><div><p class="eyebrow "><span class="n">07</span><span>Réalisations</span></p><h2 class="h2">Des solutions pensées pour votre métier.</h2>
+    <p class="lead">Des exemples de ce que nous concevons. Les noms et les montants affichés sont fictifs.</p></div>
     <a class="btn btn-outline btn-sm" href="#/realisations">Voir toutes les solutions<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
-  <div class="grid cases"><article class="case rv"><div class="shot"><image-slot id="real-salon" placeholder="Capture d’écran : réservation en ligne pour salon"></image-slot></div><p class="kick">Solution type · Salon de coiffure</p><h3>Réservation en ligne avec acompte</h3><a class="btn-link btn" href="#/realisations" style="justify-content:flex-start;">Voir la solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></article><article class="case rv"><div class="shot"><image-slot id="real-perruques" placeholder="Capture d’écran : boutique en ligne de perruques"></image-slot></div><p class="kick">Solution type · Vendeuse de perruques</p><h3>Boutique en ligne et commandes suivies</h3><a class="btn-link btn" href="#/realisations" style="justify-content:flex-start;">Voir la solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></article><article class="case rv"><div class="shot"><image-slot id="real-restaurant" placeholder="Capture d’écran : menu et commande en ligne"></image-slot></div><p class="kick">Solution type · Restaurant</p><h3>Menu en ligne et commande à emporter</h3><a class="btn-link btn" href="#/realisations" style="justify-content:flex-start;">Voir la solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></article></div>
+  <div class="grid cases"><article class="case rv"><div class="shot"><image-slot id="real-salon" alt="Une cliente en tresses qui consulte son téléphone"></image-slot><div class="ov ov-tl"><div class="gl"><small>Réservation</small><b>Tresses · samedi 10:00</b><span class="tag green">Acompte 5 000 FCFA · Wave</span></div></div></div><p class="kick">Solution type · Salon de coiffure</p><h3>Réservation en ligne avec acompte</h3><a class="btn-link btn" href="#/realisations" style="justify-content:flex-start;">Voir la solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></article><article class="case rv"><div class="shot"><image-slot id="real-perruques" alt="Perruques colorées sur des présentoirs"></image-slot><div class="ov ov-tr"><div class="gl"><small>Panier · 1 article</small><b>Perruque lace frontal</b><span class="r2"><em>65 000 FCFA</em><i>Payer avec Wave</i></span></div></div></div><p class="kick">Solution type · Vendeuse de perruques</p><h3>Boutique en ligne et commandes suivies</h3><a class="btn-link btn" href="#/realisations" style="justify-content:flex-start;">Voir la solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></article><article class="case rv"><div class="shot"><image-slot id="real-restaurant" alt="Une cuisine de restaurant en service"></image-slot><div class="ov ov-bl"><div class="gl"><small>Commande à emporter</small><b>2 plats · Payée avec Orange Money</b><span class="tag green">Envoyée en cuisine</span></div></div></div><p class="kick">Solution type · Restaurant</p><h3>Menu en ligne et commande à emporter</h3><a class="btn-link btn" href="#/realisations" style="justify-content:flex-start;">Voir la solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></article></div>
 </div></section>
 </main>
 </sc-if>
@@ -584,27 +849,9 @@ body { letter-spacing: -0.003em; }
 
 <sc-if value="{{ isReal }}">
 <main data-screen-label="Réalisations" style="flex:1;">
-  <section class="pagehead"><div class="wrap"><p class="eyebrow "><span class="n">●</span><span>Réalisations</span></p><h1>Des solutions concrètes, pensées pour chaque secteur.</h1>
-    <p class="lead">Voici des exemples de solutions que DST Technologie conçoit pour les entreprises. Chaque projet part de votre activité réelle : vos clients, vos produits et votre façon de travailler.</p></div></section>
-  <section class="wrap" style="padding-bottom:clamp(64px,8vw,104px)"><div class="grid cases" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px 40px"><article class="case big"><div class="shot"><image-slot id="real-salon" placeholder="Capture d’écran : réservation en ligne pour salon"></image-slot></div>
-  <div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Salon de coiffure</p><h2>Réservation en ligne avec acompte</h2><p class="desc">Les clientes choisissent la prestation, la coiffeuse et le créneau, puis confirment avec un acompte Wave ou Orange Money.</p>
-  <div class="tags"><span class="tag">Réservation</span><span class="tag">Paiement</span><span class="tag">CRM</span></div>
-  <div><button type="button" class="btn-link btn" onClick="{{ caseDevis.salon }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big"><div class="shot"><image-slot id="real-perruques" placeholder="Capture d’écran : boutique en ligne de perruques"></image-slot></div>
-  <div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Vendeuse de perruques</p><h2>Boutique en ligne et commandes suivies</h2><p class="desc">Un catalogue clair par longueur et texture, un panier, le paiement mobile money et une confirmation envoyée sur WhatsApp.</p>
-  <div class="tags"><span class="tag">E-commerce</span><span class="tag">Paiement</span></div>
-  <div><button type="button" class="btn-link btn" onClick="{{ caseDevis.perruques }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big"><div class="shot"><image-slot id="real-restaurant" placeholder="Capture d’écran : menu et commande en ligne"></image-slot></div>
-  <div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Restaurant</p><h2>Menu en ligne et commande à emporter</h2><p class="desc">Le menu toujours à jour, la commande en quelques clics et le paiement à la commande pour éviter les oublis.</p>
-  <div class="tags"><span class="tag">E-commerce</span><span class="tag">Paiement</span></div>
-  <div><button type="button" class="btn-link btn" onClick="{{ caseDevis.restaurant }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big"><div class="shot"><image-slot id="real-evenementiel" placeholder="Capture d’écran : vitrine d’un prestataire événementiel"></image-slot></div>
-  <div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Prestataire événementiel</p><h2>Vitrine, galerie et demandes de devis</h2><p class="desc">Une galerie de vos événements, un formulaire de devis structuré et le suivi de chaque demande dans un CRM.</p>
-  <div class="tags"><span class="tag">Site web</span><span class="tag">CRM</span></div>
-  <div><button type="button" class="btn-link btn" onClick="{{ caseDevis.evenementiel }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big"><div class="shot"><image-slot id="real-boutique" placeholder="Capture d’écran : gestion des ventes et des clients"></image-slot></div>
-  <div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Boutique</p><h2>Ventes et fichier clients centralisés</h2><p class="desc">Chaque vente enregistrée, chaque client retrouvé : historique d’achats, relances et offres de fidélité.</p>
-  <div class="tags"><span class="tag">CRM</span><span class="tag">Digitalisation</span></div>
-  <div><button type="button" class="btn-link btn" onClick="{{ caseDevis.boutique }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big"><div class="shot"><image-slot id="real-entreprise" placeholder="Capture d’écran : plateforme interne sur mesure"></image-slot></div>
-  <div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Entreprise</p><h2>Plateforme interne sur mesure</h2><p class="desc">Les demandes, validations et rapports qui circulaient sur papier ou par message passent sur une plateforme unique.</p>
-  <div class="tags"><span class="tag">Sur mesure</span><span class="tag">Digitalisation</span></div>
-  <div><button type="button" class="btn-link btn" onClick="{{ caseDevis.entreprise }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article></div></section>
+  <section class="pagehead"><div class="wrap"><p class="eyebrow "><span class="n">●</span><span>Réalisations</span></p><h1>Des solutions concrètes, pour des métiers concrets.</h1>
+    <p class="lead">Des exemples de ce que DST Technologie conçoit. Chaque projet part de votre réalité : vos clients, vos produits, votre façon de travailler. Les noms et les montants affichés sont fictifs.</p></div></section>
+  <section class="wrap" style="padding-bottom:clamp(64px,8vw,104px)"><div class="grid cases" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px 40px"><article class="case big rv"><div class="shot"><image-slot id="real-salon" alt="Une cliente en tresses qui consulte son téléphone"></image-slot><div class="ov ov-tl"><div class="gl"><small>Réservation</small><b>Tresses · samedi 10:00</b><span class="tag green">Acompte 5 000 FCFA · Wave</span></div></div></div><div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Salon de coiffure</p><h2>Réservation en ligne avec acompte</h2><p class="desc">Les clientes choisissent la prestation, la coiffeuse et le créneau, puis confirment avec un acompte Wave ou Orange Money.</p><div class="tags"><span class="tag">Réservation</span><span class="tag">Paiement</span><span class="tag">CRM</span></div><div><button type="button" class="btn-link btn" onClick="{{ caseDevis.salon }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big rv"><div class="shot"><image-slot id="real-perruques" alt="Perruques colorées sur des présentoirs"></image-slot><div class="ov ov-tr"><div class="gl"><small>Panier · 1 article</small><b>Perruque lace frontal</b><span class="r2"><em>65 000 FCFA</em><i>Payer avec Wave</i></span></div></div></div><div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Vendeuse de perruques</p><h2>Boutique en ligne et commandes suivies</h2><p class="desc">Un catalogue clair par longueur et texture, un panier, le paiement mobile money et une confirmation envoyée sur WhatsApp.</p><div class="tags"><span class="tag">E-commerce</span><span class="tag">Paiement</span></div><div><button type="button" class="btn-link btn" onClick="{{ caseDevis.perruques }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big rv"><div class="shot"><image-slot id="real-restaurant" alt="Une cuisine de restaurant en service"></image-slot><div class="ov ov-bl"><div class="gl"><small>Commande à emporter</small><b>2 plats · Payée avec Orange Money</b><span class="tag green">Envoyée en cuisine</span></div></div></div><div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Restaurant</p><h2>Menu en ligne et commande à emporter</h2><p class="desc">Le menu toujours à jour, la commande en quelques clics et le paiement à la commande pour éviter les oublis.</p><div class="tags"><span class="tag">E-commerce</span><span class="tag">Paiement</span></div><div><button type="button" class="btn-link btn" onClick="{{ caseDevis.restaurant }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big rv"><div class="shot"><image-slot id="real-evenementiel" alt="Invités avec des cierges magiques lors d’une soirée"></image-slot><div class="ov ov-tr"><div class="gl"><small>Nouvelle demande de devis</small><b>Mariage · 120 invités</b><span class="tag">À étudier</span></div></div></div><div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Prestataire événementiel</p><h2>Vitrine, galerie et demandes de devis</h2><p class="desc">Une galerie de vos événements, un formulaire de devis structuré et le suivi de chaque demande dans un CRM.</p><div class="tags"><span class="tag">Site web</span><span class="tag">CRM</span></div><div><button type="button" class="btn-link btn" onClick="{{ caseDevis.evenementiel }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big rv"><div class="shot"><image-slot id="real-boutique" alt="Un étal de marché de nuit avec sacs et chapeaux"></image-slot><div class="ov ov-bl"><div class="gl"><small>Fiche cliente</small><b>Aïcha K. · 3 commandes</b><span class="tag">Relance WhatsApp prévue</span></div></div></div><div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Boutique</p><h2>Ventes et fichier clients centralisés</h2><p class="desc">Chaque vente enregistrée, chaque client retrouvé : historique d’achats, relances et offres de fidélité.</p><div class="tags"><span class="tag">CRM</span><span class="tag">Digitalisation</span></div><div><button type="button" class="btn-link btn" onClick="{{ caseDevis.boutique }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big rv"><div class="shot dashshot"><div class="dash"><div class="dh"><b>Tableau de bord</b><span class="tag green">● En direct</span></div><div class="kpis"><div><small>Demandes</small><b>24</b></div><div><small>Validées</small><b>18</b></div><div><small>En attente</small><b>6</b></div></div><div class="bars"><i style="height:38%"></i><i style="height:62%"></i><i style="height:48%"></i><i style="height:80%"></i><i style="height:58%"></i><i style="height:92%"></i><i style="height:70%"></i></div><ul class="dl"><li><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Demande de congé · validée</li><li><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Rapport mensuel · envoyé</li><li class="wait">● Bon de commande · à valider</li></ul></div></div><div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Entreprise</p><h2>Plateforme interne sur mesure</h2><p class="desc">Les demandes, validations et rapports qui circulaient sur papier ou par message passent sur une plateforme unique.</p><div class="tags"><span class="tag">Sur mesure</span><span class="tag">Digitalisation</span></div><div><button type="button" class="btn-link btn" onClick="{{ caseDevis.entreprise }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article></div></section>
 </main>
 </sc-if>
 
@@ -668,7 +915,7 @@ body { letter-spacing: -0.003em; }
           <p class="lead">Dernière étape : envoyez-la sur WhatsApp. Un conseiller DST Technologie vous répond et prépare votre devis.</p>
           <div class="recap"><sc-for list="{{ recap }}" as="r"><div><span class="k">{{ r.k }}</span><span class="v">{{ r.v }}</span></div></sc-for></div>
           <div class="row-btns" style="align-items:center">
-            <a class="btn btn-primary" href="{{ waDevis }}" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Envoyer sur WhatsApp</a>
+            <a class="btn btn-wa" href="{{ waDevis }}" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Envoyer sur WhatsApp</a>
             <a class="btn btn-outline" href="tel:+2250503206666">Appeler le 05 03 20 66 66</a>
             <button type="button" class="btn btn-link" onClick="{{ edit }}">Modifier ma demande</button>
           </div></div></sc-if>
@@ -684,7 +931,7 @@ body { letter-spacing: -0.003em; }
     <aside class="aside">
       <div class="card box"><p class="eyebrow">Téléphone &amp; WhatsApp</p><a class="tel" href="tel:+2250503206666">05 03 20 66 66</a>
         <p class="sm">Vous préférez échanger directement ? Écrivez-nous ou appelez un conseiller.</p>
-        <div class="row-btns"><a class="btn btn-primary btn-sm" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Écrire sur WhatsApp</a><a class="btn btn-outline btn-sm" href="tel:+2250503206666"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Appeler</a></div></div>
+        <div class="row-btns"><a class="btn btn-wa btn-sm" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Écrire sur WhatsApp</a><a class="btn btn-outline btn-sm" href="tel:+2250503206666"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Appeler</a></div></div>
       <div class="card box"><p class="eyebrow">Site web</p><a href="https://dsttechnologie.com/" target="_blank" rel="noopener" style="font-size:18px;font-weight:700">dsttechnologie.com</a></div>
       <div class="card box"><p class="eyebrow">Et ensuite ?</p><ol>
         <li><b>01</b><span>Nous étudions votre demande.</span></li><li><b>02</b><span>Un conseiller vous contacte pour préciser vos besoins.</span></li><li><b>03</b><span>Vous recevez une proposition et un devis détaillé.</span></li></ol></div>
@@ -694,17 +941,23 @@ body { letter-spacing: -0.003em; }
 </sc-if>
 
 <sc-if value="{{ showClose }}">
-<section class="closing"><div class="wrap">
-  <p class="eyebrow">Vous avez un projet en tête ?</p>
-  <h2>Votre partenaire digital.</h2>
-  <p class="l">Parlez-nous de votre activité : nous vous proposons la solution adaptée et un devis détaillé.</p>
-  <div class="btns"><button type="button" class="btn btn-light" onClick="{{ goDevis }}">Demander un devis<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button><a class="btn btn-ghost-light" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp · 05 03 20 66 66</a></div>
+<section class="closing"><div class="wrap cl">
+  <div class="ctext">
+    <p class="eyebrow">Vous avez un projet en tête ?</p>
+    <h2>Et si votre prochain client vous trouvait ce soir ?</h2>
+    <p class="l">Parlez-nous de votre activité : nous vous proposons la solution adaptée et un devis détaillé.</p>
+    <div class="btns"><button type="button" class="btn btn-light" onClick="{{ goDevis }}">Demander un devis<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button><a class="btn btn-ghost-light" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp · 05 03 20 66 66</a></div>
+  </div>
+  <div class="cvis rv"><div class="cphoto"><image-slot id="closing-photo" alt="Une femme qui consulte son téléphone" pos="62% 30%"></image-slot>
+    <div class="ov ov-tl"><div class="gl"><small>Recherche Google</small><b>perruque lace frontal près de moi</b></div></div>
+    <div class="ov ov-br"><div class="gl"><small>Résultat</small><b>Votre boutique · Commander en ligne</b><span class="tag green">Trouvé</span></div></div>
+  </div></div>
 </div></section>
 </sc-if>
 
 <footer class="foot"><div class="wrap">
   <div class="cols4">
-    <div class="col"><img class="logoimg" src="assets/logo-dst-technologie.png" alt="DST Technologie"><p style="max-width:28ch">Votre partenaire digital pour la réussite de votre entreprise.</p></div>
+    <div class="col"><img class="logoimg" data-keep="logo-f" src="assets/logo-dst-technologie.png" alt="DST Technologie"><p style="max-width:28ch">Votre partenaire digital pour la réussite de votre entreprise.</p></div>
     <nav class="col" aria-label="Pied de page"><h4>Navigation</h4><a href="#/">Accueil</a><a href="#/services">Services</a><a href="#/realisations">Réalisations</a><a href="#/contact">Contact &amp; devis</a></nav>
     <div class="col"><h4>Services</h4><a href="#/services" onClick="{{ open.web }}">Création de sites web</a><a href="#/services" onClick="{{ open.ecommerce }}">E-commerce</a><a href="#/services" onClick="{{ open.reservation }}">Réservation en ligne</a><a href="#/services" onClick="{{ open.paiement }}">Paiement en ligne</a><a href="#/services" onClick="{{ open.digitalisation }}">Digitalisation</a><a href="#/services" onClick="{{ open.crm }}">CRM &amp; gestion clients</a><a href="#/services" onClick="{{ open.surmesure }}">Solutions sur mesure</a><a href="#/services" onClick="{{ open.seo }}">SEO / Référencement</a></div>
     <div class="col"><h4>Contact</h4><span>Téléphone &amp; WhatsApp</span><a class="tel" href="tel:+2250503206666">05 03 20 66 66</a><a href="https://dsttechnologie.com/" target="_blank" rel="noopener">dsttechnologie.com</a><button type="button" class="btn btn-primary btn-sm" onClick="{{ goDevis }}">Demander un devis</button></div>
@@ -713,7 +966,7 @@ body { letter-spacing: -0.003em; }
 </div></footer>
 <sc-if value="{{ desktop }}"><a class="wafab" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span>WhatsApp</span></a></sc-if>
 <sc-if value="{{ showMobileBar }}"><div style="height:72px"></div>
-  <div class="mbar"><button type="button" class="btn btn-primary" onClick="{{ goDevis }}">Demander un devis</button><a class="btn btn-outline" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp</a></div></sc-if>
+  <div class="mbar"><button type="button" class="btn btn-primary" onClick="{{ goDevis }}">Demander un devis</button><a class="btn btn-wa" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp</a></div></sc-if>
 </div>
 </template>
 
