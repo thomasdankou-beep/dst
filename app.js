@@ -84,7 +84,7 @@ const CASES = {
 const emptyForm = () => ({ services: [], secteur: '', description: '', site: '', budget: '', delai: '', nom: '', entreprise: '', tel: '', email: '', pref: 'WhatsApp' });
 
 /* ============ 2. ÉTAT ============ */
-let state = { tab: 0, page: 'accueil', w: window.innerWidth || 1280, menuOpen: false, step: 0, sent: false, errors: {}, form: emptyForm(), demo: { step: 0, pay: '' } };
+let state = { tab: 0, page: 'accueil', w: window.innerWidth || 1280, menuOpen: false, step: 0, sent: false, errors: {}, form: emptyForm(), demo: { step: 0, pay: '' }, mail: { status: '' } };
 const formRef = { current: null };
 let pendingScroll = null;
 
@@ -130,7 +130,7 @@ function openService(id) {
   go('services');
 }
 function goDevis(services) {
-  setState(s => ({ step: 0, sent: false, errors: {}, menuOpen: false, form: services ? Object.assign({}, s.form, { services: services.slice() }) : s.form }));
+  setState(s => ({ mail: { status: '' }, step: 0, sent: false, errors: {}, menuOpen: false, form: services ? Object.assign({}, s.form, { services: services.slice() }) : s.form }));
   go('contact');
 }
 
@@ -177,8 +177,34 @@ function prevStep() {
 }
 function submitForm(single) {
   if (!validate(single ? [0, 1, 2, 3] : [3])) return;
-  setState({ sent: true }, toFormTop);
+  setState({ sent: true, mail: { status: '' } }, toFormTop);
 }
+/* --- Envoi de la demande par e-mail ---
+   1) on essaie devis.php (hébergement avec PHP) ; 2) sinon on propose d'ouvrir l'application e-mail du client,
+   avec le message déjà rédigé (lien mailto:). */
+const DST_EMAIL = 'infos@dsttechnologie.com';
+function mailtoHref() {
+  const f = state.form;
+  const corps = 'Bonjour DST Technologie, je souhaite recevoir un devis.\n\n' + recapRows().map(r => r.k + ' : ' + r.v).join('\n');
+  return 'mailto:' + DST_EMAIL + '?subject=' + encodeURIComponent('Demande de devis - ' + (f.entreprise.trim() || f.nom.trim() || 'site web')) +
+    '&body=' + encodeURIComponent(corps.replace(/\n/g, '\r\n'));
+}
+async function sendDevisMail() {
+  if (state.mail.status === 'sending' || state.mail.status === 'sent') return;
+  setState({ mail: { status: 'sending' } });
+  const f = state.form;
+  try {
+    const res = await fetch('devis.php', { method: 'POST', body: JSON.stringify({
+      nom: f.nom.trim(), entreprise: f.entreprise.trim(), telephone: f.tel.trim(), email: f.email.trim(), rows: recapRows()
+    }) });
+    let r = null; try { r = await res.json(); } catch (e) { /* réponse non JSON : pas de PHP */ }
+    if (res.ok && r && r.ok === true) { setState({ mail: { status: 'sent', copie: r.copie === true } }); return; }
+    throw new Error(r && r.error ? r.error : 'HTTP ' + res.status);
+  } catch (err) {
+    setState({ mail: { status: 'fallback', reason: err.message } });
+  }
+}
+
 function svcTitle(id) {
   if (id === CONSEIL.id) return CONSEIL.title;
   const s = SERVICES.find(x => x.id === id);
@@ -332,7 +358,15 @@ function computeVals() {
     greet: firstName ? ' ' + firstName : '',
     recap,
     waDevis: 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(msg),
-    edit: () => setState({ sent: false, step: single ? 0 : 3 }),
+    mail: {
+      sent: s.mail.status === 'sent', fallback: s.mail.status === 'fallback',
+      off: s.mail.status === 'sending' || s.mail.status === 'sent',
+      label: s.mail.status === 'sending' ? 'Envoi en cours…' : s.mail.status === 'sent' ? 'Envoyé par e-mail ✓' : 'Envoyer par e-mail',
+      copieMsg: s.mail.copie ? ' Une confirmation a été envoyée à ' + f.email.trim() + ' (pensez à vérifier vos courriers indésirables).' : '',
+      href: mailtoHref(),
+      send: sendDevisMail,
+    },
+    edit: () => setState({ sent: false, mail: { status: '' }, step: single ? 0 : 3 }),
     svcTabs: OPTIONS.servicesLayout === 'Onglets',
     svcGrid: OPTIONS.servicesLayout !== 'Onglets',
     tabs,
@@ -440,6 +474,7 @@ function build(node, scope, out) {
     const single = SINGLE.exec(val);
     if (name === 'ref' && single) { ref = lookup(single[1], scope); continue; }
     if (name === 'data-keep') continue;
+    if (name === 'disabled' && single) { if (truthy(lookup(single[1], scope))) el.disabled = true; continue; }
     if (name === 'data-html' && single) { el.innerHTML = String(lookup(single[1], scope) ?? ''); continue; }
     if (name === 'onclick' && single) { const fn = lookup(single[1], scope); if (fn) el.addEventListener('click', fn); continue; }
     if (name === 'onchange' && single) {

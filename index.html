@@ -611,6 +611,13 @@ body { letter-spacing: -0.003em; }
 .float.b { max-width: 46%; }
 .top .mpanel .btn-wa, .mbar .btn-wa { color: #fff; }
 
+/* e-mail du devis */
+.note { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin: 0; padding: 14px 16px; border-radius: 14px; font-size: 14.5px; line-height: 1.5; }
+.note p { margin: 0; }
+.note.ok { background: #E6F6E4; color: #1D5C22; border: 1px solid #BFE3BD; font-weight: 600; }
+.note.info { background: var(--soft); color: var(--ink); border: 1px solid #BBD4FF; }
+.btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
 </style>
 </head>
 <body>
@@ -912,12 +919,16 @@ body { letter-spacing: -0.003em; }
         <sc-if value="{{ sent }}"><div class="okbox">
           <span class="bigtick"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
           <h2>Merci{{ greet }}. Votre demande est prête.</h2>
-          <p class="lead">Dernière étape : envoyez-la sur WhatsApp. Un conseiller DST Technologie vous répond et prépare votre devis.</p>
+          <p class="lead">Dernière étape : envoyez-la par WhatsApp ou par e-mail. Un conseiller DST Technologie vous répond et prépare votre devis.</p>
           <div class="recap"><sc-for list="{{ recap }}" as="r"><div><span class="k">{{ r.k }}</span><span class="v">{{ r.v }}</span></div></sc-for></div>
           <div class="row-btns" style="align-items:center">
             <a class="btn btn-wa" href="{{ waDevis }}" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Envoyer sur WhatsApp</a>
+            <button type="button" class="btn btn-outline" onClick="{{ mail.send }}" disabled="{{ mail.off }}"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>{{ mail.label }}</button>
             <a class="btn btn-outline" href="tel:+2250503206666">Appeler le 05 03 20 66 66</a>
             <button type="button" class="btn btn-link" onClick="{{ edit }}">Modifier ma demande</button>
+          </div>
+          <sc-if value="{{ mail.sent }}"><p class="note ok" role="status">Votre demande a bien été envoyée par e-mail à DST Technologie.{{ mail.copieMsg }}</p></sc-if>
+          <sc-if value="{{ mail.fallback }}"><div class="note info" role="status"><p>L’envoi automatique n’est pas disponible pour le moment. Ouvrez votre application e-mail : le message est déjà rédigé, il ne reste qu’à l’envoyer.</p><a class="btn btn-primary btn-sm" href="{{ mail.href }}"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Ouvrir mon application e-mail</a></div></sc-if>
           </div></div></sc-if>
       </div>
       <sc-if value="{{ nav.bar }}"><div class="fnav">
@@ -931,7 +942,7 @@ body { letter-spacing: -0.003em; }
     <aside class="aside">
       <div class="card box"><p class="eyebrow">Téléphone &amp; WhatsApp</p><a class="tel" href="tel:+2250503206666">05 03 20 66 66</a>
         <p class="sm">Vous préférez échanger directement ? Écrivez-nous ou appelez un conseiller.</p>
-        <div class="row-btns"><a class="btn btn-wa btn-sm" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Écrire sur WhatsApp</a><a class="btn btn-outline btn-sm" href="tel:+2250503206666"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Appeler</a></div></div>
+        <div class="row-btns"><a class="btn btn-wa btn-sm" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Écrire sur WhatsApp</a><a class="btn btn-outline btn-sm" href="tel:+2250503206666"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Appeler</a><a class="btn btn-outline btn-sm" href="mailto:infos@dsttechnologie.com"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>E-mail</a></div></div>
       <div class="card box"><p class="eyebrow">Site web</p><a href="https://dsttechnologie.com/" target="_blank" rel="noopener" style="font-size:18px;font-weight:700">dsttechnologie.com</a></div>
       <div class="card box"><p class="eyebrow">Et ensuite ?</p><ol>
         <li><b>01</b><span>Nous étudions votre demande.</span></li><li><b>02</b><span>Un conseiller vous contacte pour préciser vos besoins.</span></li><li><b>03</b><span>Vous recevez une proposition et un devis détaillé.</span></li></ol></div>

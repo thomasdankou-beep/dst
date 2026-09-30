@@ -43,4 +43,10 @@ La démo du téléphone, la conversation WhatsApp et les cartes sur les photos d
 
 ## Mise en ligne
 
-Envoyez tout le dossier sur votre hébergement. Le formulaire de devis du site n'envoie pas d'e-mail : il prépare un message WhatsApp avec le récapitulatif. Seul le dossier `questionnaire/` a besoin de PHP.
+Envoyez tout le dossier sur votre hébergement.
+
+À la fin du formulaire de devis, le client choisit : **WhatsApp**, **e-mail** ou **appel**.
+
+- **E-mail** : `devis.php` (à la racine, à côté de `index.html`) envoie la demande à `infos@dsttechnologie.com` et, si le client a donné son e-mail, une confirmation. Il faut un hébergement avec **PHP** ; l'adresse se change en haut de `devis.php`. Vérification : ouvrez `https://votresite.com/devis.php`, vous devez voir « Service actif ».
+- **Sans PHP** (ou si le serveur n'arrive pas à envoyer) : le site propose d'ouvrir l'application e-mail du client avec le message déjà rédigé.
+- Le dossier `questionnaire/` a aussi besoin de PHP (voir son `LISEZ-MOI.txt`).
