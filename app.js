@@ -308,9 +308,9 @@ function imageSlot(el) { // remplace <image-slot id="…"> : affiche assets/imag
   const img = document.createElement('img');
   img.alt = '';
   img.loading = 'lazy';
-  img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;';
+  img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;';
   let i = 0;
-  img.onload = () => { img.style.display = 'block'; cap.style.display = 'none'; };
+  img.onload = () => { img.style.opacity = '1'; cap.style.display = 'none'; };
   img.onerror = () => { i++; if (i < IMG_EXT.length) img.src = 'assets/images/' + id + '.' + IMG_EXT[i]; };
   img.src = 'assets/images/' + id + '.' + IMG_EXT[0];
   box.appendChild(img);

@@ -1,0 +1,44 @@
+Photos libres de droits (licences CC0 / domaine public), trouvées via Openverse.
+Remplacez-les à tout moment par vos propres photos en gardant les mêmes noms de fichiers.
+
+hero-banner.jpg
+  Titre : Business People
+  Auteur : Direct Media
+  Licence : CC0 (libre de droits, sans attribution obligatoire)
+  Source : https://stocksnap.io/photo/business-people-IS1XRUWYW4
+
+real-salon.jpg
+  Titre : Hairdressers
+  Auteur : adornhairdressers
+  Licence : PDM (libre de droits, sans attribution obligatoire)
+  Source : https://www.flickr.com/photos/156298865@N08/40975936752
+
+real-perruques.jpg
+  Titre : Colorful wigs
+  Auteur : inconnu
+  Licence : CC0 (libre de droits, sans attribution obligatoire)
+  Source : https://www.rawpixel.com/image/6029747/colorful-wigs-free-public-domain-cc0-photo
+
+real-restaurant.jpg
+  Titre : Restaurant Food
+  Auteur : Jay Wennington
+  Licence : CC0 (libre de droits, sans attribution obligatoire)
+  Source : https://stocksnap.io/photo/restaurant-food-47E77904CB
+
+real-evenementiel.jpg
+  Titre : (sans titre)
+  Auteur : inconnu
+  Licence : CC0 (libre de droits, sans attribution obligatoire)
+  Source : https://www.rawpixel.com/image/5963763/free-public-domain-cc0-photo
+
+real-boutique.jpg
+  Titre : Clothes Suits
+  Auteur : Clark Street Mercantile
+  Licence : CC0 (libre de droits, sans attribution obligatoire)
+  Source : https://stocksnap.io/photo/clothes-suits-XRVSDKCWZ7
+
+real-entreprise.jpg
+  Titre : Seo Ppc
+  Auteur : Serpstat
+  Licence : CC0 (libre de droits, sans attribution obligatoire)
+  Source : https://stocksnap.io/photo/seo-ppc-9699Y6WKLD
