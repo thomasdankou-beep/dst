@@ -26,6 +26,7 @@ Puis ouvrez `http://localhost:8080/index.html`.
 - **Services, secteurs, budgets, délais, questions du devis** : en haut de `app.js`.
 - **Numéro WhatsApp** : `WA_NUM` en haut de `app.js`, et les liens `wa.me` dans `index.html`.
 - **Présentation des services** : `OPTIONS.servicesLayout` dans `app.js` (`'Grille'` = cartes illustrées, `'Onglets'` = liste à onglets).
+- **Après avoir modifié `app.js`** : changez le texte qui suit `app.js?v=` dans `index.html` (n'importe quelle nouvelle valeur). Sinon les navigateurs gardent l'ancienne version du script en mémoire et le site se comporte mal.
 - **Une photo** : remplacez le fichier dans `assets/images/` en gardant exactement le même nom.
 
 | Fichier | Où il s'affiche |
