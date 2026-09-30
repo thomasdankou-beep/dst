@@ -5,26 +5,317 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DST Technologie — Votre partenaire digital</title>
 <meta name="description" content="DST Technologie, agence digitale et solutions technologiques : sites web, e-commerce, réservation et paiement en ligne (Wave, Orange Money, MTN Money, Moov Money), CRM, SEO et solutions sur mesure.">
-<meta name="theme-color" content="#0062E6">
+<meta name="theme-color" content="#061340">
 <link rel="icon" href="assets/logo-dst-technologie.png">
-<link rel="stylesheet" href="_ds/modernist-b943c901-d95c-485c-9609-82c7f40d0a63/styles.css">
-  <style>
-    :root {
-      --color-bg: #F4F6FA; --color-surface: #E8ECF3; --color-text: #001B5E;
-      --color-accent: #0062E6; --color-accent-2: #47B73F; --color-divider: #929EBC;
-      --color-neutral-100: #F7F8FB; --color-neutral-200: #E9ECF2; --color-neutral-300: #D5DAE5; --color-neutral-400: #B6BDCE; --color-neutral-500: #959EB4; --color-neutral-600: #77809A; --color-neutral-700: #5A6480; --color-neutral-800: #3F4866; --color-neutral-900: #28304D;
-      --color-accent-100: #EEF4FF; --color-accent-200: #DCE8FF; --color-accent-300: #BCD3FF; --color-accent-400: #008AF3; --color-accent-500: #0062E6; --color-accent-600: #014FB6; --color-accent-700: #0041A4; --color-accent-800: #022B7C; --color-accent-900: #001B5E;
-      --color-accent-2-100: #EEF9EC; --color-accent-2-200: #D8F1D3; --color-accent-2-300: #B1E3A8; --color-accent-2-400: #63C126; --color-accent-2-500: #47B73F; --color-accent-2-600: #35A236; --color-accent-2-700: #267A2A; --color-accent-2-800: #1D5C22; --color-accent-2-900: #153F19;
-      --shadow-sm: 0 1px 2px color-mix(in srgb, #001B5E 12%, transparent);
-      --shadow-md: 0 3px 10px color-mix(in srgb, #001B5E 14%, transparent);
-      --shadow-lg: 0 12px 32px color-mix(in srgb, #001B5E 20%, transparent);
-    }
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-    body { margin: 0; background: var(--color-bg); color: var(--color-text); text-wrap: pretty; -webkit-font-smoothing: antialiased; }
-    a:not(.btn) { color: var(--color-accent-600); }
-    a:not(.btn):hover { color: var(--color-accent-700); }
-  </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root {
+  --ink: #0A1B4D; --ink-2: #4A5577; --ink-3: #7B86A6;
+  --blue: #0062E6; --blue-2: #008AF3; --blue-dark: #0041A4; --navy: #061340; --navy-2: #0B2A75;
+  --green: #47B73F; --green-dark: #267A2A;
+  --bg: #F5F8FD; --card: #FFFFFF; --soft: #EAF1FE; --line: #DFE6F3; --danger: #B3261E;
+  --grad: linear-gradient(135deg, #0062E6 0%, #008AF3 100%);
+  --r: 20px; --r-sm: 12px; --r-lg: 28px;
+  --shadow: 0 1px 2px rgba(10,27,77,.06), 0 10px 30px -12px rgba(10,27,77,.18);
+  --shadow-lg: 0 30px 60px -24px rgba(6,19,64,.45);
+  --wrap: 1240px; --pad: clamp(20px, 5vw, 56px);
+  --font: "Plus Jakarta Sans", "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--font); -webkit-font-smoothing: antialiased; text-wrap: pretty; }
+h1, h2, h3, h4 { margin: 0; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+p { margin: 0; }
+img { display: block; max-width: 100%; }
+a { color: var(--blue); }
+button { font-family: inherit; }
+:focus-visible { outline: 3px solid var(--blue-2); outline-offset: 2px; }
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); width: 100%; }
+.section { padding-top: clamp(64px, 9vw, 112px); padding-bottom: clamp(64px, 9vw, 112px); }
+.section.alt { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section.dark { background: linear-gradient(160deg, var(--navy), var(--navy-2)); color: #fff; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); }
+.eyebrow .n { display: inline-grid; place-items: center; min-width: 30px; height: 26px; padding: 0 8px; border-radius: 99px; background: var(--soft); color: var(--blue-dark); font-size: 12px; }
+.eyebrow.light { color: #9CC3FF; }
+.h2 { font-size: clamp(30px, 3.8vw, 48px); max-width: 22ch; }
+.lead { font-size: clamp(17px, 1.5vw, 19px); color: var(--ink-2); max-width: 58ch; line-height: 1.65; }
+.head { display: flex; flex-direction: column; gap: 18px; margin-bottom: clamp(36px, 5vw, 56px); }
+.head.row { flex-direction: row; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px; }
+.head.row > div { display: flex; flex-direction: column; gap: 18px; }
+.grid { display: grid; gap: 20px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); }
+
+/* boutons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px; border: 1px solid transparent; border-radius: 99px; font-size: 16px; font-weight: 700; line-height: 1; text-decoration: none; cursor: pointer; transition: transform .15s, box-shadow .15s, background .15s; }
+.btn svg { flex: none; }
+.btn-primary { background: var(--grad); color: #fff; box-shadow: 0 10px 24px -10px rgba(0,98,230,.7); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -10px rgba(0,98,230,.75); }
+.btn-outline { background: #fff; color: var(--ink); border-color: var(--line); }
+.btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+.btn-light { background: #fff; color: var(--navy); }
+.btn-light:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -12px rgba(0,0,0,.45); }
+.btn-ghost-light { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); }
+.btn-ghost-light:hover { background: rgba(255,255,255,.12); }
+.btn-link { background: none; border: 0; color: var(--blue); min-height: 44px; padding: 0 4px; font-size: 15px; font-weight: 700; }
+.btn-link:hover { color: var(--blue-dark); gap: 14px; }
+.btn-sm { min-height: 44px; padding: 0 20px; font-size: 15px; }
+.btn-icon { width: 46px; min-height: 46px; padding: 0; background: #fff; border: 1px solid var(--line); color: var(--ink); }
+.btn-icon:hover { border-color: var(--blue); color: var(--blue); }
+.tag { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 99px; font-size: 12px; font-weight: 700; background: var(--soft); color: var(--blue-dark); }
+.tag.green { background: #E6F6E4; color: var(--green-dark); }
+
+/* en-tête */
+.top { position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.86); backdrop-filter: saturate(1.6) blur(14px); -webkit-backdrop-filter: saturate(1.6) blur(14px); border-bottom: 1px solid var(--line); }
+.top .bar { display: flex; align-items: center; gap: 24px; padding-top: 10px; padding-bottom: 10px; }
+.top .logo { margin-right: auto; display: block; line-height: 0; }
+.top .logo img { height: 56px; width: auto; }
+.top nav { display: flex; gap: 6px; }
+.top nav a { padding: 10px 16px; border-radius: 99px; font-size: 15px; font-weight: 700; color: var(--ink); text-decoration: none; }
+.top nav a:hover { background: var(--soft); }
+.top nav a[aria-current="page"] { background: var(--soft); color: var(--blue); }
+.top .actions { display: flex; align-items: center; gap: 10px; }
+.mpanel { border-top: 1px solid var(--line); background: #fff; padding: 8px var(--pad) 24px; }
+.mpanel nav { display: flex; flex-direction: column; }
+.mpanel nav a { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 22px; font-weight: 800; color: var(--ink); text-decoration: none; }
+.mpanel .cta { display: grid; gap: 10px; margin-top: 20px; }
+
+/* accueil : bannière */
+.hero { position: relative; overflow: hidden; color: #fff; background: radial-gradient(900px 500px at 85% -10%, rgba(0,138,243,.55), transparent 60%), radial-gradient(700px 500px at -5% 110%, rgba(71,183,63,.28), transparent 55%), linear-gradient(165deg, var(--navy) 0%, var(--navy-2) 100%); }
+.hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse at 70% 30%, #000 10%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at 70% 30%, #000 10%, transparent 70%); }
+.hero .wrap { position: relative; padding-top: clamp(48px, 7vw, 96px); padding-bottom: clamp(56px, 7vw, 96px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 48px clamp(32px, 5vw, 72px); align-items: center; }
+.hero h1 { font-size: clamp(42px, 6.4vw, 82px); line-height: 1.0; letter-spacing: -0.035em; margin: 22px 0 24px; }
+.hero h1 em { font-style: normal; background: linear-gradient(90deg, #6CC1FF, #8BE07F); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero .sub { font-size: clamp(18px, 1.6vw, 21px); color: #C9D8F6; max-width: 46ch; line-height: 1.6; }
+.hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.hero .trust { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 36px; font-size: 14px; font-weight: 600; color: #B5C7EC; }
+.hero .trust span { display: inline-flex; align-items: center; gap: 8px; }
+.hero .trust i { width: 8px; height: 8px; border-radius: 2px; background: var(--green); display: block; }
+.hero .visual { position: relative; }
+.hero .photo { position: relative; aspect-ratio: 4 / 4.2; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid rgba(255,255,255,.18); background: var(--navy-2); }
+.float { position: absolute; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 16px; background: #fff; color: var(--ink); box-shadow: 0 18px 40px -16px rgba(0,0,0,.5); font-size: 13px; line-height: 1.3; animation: bob 6s ease-in-out infinite; }
+.float strong { display: block; font-size: 15px; }
+.float .ic { width: 38px; height: 38px; flex: none; display: grid; place-items: center; border-radius: 12px; background: var(--soft); color: var(--blue); }
+.float.a { left: -18px; bottom: 12%; }
+.float.b { right: -14px; top: 10%; animation-delay: -3s; }
+.float.b .ic { background: #E6F6E4; color: var(--green-dark); }
+@keyframes bob { 50% { transform: translateY(-10px); } }
+@media (max-width: 560px) { .float.a { left: 8px; } .float.b { right: 8px; } }
+
+/* atouts sous la bannière */
+.feats { margin-top: clamp(-56px, -5vw, -40px); position: relative; z-index: 2; }
+.feats .grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.feat { padding: 28px 26px; display: flex; flex-direction: column; gap: 12px; }
+.feat .ic { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 16px; background: var(--grad); color: #fff; margin-bottom: 4px; }
+.feat h3 { font-size: 20px; }
+.feat p { color: var(--ink-2); font-size: 15.5px; }
+
+/* bandeau paiements */
+.pay { padding: 28px 0; }
+.pay .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; }
+.pay .lbl { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-right: 10px; }
+.pill { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 99px; background: #fff; border: 1px solid var(--line); font-weight: 800; font-size: 15px; box-shadow: var(--shadow); }
+.pill i { width: 10px; height: 10px; border-radius: 50%; background: var(--blue); }
+.pill:nth-of-type(2n) i { background: var(--green); }
+
+/* qui sommes-nous */
+.about { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 48px clamp(32px, 5vw, 80px); align-items: center; }
+.about .text { display: flex; flex-direction: column; gap: 24px; }
+.ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.ticks li { display: flex; gap: 14px; align-items: center; font-weight: 700; font-size: 16px; }
+.tick { width: 26px; height: 26px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: #fff; }
+.tick.sm { width: 22px; height: 22px; }
+.bigstat { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; padding: 20px 24px; border-radius: var(--r) var(--r) 0 0; background: var(--grad); color: #fff; }
+.bigstat b { font-size: clamp(40px, 4vw, 56px); line-height: 1; letter-spacing: -0.03em; }
+.bigstat span { font-size: 15px; line-height: 1.45; opacity: .92; }
+.feed { border-radius: 0 0 var(--r) var(--r); overflow: hidden; }
+.feed .fh { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.feed .row { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 16px 18px; border-bottom: 1px solid var(--line); }
+.feed .row:last-of-type { border-bottom: 0; }
+.feed .row time { font-size: 13px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.feed .row b { display: block; font-size: 15px; }
+.feed .row small { font-size: 13px; color: var(--ink-2); }
+.figcap { margin-top: 12px; font-size: 13px; color: var(--ink-3); }
+
+/* problèmes */
+.probs { grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); }
+.prob { padding: 28px; min-height: 240px; display: flex; flex-direction: column; gap: 14px; transition: transform .2s, box-shadow .2s; }
+.prob:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -16px rgba(10,27,77,.3); }
+.prob .num { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; background: var(--soft); color: var(--blue-dark); font-weight: 800; font-size: 14px; }
+.prob h3 { font-size: clamp(20px, 1.8vw, 23px); line-height: 1.22; }
+.prob p { margin-top: auto; color: var(--ink-2); font-size: 15.5px; }
+.prob.sol { background: var(--grad); border: 0; color: #fff; box-shadow: 0 24px 50px -20px rgba(0,98,230,.8); }
+.prob.sol .eyebrow { color: #CFE3FF; }
+.prob.sol h3 { color: #fff; }
+.prob.sol .btn { margin-top: auto; align-self: flex-start; }
+
+/* services : onglets */
+.tabs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 20px; }
+.tablist { display: flex; flex-direction: column; gap: 8px; }
+.tab { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; align-items: center; gap: 12px; width: 100%; min-height: 62px; padding: 14px 18px; border: 1px solid var(--line); border-radius: 16px; background: #fff; color: var(--ink); font-size: 17px; font-weight: 700; line-height: 1.25; text-align: left; cursor: pointer; transition: background .15s, border-color .15s, transform .15s; }
+.tab .n { font-size: 13px; font-weight: 800; color: var(--ink-3); }
+.tab:hover { border-color: var(--blue); transform: translateX(4px); }
+.tab.is-on { background: var(--grad); color: #fff; border-color: transparent; box-shadow: 0 14px 30px -14px rgba(0,98,230,.8); }
+.tab.is-on .n { color: #CFE3FF; }
+.tabpanel { padding: clamp(26px, 3.5vw, 44px); display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.tabpanel .big { font-size: clamp(56px, 6vw, 88px); font-weight: 800; line-height: .9; letter-spacing: -0.04em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tabpanel h3 { font-size: clamp(26px, 2.8vw, 36px); }
+.tabpanel .long { font-size: 17px; color: var(--ink-2); max-width: 52ch; line-height: 1.65; }
+.fl { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px 24px; }
+.fl li { display: flex; gap: 12px; align-items: center; font-size: 15.5px; font-weight: 600; }
+.btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 12px; }
+
+/* services : grille */
+.sgrid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.scard { display: flex; flex-direction: column; gap: 12px; padding: 28px 24px; min-height: 220px; color: var(--ink); text-decoration: none; transition: transform .2s, border-color .2s; }
+.scard:hover { transform: translateY(-4px); border-color: var(--blue); }
+.scard .n { font-size: 13px; font-weight: 800; color: var(--blue); }
+.scard h3 { font-size: 20px; }
+.scard p { color: var(--ink-2); font-size: 15px; }
+
+/* pourquoi */
+.why { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 24px; }
+.why > div { padding: 28px 24px; border-radius: var(--r); background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); display: flex; flex-direction: column; gap: 14px; }
+.why .sq { width: 14px; height: 14px; border-radius: 4px; }
+.why h3 { font-size: clamp(28px, 2.8vw, 36px); }
+.why p { color: #C4D3F1; font-size: 16px; }
+.section.dark .h2 { color: #fff; }
+.section.dark .lead { color: #C4D3F1; }
+
+/* pour qui */
+.sectors { grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 16px; }
+.sector { padding: 24px 22px; min-height: 150px; display: flex; flex-direction: column; gap: 10px; transition: transform .2s, border-color .2s; }
+.sector:hover { transform: translateY(-3px); border-color: var(--blue); }
+.sector h3 { font-size: 18px; line-height: 1.2; overflow-wrap: break-word; }
+.sector p { margin-top: auto; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.sector.cta { background: var(--navy); border-color: var(--navy); color: #fff; cursor: pointer; text-align: left; font-family: inherit; }
+.sector.cta:hover { background: var(--navy-2); }
+.sector.cta span:last-child { margin-top: auto; display: flex; align-items: center; gap: 8px; font-weight: 700; }
+.sector.cta span:first-child { font-size: 18px; font-weight: 800; line-height: 1.2; }
+
+/* processus */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 24px; counter-reset: s; }
+.steps li { position: relative; padding: 28px 24px 26px; border-radius: var(--r); background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px; }
+.steps .no { font-size: clamp(44px, 4.4vw, 58px); font-weight: 800; line-height: 1; letter-spacing: -0.03em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.steps li:nth-child(4) .no { background: linear-gradient(135deg, #2E9E33, #63C126); -webkit-background-clip: text; background-clip: text; }
+.steps h3 { font-size: 22px; margin-top: 6px; }
+.steps p { color: var(--ink-2); font-size: 16px; }
+
+/* réalisations */
+.cases { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 32px; }
+.case { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.case .shot { position: relative; aspect-ratio: 4 / 3; border-radius: var(--r); overflow: hidden; background: var(--soft); box-shadow: var(--shadow); transition: transform .3s; }
+.case:hover .shot { transform: translateY(-4px); }
+.case .kick { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
+.case h3 { font-size: 22px; }
+.case .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.case.big .shot { aspect-ratio: 16 / 10; }
+.case.big h2 { font-size: clamp(22px, 2.2vw, 28px); line-height: 1.15; }
+.case.big .desc { color: var(--ink-2); }
+.casewide { position: relative; aspect-ratio: 21 / 9; min-height: 240px; border-radius: var(--r-lg); overflow: hidden; background: var(--soft); }
+
+/* pages */
+.pagehead { padding-top: clamp(56px, 8vw, 104px); padding-bottom: clamp(36px, 5vw, 64px); background: radial-gradient(700px 300px at 90% 0%, rgba(0,138,243,.14), transparent 70%); }
+.pagehead .wrap { display: flex; flex-direction: column; gap: 22px; }
+.pagehead h1 { font-size: clamp(36px, 5vw, 66px); line-height: 1.04; letter-spacing: -0.03em; max-width: 18ch; }
+.sindex { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 12px; }
+.sindex button { display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 14px 18px; border: 1px solid var(--line); border-radius: 16px; background: #fff; color: var(--ink); font-size: 15px; font-weight: 700; text-align: left; cursor: pointer; transition: border-color .15s, transform .15s; }
+.sindex button:hover { border-color: var(--blue); transform: translateY(-2px); }
+.sindex .n { font-size: 13px; color: var(--blue); font-weight: 800; }
+.sdetail { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 28px clamp(32px, 5vw, 72px); padding: 52px 0; border-top: 1px solid var(--line); scroll-margin-top: 90px; }
+.sdetail .l { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.sdetail .num { font-size: 15px; font-weight: 800; color: var(--blue); }
+.sdetail h2 { font-size: clamp(26px, 2.8vw, 36px); }
+.sdetail .long { color: var(--ink-2); font-size: 17px; max-width: 48ch; line-height: 1.65; }
+.sdetail .lt { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+.sdetail ul { list-style: none; margin: 0; padding: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); }
+.sdetail ul li { display: flex; gap: 14px; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--line); font-weight: 700; }
+.sdetail ul li:last-child { border-bottom: 0; }
+.sdetail ul li i { width: 10px; height: 10px; border-radius: 3px; background: var(--blue); flex: none; }
+
+/* contact */
+.contact { display: flex; flex-wrap: wrap; gap: 40px clamp(32px, 5vw, 64px); align-items: flex-start; padding-bottom: clamp(64px, 8vw, 112px); }
+.formbox { flex: 7 1 540px; min-width: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow); overflow: hidden; scroll-margin-top: 100px; }
+.stepper { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: var(--bg); border-bottom: 1px solid var(--line); }
+.stepper > div { padding: 14px 16px 16px; border-top: 4px solid var(--line); color: var(--ink-3); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.stepper > div.is-now { border-top-color: var(--blue); color: var(--ink); background: #fff; }
+.stepper > div.is-done { border-top-color: var(--green); color: var(--ink); }
+.stepper .n { font-size: 12px; font-weight: 800; }
+.stepper .t { font-size: 14px; font-weight: 700; line-height: 1.25; overflow-wrap: break-word; }
+.fbody { padding: clamp(20px, 3vw, 34px); display: flex; flex-direction: column; gap: 36px; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+legend { padding: 0; margin: 0 0 4px; font-weight: 800; font-size: clamp(22px, 2.2vw, 27px); line-height: 1.2; letter-spacing: -0.02em; }
+.hint { color: var(--ink-2); font-size: 15px; }
+.opts { display: grid; gap: 10px; }
+.opt { position: relative; display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 12px 16px; border: 2px solid var(--line); border-radius: 14px; background: #fff; font-size: 15px; font-weight: 600; line-height: 1.3; color: var(--ink); text-align: left; cursor: pointer; transition: border-color .15s, background .15s; }
+.opt:hover { border-color: var(--blue-2); }
+.opt.is-on { border-color: var(--blue); background: var(--soft); }
+.opt input { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+.opt:has(input:focus-visible) { outline: 3px solid var(--blue-2); outline-offset: 2px; }
+.mark { width: 22px; height: 22px; flex: none; display: grid; place-items: center; border: 2px solid var(--ink-3); border-radius: 7px; background: transparent; color: #fff; }
+.opt.is-on .mark { background: var(--blue); border-color: var(--blue); }
+.opt.radio .mark { border-radius: 50%; }
+.opt.radio.is-on .mark { box-shadow: inset 0 0 0 4px var(--soft); }
+.qt { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+.opt-group { display: flex; flex-direction: column; }
+.field label { display: block; font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.field label small { font-weight: 400; color: var(--ink-2); font-size: inherit; }
+.input { width: 100%; min-height: 50px; padding: 11px 14px; font: inherit; font-size: 16px; color: var(--ink); background: #fff; border: 2px solid var(--line); border-radius: 12px; }
+.input:hover { border-color: #C7D3EA; }
+.input:focus-visible { border-color: var(--blue); outline: 0; box-shadow: 0 0 0 4px rgba(0,138,243,.18); }
+textarea.input { min-height: 120px; resize: vertical; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 20px; }
+.seg { display: inline-flex; flex-wrap: wrap; gap: 8px; }
+.seg .opt { min-height: 48px; padding: 10px 18px; border-radius: 99px; }
+.err { margin-top: 8px; font-size: 14px; font-weight: 700; color: var(--danger); }
+.sep { height: 1px; background: var(--line); }
+.fnav { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; justify-content: space-between; padding: 18px clamp(20px, 3vw, 34px); border-top: 1px solid var(--line); background: var(--bg); }
+.fnav .note { font-size: 14px; color: var(--ink-2); }
+.okbox { display: flex; flex-direction: column; gap: 20px; }
+.okbox .bigtick { width: 60px; height: 60px; display: grid; place-items: center; border-radius: 18px; background: var(--green); color: #fff; }
+.okbox h2 { font-size: clamp(26px, 3vw, 34px); line-height: 1.1; }
+.recap { border-top: 1px solid var(--line); }
+.recap > div { display: grid; grid-template-columns: minmax(110px, 34%) minmax(0, 1fr); gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; line-height: 1.45; }
+.recap .k { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); padding-top: 2px; }
+.recap .v { overflow-wrap: anywhere; }
+.aside { flex: 5 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.aside .box { padding: 26px; display: flex; flex-direction: column; gap: 12px; }
+.aside .tel { font-size: clamp(28px, 3vw, 38px); font-weight: 800; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; font-variant-numeric: tabular-nums; }
+.aside .sm { font-size: 15px; color: var(--ink-2); }
+.aside ol { list-style: none; margin: 0; padding: 0; }
+.aside ol li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; line-height: 1.5; }
+.aside ol li:last-child { border-bottom: 0; }
+.aside ol b { color: var(--blue); font-variant-numeric: tabular-nums; }
+.row-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+
+/* appel à l'action final */
+.closing { position: relative; overflow: hidden; color: #fff; background: radial-gradient(700px 400px at 100% 0%, rgba(108,193,255,.45), transparent 60%), var(--grad); }
+.closing .wrap { padding-top: clamp(72px, 10vw, 120px); padding-bottom: clamp(72px, 10vw, 120px); display: flex; flex-direction: column; gap: 24px; }
+.closing h2 { font-size: clamp(40px, 7vw, 96px); line-height: 1; letter-spacing: -0.035em; color: #fff; }
+.closing p.l { font-size: clamp(18px, 1.6vw, 21px); max-width: 46ch; opacity: .95; }
+.closing .eyebrow { color: #DDEBFF; }
+.closing .btns { padding-top: 0; margin-top: 8px; }
+
+/* pied de page */
+.foot { background: var(--navy); color: #C4D3F1; }
+.foot .cols4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 40px 32px; padding-top: 64px; padding-bottom: 40px; }
+.foot .logoimg { width: 170px; height: auto; background: #fff; padding: 10px 14px; border-radius: 14px; }
+.foot h4 { font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #8FB6F5; margin-bottom: 4px; }
+.foot .col { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.foot a { color: #fff; text-decoration: none; font-size: 15px; }
+.foot a:hover { color: #8BE07F; }
+.foot .tel { font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.foot .legal { border-top: 1px solid rgba(255,255,255,.14); padding-top: 20px; padding-bottom: 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 13px; color: #8FA3CF; }
+.mbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px; background: rgba(255,255,255,.94); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
+.mbar .btn { min-height: 52px; padding: 0 14px; font-size: 15px; }
+.top .mpanel nav { display: flex; flex-direction: column; gap: 0; }
+.top .mpanel nav a { border-radius: 0; padding: 16px 0; background: none; color: var(--ink); }
+.hero .cta .btn { padding: 0 22px; }
+.mbar .btn { white-space: nowrap; padding: 0 10px; font-size: 14px; }
+
+</style>
 </head>
 <body>
 <noscript><p style="padding:24px;font-family:sans-serif">JavaScript est nécessaire pour afficher ce site. Contactez-nous : 05 03 20 66 66 · dsttechnologie.com</p></noscript>
@@ -33,713 +324,308 @@
 <div id="app"></div>
 
 <template id="tpl">
-<div style="min-height:100vh; display:flex; flex-direction:column;">
-
-<header style="position:sticky; top:0; z-index:40; background:var(--color-bg);">
-  <div class="nav" style="gap:28px; padding-top:10px; padding-bottom:10px; padding-left:max(clamp(20px, 5vw, 64px), calc((100% - 1280px) / 2 + clamp(20px, 5vw, 64px))); padding-right:max(clamp(20px, 5vw, 64px), calc((100% - 1280px) / 2 + clamp(20px, 5vw, 64px)));">
-    <a href="#/" aria-label="DST Technologie, accueil" style="margin-right:auto; display:block; line-height:0;">
-      <img src="assets/logo-dst-technologie.png" alt="DST Technologie" style="height:60px; width:auto;">
-    </a>
-    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
-      <nav aria-label="Navigation principale" style="display:flex; align-items:center; gap:28px;">
-        <a href="#/" aria-current="{{ cur.accueil }}" style="font-size:15px; font-weight:600;">Accueil</a>
-        <a href="#/services" aria-current="{{ cur.services }}" style="font-size:15px; font-weight:600;">Services</a>
-        <a href="#/realisations" aria-current="{{ cur.realisations }}" style="font-size:15px; font-weight:600;">Réalisations</a>
-        <a href="#/contact" aria-current="{{ cur.contact }}" style="font-size:15px; font-weight:600;">Contact</a>
+<div class="app">
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo" href="#/" aria-label="DST Technologie, accueil"><img src="assets/logo-dst-technologie.png" alt="DST Technologie"></a>
+    <sc-if value="{{ desktop }}">
+      <nav aria-label="Navigation principale">
+        <a href="#/" aria-current="{{ cur.accueil }}">Accueil</a>
+        <a href="#/services" aria-current="{{ cur.services }}">Services</a>
+        <a href="#/realisations" aria-current="{{ cur.realisations }}">Réalisations</a>
+        <a href="#/contact" aria-current="{{ cur.contact }}">Contact</a>
       </nav>
-      <div style="display:flex; align-items:center; gap:10px;">
-        <a class="btn btn-secondary btn-icon" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services." target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp au 05 03 20 66 66" style="width:44px; height:44px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
-        </a>
-        <button type="button" class="btn btn-primary" onClick="{{ goDevis }}" style="min-height:44px; padding:10px 18px; font-size:15px; gap:8px;">Demander un devis<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+      <div class="actions">
+        <a class="btn btn-icon" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services." target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp au 05 03 20 66 66"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></a>
+        <button type="button" class="btn btn-primary btn-sm" onClick="{{ goDevis }}">Demander un devis<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
       </div>
     </sc-if>
-    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
-      <div style="display:flex; align-items:center; gap:8px;">
-        <a class="btn btn-secondary btn-icon" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services." target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp" style="width:44px; height:44px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
-        </a>
-        <button type="button" class="btn btn-secondary btn-icon" onClick="{{ toggleMenu }}" aria-expanded="{{ menuAria }}" aria-label="Menu" style="width:44px; height:44px;">
-          <sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg></sc-if>
-          <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></sc-if>
+    <sc-if value="{{ mobile }}">
+      <div class="actions">
+        <a class="btn btn-icon" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services." target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></a>
+        <button type="button" class="btn btn-icon" onClick="{{ toggleMenu }}" aria-expanded="{{ menuAria }}" aria-label="Menu">
+          <sc-if value="{{ menuClosed }}"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></sc-if>
+          <sc-if value="{{ menuOpen }}"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></sc-if>
         </button>
       </div>
     </sc-if>
   </div>
-  <sc-if value="{{ menuPanel }}" hint-placeholder-val="{{ false }}">
-    <div style="border-bottom:2px solid var(--color-divider); background:var(--color-bg); padding:4px clamp(20px, 5vw, 64px) 24px;">
-      <nav aria-label="Menu mobile" style="display:flex; flex-direction:column;">
-        <a href="#/" onClick="{{ closeMenu }}" style="display:flex; justify-content:space-between; align-items:center; padding:16px 0; border-bottom:1px solid var(--color-divider); font-size:22px; font-weight:800; color:var(--color-text); text-decoration:none;">Accueil<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
-        <a href="#/services" onClick="{{ closeMenu }}" style="display:flex; justify-content:space-between; align-items:center; padding:16px 0; border-bottom:1px solid var(--color-divider); font-size:22px; font-weight:800; color:var(--color-text); text-decoration:none;">Services<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
-        <a href="#/realisations" onClick="{{ closeMenu }}" style="display:flex; justify-content:space-between; align-items:center; padding:16px 0; border-bottom:1px solid var(--color-divider); font-size:22px; font-weight:800; color:var(--color-text); text-decoration:none;">Réalisations<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
-        <a href="#/contact" onClick="{{ closeMenu }}" style="display:flex; justify-content:space-between; align-items:center; padding:16px 0; border-bottom:1px solid var(--color-divider); font-size:22px; font-weight:800; color:var(--color-text); text-decoration:none;">Contact<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+  <sc-if value="{{ menuPanel }}">
+    <div class="mpanel">
+      <nav aria-label="Menu mobile">
+        <a href="#/" onClick="{{ closeMenu }}">Accueil<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="#/services" onClick="{{ closeMenu }}">Services<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="#/realisations" onClick="{{ closeMenu }}">Réalisations<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="#/contact" onClick="{{ closeMenu }}">Contact<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </nav>
-      <div style="display:grid; gap:10px; margin-top:20px;">
-        <button type="button" class="btn btn-primary" onClick="{{ goDevis }}" style="min-height:52px; padding:14px 18px; font-size:16px; justify-content:flex-start;">Demander un devis</button>
-        <a class="btn btn-secondary" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener" style="min-height:52px; padding:14px 18px; font-size:16px; justify-content:flex-start; gap:10px;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>WhatsApp · 05 03 20 66 66</a>
+      <div class="cta">
+        <button type="button" class="btn btn-primary" onClick="{{ goDevis }}">Demander un devis</button>
+        <a class="btn btn-outline" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp · 05 03 20 66 66</a>
       </div>
     </div>
   </sc-if>
 </header>
 
-<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<sc-if value="{{ isHome }}">
 <main data-screen-label="Accueil" style="flex:1;">
-<section style="max-width:1280px; margin:0 auto; padding-top:clamp(40px, 6vw, 80px); padding-left:clamp(20px, 5vw, 64px); padding-right:clamp(20px, 5vw, 64px);">
-<p style="margin:0; display:flex; align-items:center; gap:14px; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700); margin-bottom:28px;"><span aria-hidden="true" style="display:grid; grid-template-columns:repeat(2, 8px); gap:3px;"><span style="width:8px; height:8px; background:var(--color-accent-2);"></span><span style="width:8px; height:8px; background:var(--color-accent-400);"></span><span style="width:8px; height:8px; background:var(--color-accent);"></span><span style="width:8px; height:8px; background:var(--color-text);"></span></span><span>Agence digitale &amp; solutions technologiques</span></p>
-<h1 style="margin:0 0 0 -0.055em; font-size:clamp(44px, 8.6vw, 128px); line-height:0.92; letter-spacing:-0.035em; text-transform:uppercase;"><span style="display:block;">Votre partenaire</span><span style="display:block; color:var(--color-accent);">digital.</span></h1>
-<div style="height:2px; background:var(--color-divider); margin:clamp(32px, 4vw, 48px) 0;"></div>
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap:32px clamp(32px, 5vw, 72px); align-items:start;">
-<h2 style="margin:0; font-size:clamp(24px, 2.4vw, 32px); line-height:1.15; letter-spacing:-0.015em;">Votre entreprise mérite plus qu’une présence en ligne. <span style="color:var(--color-accent);">Elle mérite une véritable solution digitale.</span></h2>
-<div style="display:flex; flex-direction:column; gap:28px; min-width:0;"><p style="margin:0; font-size:clamp(17px, 1.4vw, 19px); line-height:1.6; max-width:52ch; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">DST Technologie transforme vos idées et votre activité en solutions digitales modernes qui vous permettent de mieux vendre, mieux gérer vos clients et développer votre entreprise.</p>
-<div style="display:flex; flex-wrap:wrap; gap:12px;"><button type="button" class="btn btn-primary" onClick="{{ goDevis }}" style="min-height:56px; padding:14px 22px; font-size:16px; gap:10px; justify-content:flex-start;">Demander un devis<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><a class="btn btn-secondary" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener" style="min-height:56px; padding:14px 22px; font-size:16px; gap:10px; justify-content:flex-start;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>Parler à un conseiller</a></div></div>
-</div>
-<div class="grayscale" style="margin-top:clamp(40px, 5vw, 64px); aspect-ratio:21 / 9; min-height:240px; background:var(--color-surface); border:2px solid var(--color-text);"><image-slot id="hero-banner" shape="rect" placeholder="Photo : entrepreneurs ou équipe DST au travail" style="display:block; width:100%; height:100%;"></image-slot></div>
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(max(calc(33.333% - 2px), min(100%, calc((760px - 100%) * 999))), 1fr)); padding:0 2px 2px 0; margin-top:-2px;">
-<div style="border:2px solid var(--color-text); margin:0 -2px -2px 0; padding:28px 24px; display:flex; flex-direction:column; gap:12px; min-width:0;"><span style="color:var(--color-accent);"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg></span><h3 style="margin:8px 0 0; font-size:20px; line-height:1.2;">Sites web &amp; e-commerce</h3><p style="margin:0; font-size:15.5px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Une vitrine professionnelle et une boutique ouverte 24h/24.</p></div>
-<div style="border:2px solid var(--color-text); margin:0 -2px -2px 0; padding:28px 24px; display:flex; flex-direction:column; gap:12px; min-width:0;"><span style="color:var(--color-accent);"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg></span><h3 style="margin:8px 0 0; font-size:20px; line-height:1.2;">Paiement mobile intégré</h3><p style="margin:0; font-size:15.5px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Wave, Orange Money, MTN Money, Moov Money et carte bancaire.</p></div>
-<div style="border:2px solid var(--color-text); margin:0 -2px -2px 0; padding:28px 24px; display:flex; flex-direction:column; gap:12px; min-width:0;"><span style="color:var(--color-accent);"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><h3 style="margin:8px 0 0; font-size:20px; line-height:1.2;">Clients &amp; commandes organisés</h3><p style="margin:0; font-size:15.5px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Un CRM simple pour suivre clients, commandes et rendez-vous.</p></div>
-</div>
-</section>
-<div style="height:clamp(56px, 7vw, 88px);"></div>
-<div style="border-top:2px solid var(--color-divider); border-bottom:2px solid var(--color-divider);">
-    <div style="max-width:1280px; margin:0 auto; padding:20px clamp(20px, 5vw, 64px); display:flex; flex-wrap:wrap; align-items:center; gap:12px 36px;">
-      <span style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Paiements intégrés</span>
-      <span style="display:flex; align-items:center; gap:10px; font-size:17px; font-weight:800;"><span style="width:10px; height:10px; background:var(--color-accent);"></span>Wave</span>
-      <span style="display:flex; align-items:center; gap:10px; font-size:17px; font-weight:800;"><span style="width:10px; height:10px; background:var(--color-accent);"></span>Orange Money</span>
-      <span style="display:flex; align-items:center; gap:10px; font-size:17px; font-weight:800;"><span style="width:10px; height:10px; background:var(--color-accent);"></span>MTN Money</span>
-      <span style="display:flex; align-items:center; gap:10px; font-size:17px; font-weight:800;"><span style="width:10px; height:10px; background:var(--color-accent);"></span>Moov Money</span>
-      <span style="display:flex; align-items:center; gap:10px; font-size:17px; font-weight:800;"><span style="width:10px; height:10px; background:var(--color-accent);"></span>Carte bancaire</span>
+<section class="hero"><div class="wrap">
+  <div>
+    <p class="eyebrow light"><span class="n" style="background:rgba(255,255,255,.14);color:#fff">●</span><span>Agence digitale &amp; solutions technologiques</span></p>
+    <h1>Votre partenaire <em>digital.</em></h1>
+    <p class="sub">Votre entreprise mérite plus qu’une présence en ligne. Elle mérite une véritable solution digitale. DST Technologie transforme vos idées et votre activité en solutions digitales modernes qui vous permettent de mieux vendre, mieux gérer vos clients et développer votre entreprise.</p>
+    <div class="cta"><button type="button" class="btn btn-light" onClick="{{ goDevis }}">Demander un devis<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button><a class="btn btn-ghost-light" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Parler à un conseiller</a></div>
+    <div class="trust"><span><i></i>Wave · Orange Money · MTN · Moov</span><span><i></i>Ouvert 24h/24</span><span><i></i>Devis sur mesure</span></div>
+  </div>
+  <div class="visual">
+    <div class="photo"><image-slot id="hero-banner" placeholder="Photo : entrepreneurs ou équipe DST au travail"></image-slot></div>
+    <div class="float a"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg></span><span><strong>Nouvelle commande</strong>65 000 FCFA · Wave</span></div>
+    <div class="float b"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></span><span><strong>Rendez-vous confirmé</strong>Samedi 10:00</span></div>
+  </div>
+</div></section>
+
+<section class="feats"><div class="wrap"><div class="grid">
+  <div class="card feat"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span><h3>Sites web &amp; e-commerce</h3><p>Une vitrine professionnelle et une boutique ouverte 24h/24.</p></div>
+  <div class="card feat"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></span><h3>Paiement mobile intégré</h3><p>Wave, Orange Money, MTN Money, Moov Money et carte bancaire.</p></div>
+  <div class="card feat"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h3>Clients &amp; commandes organisés</h3><p>Un CRM simple pour suivre clients, commandes et rendez-vous.</p></div>
+</div></div></section>
+
+<div class="pay"><div class="wrap"><span class="lbl">Paiements intégrés</span>
+  <span class="pill"><i></i>Wave</span><span class="pill"><i></i>Orange Money</span><span class="pill"><i></i>MTN Money</span><span class="pill"><i></i>Moov Money</span><span class="pill"><i></i>Carte bancaire</span></div></div>
+
+<section id="qui-sommes-nous" class="section"><div class="wrap about">
+  <div>
+    <div class="bigstat"><b>24h/24</b><span>Votre activité reste ouverte, même quand votre boutique est fermée.</span></div>
+    <figure class="card feed" style="margin:0;border-radius:0 0 var(--r) var(--r);border-top:0;">
+      <div class="fh"><span>Votre activité</span><span class="tag green">● En ligne 24h/24</span></div>
+      <div class="row"><time>23:47</time><span><b>Nouvelle commande</b><small>Perruque lace frontal · 65 000 FCFA</small></span><span class="tag ">E-commerce</span></div><div class="row"><time>07:10</time><span><b>Rendez-vous réservé</b><small>Tresses · samedi 10:00</small></span><span class="tag ">Réservation</span></div><div class="row"><time>07:11</time><span><b>Acompte reçu</b><small>5 000 FCFA via Wave</small></span><span class="tag green">Paiement</span></div><div class="row"><time>09:30</time><span><b>Fiche client mise à jour</b><small>Aïcha K. · 3 commandes, 1 rendez-vous</small></span><span class="tag ">CRM</span></div>
+    </figure>
+    <p class="figcap">Exemple de solution : une boutique qui vend, réserve et encaisse, même la nuit.</p>
+  </div>
+  <div class="text">
+    <p class="eyebrow "><span class="n">01</span><span>Qui sommes-nous ?</span></p>
+    <h2 class="h2">Un partenaire technologique pour votre entreprise.</h2>
+    <p class="lead">DST Technologie accompagne les entreprises, commerçants, entrepreneurs et prestataires dans leur transformation digitale. Nous transformons une activité traditionnelle en une activité plus moderne, visible, accessible et organisée.</p>
+    <ul class="ticks">
+      <li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Plus de visibilité sur Google</li><li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Des ventes possibles 24h/24</li><li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Des clients et commandes mieux organisés</li><li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Des paiements adaptés au marché local</li>
+    </ul>
+    <div><a class="btn btn-primary" href="#/services">Découvrir nos services<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+  </div>
+</div></section>
+
+<section id="probleme" class="section alt"><div class="wrap">
+  <div class="head"><p class="eyebrow "><span class="n">02</span><span>Votre problème</span></p><h2 class="h2">Vous vous reconnaissez ?</h2>
+    <p class="lead">Chaque jour, des entreprises perdent des clients et du temps, simplement parce que leur activité n’est pas encore digitalisée.</p></div>
+  <div class="grid probs"><div class="card prob"><span class="num">01</span><h3>Vos clients vous trouvent difficilement ?</h3><p>Sans site ni présence sur Google, vos futurs clients trouvent d’abord vos concurrents.</p></div><div class="card prob"><span class="num">02</span><h3>Vous dépendez uniquement de WhatsApp, Facebook, Instagram ou TikTok ?</h3><p>Votre visibilité dépend d’algorithmes que vous ne contrôlez pas.</p></div><div class="card prob"><span class="num">03</span><h3>Vous prenez encore vos commandes manuellement ?</h3><p>Chaque commande notée à la main est un oubli ou une erreur possible.</p></div><div class="card prob"><span class="num">04</span><h3>Vous perdez du temps à gérer vos clients ?</h3><p>Messages, relances, historiques : ce temps-là, vous ne le passez pas à vendre.</p></div><div class="card prob"><span class="num">05</span><h3>Vous souhaitez vendre 24h/24 ?</h3><p>Votre boutique ferme le soir. Votre site, lui, continue de vendre.</p></div>
+    <div class="card prob sol"><p class="eyebrow" style="margin:0">La solution</p><h3>DST Technologie construit la solution digitale qui règle chacun de ces problèmes.</h3><button type="button" class="btn btn-light btn-sm" onClick="{{ goDevis }}">Trouver ma solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div>
+  </div>
+</div></section>
+
+
+<sc-if value="{{ svcTabs }}">
+<section id="services" class="section alt"><div class="wrap">
+  <div class="head row"><div><p class="eyebrow "><span class="n">03</span><span>Services</span></p><h2 class="h2">Des solutions digitales pour chaque besoin.</h2></div>
+    <a class="btn btn-outline btn-sm" href="#/services">Tous les services<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+  <div class="tabs">
+    <div class="tablist" role="tablist" aria-label="Nos services">
+      <sc-for list="{{ tabs }}" as="t"><button type="button" role="tab" class="tab {{ t.cls }}" aria-selected="{{ t.aria }}" onClick="{{ t.pick }}"><span class="n">{{ t.num }}</span><span>{{ t.title }}</span><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></sc-for>
+    </div>
+    <div class="card tabpanel" role="tabpanel">
+      <span class="big">{{ tabSel.num }}</span>
+      <h3>{{ tabSel.title }}</h3>
+      <p class="long">{{ tabSel.long }}</p>
+      <ul class="fl"><sc-for list="{{ tabSel.features }}" as="ft"><li><span class="tick sm"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>{{ ft }}</li></sc-for></ul>
+      <div class="btns"><button type="button" class="btn btn-primary" onClick="{{ tabSel.devis }}">Demander un devis<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button><a class="btn btn-outline" href="#/services" onClick="{{ tabSel.more }}">En savoir plus</a></div>
     </div>
   </div>
+</div></section>
+</sc-if>
+<sc-if value="{{ svcGrid }}">
+<section id="services" class="section alt"><div class="wrap">
+  <div class="head row"><div><p class="eyebrow "><span class="n">03</span><span>Services</span></p><h2 class="h2">Tout ce qu’il faut pour digitaliser votre activité.</h2></div>
+    <a class="btn btn-outline btn-sm" href="#/services">Voir le détail des services<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+  <div class="grid sgrid"><sc-for list="{{ services }}" as="s"><a class="card scard" href="#/services" onClick="{{ s.open }}"><span class="n">{{ s.num }}</span><h3>{{ s.title }}</h3><p>{{ s.long }}</p></a></sc-for></div>
+</div></section>
+</sc-if>
 
-  <section id="qui-sommes-nous" style="max-width:1280px; margin:0 auto; padding-top:clamp(64px, 9vw, 112px); padding-bottom:clamp(64px, 9vw, 112px); padding-left:clamp(20px, 5vw, 64px); padding-right:clamp(20px, 5vw, 64px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap:48px clamp(32px, 5vw, 80px); align-items:center;">
-<div style="display:flex; flex-direction:column; min-width:0;"><div style="display:grid; grid-template-columns:auto minmax(0, 1fr); gap:18px; align-items:center; background:var(--color-text); color:var(--color-bg); padding:20px 24px;"><span style="font-size:clamp(40px, 4vw, 56px); font-weight:800; line-height:1; letter-spacing:-0.03em;">24h/24</span><span style="font-size:15px; line-height:1.45;">Votre activité reste ouverte, même quand votre boutique est fermée.</span></div><figure style="margin:-2px 0 0; display:flex; flex-direction:column; gap:12px; min-width:0;">
-          <div style="background:var(--color-surface); border:2px solid var(--color-text);">
-            <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 18px; border-bottom:2px solid var(--color-text);">
-              <span style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">Votre activité</span>
-              <span class="tag tag-accent-2" style="gap:8px; font-size:12px; font-weight:600;"><span style="width:8px; height:8px; background:var(--color-accent-2);"></span>En ligne 24h/24</span>
-            </div>
-            <div style="display:grid; grid-template-columns:48px minmax(0, 1fr) auto; gap:14px; align-items:center; padding:16px 18px; border-bottom:1px solid var(--color-divider);">
-              <span style="font-size:13px; font-variant-numeric:tabular-nums; color:color-mix(in srgb, var(--color-text) 72%, var(--color-surface));">23:47</span>
-              <span style="display:flex; flex-direction:column; gap:2px; min-width:0;"><strong style="font-size:15px;">Nouvelle commande</strong><span style="font-size:13px; color:color-mix(in srgb, var(--color-text) 72%, var(--color-surface));">Perruque lace frontal · 65 000 FCFA</span></span>
-              <span class="tag tag-accent">E-commerce</span>
-            </div>
-            <div style="display:grid; grid-template-columns:48px minmax(0, 1fr) auto; gap:14px; align-items:center; padding:16px 18px; border-bottom:1px solid var(--color-divider);">
-              <span style="font-size:13px; font-variant-numeric:tabular-nums; color:color-mix(in srgb, var(--color-text) 72%, var(--color-surface));">07:10</span>
-              <span style="display:flex; flex-direction:column; gap:2px; min-width:0;"><strong style="font-size:15px;">Rendez-vous réservé</strong><span style="font-size:13px; color:color-mix(in srgb, var(--color-text) 72%, var(--color-surface));">Tresses · samedi 10:00</span></span>
-              <span class="tag tag-accent">Réservation</span>
-            </div>
-            <div style="display:grid; grid-template-columns:48px minmax(0, 1fr) auto; gap:14px; align-items:center; padding:16px 18px; border-bottom:1px solid var(--color-divider);">
-              <span style="font-size:13px; font-variant-numeric:tabular-nums; color:color-mix(in srgb, var(--color-text) 72%, var(--color-surface));">07:11</span>
-              <span style="display:flex; flex-direction:column; gap:2px; min-width:0;"><strong style="font-size:15px;">Acompte reçu</strong><span style="font-size:13px; color:color-mix(in srgb, var(--color-text) 72%, var(--color-surface));">5 000 FCFA via Wave</span></span>
-              <span class="tag tag-accent-2">Paiement</span>
-            </div>
-            <div style="display:grid; grid-template-columns:48px minmax(0, 1fr) auto; gap:14px; align-items:center; padding:16px 18px;">
-              <span style="font-size:13px; font-variant-numeric:tabular-nums; color:color-mix(in srgb, var(--color-text) 72%, var(--color-surface));">09:30</span>
-              <span style="display:flex; flex-direction:column; gap:2px; min-width:0;"><strong style="font-size:15px;">Fiche client mise à jour</strong><span style="font-size:13px; color:color-mix(in srgb, var(--color-text) 72%, var(--color-surface));">Aïcha K. · 3 commandes, 1 rendez-vous</span></span>
-              <span class="tag tag-accent">CRM</span>
-            </div>
-          </div>
-          <figcaption style="margin:0; font-size:13px; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Exemple de solution : une boutique qui vend, réserve et encaisse, même la nuit.</figcaption>
-        </figure></div>
-<div style="display:flex; flex-direction:column; gap:24px; min-width:0;"><p style="margin:0; display:flex; align-items:center; gap:14px; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);"><span>01</span><span>Qui sommes-nous ?</span></p><h2 style="margin:0 0 0 -0.04em; font-size:clamp(30px, 3.6vw, 48px); line-height:1.06; letter-spacing:-0.02em;">Un partenaire technologique pour votre entreprise.</h2><p style="margin:0; font-size:17px; line-height:1.65; max-width:56ch; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">DST Technologie accompagne les entreprises, commerçants, entrepreneurs et prestataires dans leur transformation digitale. Nous transformons une activité traditionnelle en une activité plus moderne, visible, accessible et organisée.</p>
-<ul style="list-style:none; margin:0; padding:0; border-top:2px solid var(--color-text);"><li style="display:flex; gap:12px; align-items:center; padding:12px 0; border-bottom:1px solid var(--color-divider); font-size:16px; font-weight:600;"><span style="width:22px; height:22px; flex:none; display:grid; place-items:center; background:var(--color-accent-2); color:var(--color-text);"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:3.5; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M20 6 9 17l-5-5"></path></svg></span>Plus de visibilité sur Google</li><li style="display:flex; gap:12px; align-items:center; padding:12px 0; border-bottom:1px solid var(--color-divider); font-size:16px; font-weight:600;"><span style="width:22px; height:22px; flex:none; display:grid; place-items:center; background:var(--color-accent-2); color:var(--color-text);"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:3.5; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M20 6 9 17l-5-5"></path></svg></span>Des ventes possibles 24h/24</li><li style="display:flex; gap:12px; align-items:center; padding:12px 0; border-bottom:1px solid var(--color-divider); font-size:16px; font-weight:600;"><span style="width:22px; height:22px; flex:none; display:grid; place-items:center; background:var(--color-accent-2); color:var(--color-text);"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:3.5; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M20 6 9 17l-5-5"></path></svg></span>Des clients et commandes mieux organisés</li><li style="display:flex; gap:12px; align-items:center; padding:12px 0; border-bottom:1px solid var(--color-divider); font-size:16px; font-weight:600;"><span style="width:22px; height:22px; flex:none; display:grid; place-items:center; background:var(--color-accent-2); color:var(--color-text);"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:3.5; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M20 6 9 17l-5-5"></path></svg></span>Des paiements adaptés au marché local</li></ul>
-<div style="display:flex; flex-wrap:wrap; gap:12px;"><a class="btn btn-primary" href="#/services" style="min-height:56px; padding:14px 22px; font-size:16px; gap:10px; justify-content:flex-start;">Découvrir nos services<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div></div>
-</section>
-<section id="probleme" style="max-width:1280px; margin:0 auto; padding:clamp(64px, 9vw, 112px) clamp(20px, 5vw, 64px);">
-    <div style="display:flex; flex-direction:column; gap:20px; margin-bottom:48px;">
-      <p style="margin:0; display:flex; gap:14px; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);"><span>02</span><span>Votre problème</span></p>
-      <h2 style="margin:0 0 0 -0.04em; font-size:clamp(30px, 3.6vw, 48px); line-height:1.06; letter-spacing:-0.02em;">Vous vous reconnaissez ?</h2>
-      <p style="margin:0; font-size:18px; line-height:1.6; max-width:60ch; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Chaque jour, des entreprises perdent des clients et du temps, simplement parce que leur activité n’est pas encore digitalisée.</p>
-    </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(max(calc(33.333% - 2px), min(40%, calc((860px - 100%) * 999)), min(100%, calc((520px - 100%) * 999))), 1fr)); padding:0 2px 2px 0;">
-      <div style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:28px; min-height:250px; display:flex; flex-direction:column; gap:14px;">
-        <span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:var(--color-accent-700);">01</span>
-        <h3 style="margin:0; font-size:clamp(20px, 1.8vw, 24px); line-height:1.2;">Vos clients vous trouvent difficilement ?</h3>
-        <p style="margin:auto 0 0; font-size:15.5px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Sans site ni présence sur Google, vos futurs clients trouvent d’abord vos concurrents.</p>
-      </div>
-      <div style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:28px; min-height:250px; display:flex; flex-direction:column; gap:14px;">
-        <span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:var(--color-accent-700);">02</span>
-        <h3 style="margin:0; font-size:clamp(20px, 1.8vw, 24px); line-height:1.2;">Vous dépendez uniquement de WhatsApp, Facebook, Instagram ou TikTok ?</h3>
-        <p style="margin:auto 0 0; font-size:15.5px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Votre visibilité dépend d’algorithmes que vous ne contrôlez pas.</p>
-      </div>
-      <div style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:28px; min-height:250px; display:flex; flex-direction:column; gap:14px;">
-        <span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:var(--color-accent-700);">03</span>
-        <h3 style="margin:0; font-size:clamp(20px, 1.8vw, 24px); line-height:1.2;">Vous prenez encore vos commandes manuellement ?</h3>
-        <p style="margin:auto 0 0; font-size:15.5px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Chaque commande notée à la main est un oubli ou une erreur possible.</p>
-      </div>
-      <div style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:28px; min-height:250px; display:flex; flex-direction:column; gap:14px;">
-        <span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:var(--color-accent-700);">04</span>
-        <h3 style="margin:0; font-size:clamp(20px, 1.8vw, 24px); line-height:1.2;">Vous perdez du temps à gérer vos clients ?</h3>
-        <p style="margin:auto 0 0; font-size:15.5px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Messages, relances, historiques : ce temps-là, vous ne le passez pas à vendre.</p>
-      </div>
-      <div style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:28px; min-height:250px; display:flex; flex-direction:column; gap:14px;">
-        <span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:var(--color-accent-700);">05</span>
-        <h3 style="margin:0; font-size:clamp(20px, 1.8vw, 24px); line-height:1.2;">Vous souhaitez vendre 24h/24 ?</h3>
-        <p style="margin:auto 0 0; font-size:15.5px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Votre boutique ferme le soir. Votre site, lui, continue de vendre.</p>
-      </div>
-      <div style="border:2px solid var(--color-accent); margin:0 -2px -2px 0; padding:28px; min-height:250px; display:flex; flex-direction:column; gap:14px; background:var(--color-accent); color:var(--color-bg); position:relative; z-index:1;">
-        <span style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">La solution</span>
-        <h3 style="margin:0; font-size:clamp(20px, 1.8vw, 24px); line-height:1.2; color:var(--color-bg);">DST Technologie construit la solution digitale qui règle chacun de ces problèmes.</h3>
-        <button type="button" class="btn" onClick="{{ goDevis }}" style="margin-top:auto; align-self:flex-start; min-height:48px; padding:12px 18px; font-size:15px; gap:10px; background:var(--color-bg); color:var(--color-text);" style-hover="background:var(--color-accent-100);">Trouver ma solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
-      </div>
-    </div>
-  </section>
 
-  <sc-if value="{{ svcTabs }}" hint-placeholder-val="{{ true }}"><section id="services" style="border-top:2px solid var(--color-divider);"><div style="max-width:1280px; margin:0 auto; padding-top:clamp(64px, 9vw, 112px); padding-bottom:clamp(64px, 9vw, 112px); padding-left:clamp(20px, 5vw, 64px); padding-right:clamp(20px, 5vw, 64px);">
-<div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px 40px; margin-bottom:48px;"><div style="display:flex; flex-direction:column; gap:20px; max-width:780px;"><p style="margin:0; display:flex; align-items:center; gap:14px; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);"><span>03</span><span>Services</span></p><h2 style="margin:0 0 0 -0.04em; font-size:clamp(30px, 3.6vw, 48px); line-height:1.06; letter-spacing:-0.02em;">Des solutions digitales pour chaque besoin.</h2></div><a class="btn btn-ghost" href="#/services" style="font-size:15px; min-height:44px; gap:8px; justify-content:flex-start;">Tous les services<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap:2px; background:var(--color-text); border:2px solid var(--color-text);">
-<div role="tablist" aria-label="Nos services" style="background:var(--color-bg); display:flex; flex-direction:column;"><sc-for list="{{ tabs }}" as="t" hint-placeholder-count="8"><button type="button" role="tab" aria-selected="{{ t.aria }}" onClick="{{ t.pick }}" style="display:grid; grid-template-columns:40px minmax(0, 1fr) auto; align-items:center; gap:12px; padding:16px 22px; min-height:62px; border:0; border-bottom:1px solid var(--color-divider); background:{{ t.bg }}; color:{{ t.fg }}; box-shadow:{{ t.bar }}; font-family:inherit; font-size:17px; font-weight:700; line-height:1.25; text-align:left; cursor:pointer;" style-hover="background:var(--color-accent-100);"><span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums;">{{ t.num }}</span><span>{{ t.title }}</span><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button></sc-for></div>
-<div role="tabpanel" style="background:var(--color-bg); padding:clamp(24px, 3.5vw, 44px); display:flex; flex-direction:column; gap:18px; min-width:0;"><span style="font-size:clamp(56px, 6vw, 88px); font-weight:800; line-height:0.9; letter-spacing:-0.04em; color:var(--color-accent); font-variant-numeric:tabular-nums;">{{ tabSel.num }}</span><h3 style="margin:0; font-size:clamp(26px, 2.8vw, 36px); line-height:1.1; letter-spacing:-0.015em;">{{ tabSel.title }}</h3><p style="margin:0; font-size:17px; line-height:1.65; max-width:52ch; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">{{ tabSel.long }}</p>
-<ul style="list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:12px 24px;"><sc-for list="{{ tabSel.features }}" as="ft" hint-placeholder-count="4"><li style="display:flex; gap:12px; align-items:center; font-size:15.5px; font-weight:600;"><span style="width:20px; height:20px; flex:none; display:grid; place-items:center; background:var(--color-accent-2); color:var(--color-text);"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:3.5; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M20 6 9 17l-5-5"></path></svg></span>{{ ft }}</li></sc-for></ul>
-<div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:auto; padding-top:12px;"><button type="button" class="btn btn-primary" onClick="{{ tabSel.devis }}" style="min-height:48px; padding:12px 20px; font-size:15px; gap:10px; justify-content:flex-start;">Demander un devis<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><a class="btn btn-secondary" href="#/services" onClick="{{ tabSel.more }}" style="min-height:48px; padding:12px 20px; font-size:15px; justify-content:flex-start;">En savoir plus</a></div></div>
-</div></div></section></sc-if>
-<sc-if value="{{ svcGrid }}" hint-placeholder-val="{{ false }}"><section id="services" style="border-top:2px solid var(--color-divider);">
-    <div style="max-width:1280px; margin:0 auto; padding:clamp(64px, 9vw, 112px) clamp(20px, 5vw, 64px);">
-      <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px 40px; margin-bottom:48px;">
-        <div style="display:flex; flex-direction:column; gap:20px; max-width:780px;">
-          <p style="margin:0; display:flex; gap:14px; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);"><span>03</span><span>Services</span></p>
-          <h2 style="margin:0 0 0 -0.04em; font-size:clamp(30px, 3.6vw, 48px); line-height:1.06; letter-spacing:-0.02em;">Tout ce qu’il faut pour digitaliser votre activité.</h2>
-        </div>
-        <a class="btn btn-ghost" href="#/services" style="font-size:15px; min-height:44px; gap:8px; justify-content:flex-start;">Voir le détail des services<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
-      </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(max(calc(25% - 2px), min(34%, calc((900px - 100%) * 999)), min(100%, calc((520px - 100%) * 999))), 1fr)); padding:0 2px 2px 0;">
-        <a href="#/services" onClick="{{ open.web }}" style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:28px 24px; min-height:250px; display:flex; flex-direction:column; gap:12px; color:var(--color-text); text-decoration:none;" style-hover="background:var(--color-surface);">
-          <span style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:var(--color-accent); stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round;"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg><span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">01</span></span>
-          <h3 style="margin:0; font-size:20px; line-height:1.2;">Création de sites web</h3>
-          <p style="margin:0; font-size:15px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Sites vitrines modernes, rapides et optimisés.</p>
-        </a>
-        <a href="#/services" onClick="{{ open.ecommerce }}" style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:28px 24px; min-height:250px; display:flex; flex-direction:column; gap:12px; color:var(--color-text); text-decoration:none;" style-hover="background:var(--color-surface);">
-          <span style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:var(--color-accent); stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round;"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg><span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">02</span></span>
-          <h3 style="margin:0; font-size:20px; line-height:1.2;">E-commerce</h3>
-          <p style="margin:0; font-size:15px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Présentez et vendez vos produits en ligne, à toute heure.</p>
-        </a>
-        <a href="#/services" onClick="{{ open.reservation }}" style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:28px 24px; min-height:250px; display:flex; flex-direction:column; gap:12px; color:var(--color-text); text-decoration:none;" style-hover="background:var(--color-surface);">
-          <span style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:var(--color-accent); stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round;"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="m9 16 2 2 4-4"></path></svg><span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">03</span></span>
-          <h3 style="margin:0; font-size:20px; line-height:1.2;">Réservation en ligne</h3>
-          <p style="margin:0; font-size:15px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Vos clients prennent rendez-vous directement depuis votre site.</p>
-        </a>
-        <a href="#/services" onClick="{{ open.paiement }}" style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:28px 24px; min-height:250px; display:flex; flex-direction:column; gap:12px; color:var(--color-text); text-decoration:none;" style-hover="background:var(--color-surface);">
-          <span style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:var(--color-accent); stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round;"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg><span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">04</span></span>
-          <h3 style="margin:0; font-size:20px; line-height:1.2;">Paiement en ligne</h3>
-          <p style="margin:0; font-size:15px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Wave, Orange Money, MTN Money, Moov Money et carte bancaire.</p>
-        </a>
-        <a href="#/services" onClick="{{ open.digitalisation }}" style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:28px 24px; min-height:250px; display:flex; flex-direction:column; gap:12px; color:var(--color-text); text-decoration:none;" style-hover="background:var(--color-surface);">
-          <span style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:var(--color-accent); stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round;"><rect width="8" height="8" x="3" y="3" rx="2"></rect><path d="M7 11v4a2 2 0 0 0 2 2h4"></path><rect width="8" height="8" x="13" y="13" rx="2"></rect></svg><span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">05</span></span>
-          <h3 style="margin:0; font-size:20px; line-height:1.2;">Digitalisation des entreprises</h3>
-          <p style="margin:0; font-size:15px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Vos processus manuels deviennent des outils numériques.</p>
-        </a>
-        <a href="#/services" onClick="{{ open.crm }}" style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:28px 24px; min-height:250px; display:flex; flex-direction:column; gap:12px; color:var(--color-text); text-decoration:none;" style-hover="background:var(--color-surface);">
-          <span style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:var(--color-accent); stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">06</span></span>
-          <h3 style="margin:0; font-size:20px; line-height:1.2;">CRM &amp; gestion clients</h3>
-          <p style="margin:0; font-size:15px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Clients, commandes, paiements et rendez-vous au même endroit.</p>
-        </a>
-        <a href="#/services" onClick="{{ open.surmesure }}" style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:28px 24px; min-height:250px; display:flex; flex-direction:column; gap:12px; color:var(--color-text); text-decoration:none;" style-hover="background:var(--color-surface);">
-          <span style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:var(--color-accent); stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round;"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg><span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">07</span></span>
-          <h3 style="margin:0; font-size:20px; line-height:1.2;">Solutions sur mesure</h3>
-          <p style="margin:0; font-size:15px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Des plateformes adaptées aux besoins spécifiques de votre entreprise.</p>
-        </a>
-        <a href="#/services" onClick="{{ open.seo }}" style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:28px 24px; min-height:250px; display:flex; flex-direction:column; gap:12px; color:var(--color-text); text-decoration:none;" style-hover="background:var(--color-surface);">
-          <span style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:var(--color-accent); stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round;"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg><span style="font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">08</span></span>
-          <h3 style="margin:0; font-size:20px; line-height:1.2;">SEO / Référencement</h3>
-          <p style="margin:0; font-size:15px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Améliorez la visibilité de votre entreprise sur Google.</p>
-        </a>
-      </div>
-    </div>
-  </section>
+<section class="section dark"><div class="wrap">
+  <div class="head"><p class="eyebrow light"><span class="n">04</span><span>Pourquoi DST Technologie ?</span></p><h2 class="h2">Plus qu’un site web : une entreprise transformée.</h2>
+    <p class="lead">DST Technologie transforme une activité traditionnelle en une activité plus moderne, visible, accessible et organisée grâce au numérique.</p></div>
+  <div class="grid why"><div><span class="sq" style="background:var(--blue)"></span><h3>Moderne.</h3><p>Une image professionnelle qui inspire confiance dès la première visite.</p></div><div><span class="sq" style="background:var(--blue-2)"></span><h3>Visible.</h3><p>Vos clients vous trouvent sur Google, pas seulement sur les réseaux sociaux.</p></div><div><span class="sq" style="background:var(--green)"></span><h3>Accessible.</h3><p>Vos clients commandent, réservent et paient à toute heure, depuis leur téléphone.</p></div><div><span class="sq" style="background:#fff"></span><h3>Organisée.</h3><p>Clients, commandes et paiements suivis au même endroit, sans cahier ni fichier perdu.</p></div></div>
+</div></section>
 
-  </sc-if>
-<section style="background:var(--color-surface); border-top:2px solid var(--color-divider); border-bottom:2px solid var(--color-divider);">
-    <div style="max-width:1280px; margin:0 auto; padding:clamp(64px, 9vw, 112px) clamp(20px, 5vw, 64px);">
-      <div style="display:flex; flex-direction:column; gap:20px; margin-bottom:56px;">
-        <p style="margin:0; display:flex; gap:14px; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);"><span>04</span><span>Pourquoi DST Technologie ?</span></p>
-        <h2 style="margin:0 0 0 -0.04em; font-size:clamp(30px, 3.6vw, 48px); line-height:1.06; letter-spacing:-0.02em; max-width:22ch;">Plus qu’un site web : une entreprise transformée.</h2>
-        <p style="margin:0; font-size:18px; line-height:1.6; max-width:60ch; color:color-mix(in srgb, var(--color-text) 72%, var(--color-surface));">DST Technologie transforme une activité traditionnelle en une activité plus moderne, visible, accessible et organisée grâce au numérique.</p>
-      </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(max(calc(25% - 24px), min(40%, calc((900px - 100%) * 999)), min(100%, calc((520px - 100%) * 999))), 1fr)); gap:40px 32px;">
-        <div style="border-top:2px solid var(--color-text); padding-top:24px; display:flex; flex-direction:column; gap:14px;">
-          <span style="width:14px; height:14px; background:var(--color-accent);"></span>
-          <h3 style="margin:0; font-size:clamp(28px, 2.8vw, 38px); line-height:1.05; letter-spacing:-0.02em;">Moderne.</h3>
-          <p style="margin:0; font-size:16px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-surface));">Une image professionnelle qui inspire confiance dès la première visite.</p>
-        </div>
-        <div style="border-top:2px solid var(--color-text); padding-top:24px; display:flex; flex-direction:column; gap:14px;">
-          <span style="width:14px; height:14px; background:var(--color-accent-400);"></span>
-          <h3 style="margin:0; font-size:clamp(28px, 2.8vw, 38px); line-height:1.05; letter-spacing:-0.02em;">Visible.</h3>
-          <p style="margin:0; font-size:16px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-surface));">Vos clients vous trouvent sur Google, pas seulement sur les réseaux sociaux.</p>
-        </div>
-        <div style="border-top:2px solid var(--color-text); padding-top:24px; display:flex; flex-direction:column; gap:14px;">
-          <span style="width:14px; height:14px; background:var(--color-accent-2);"></span>
-          <h3 style="margin:0; font-size:clamp(28px, 2.8vw, 38px); line-height:1.05; letter-spacing:-0.02em;">Accessible.</h3>
-          <p style="margin:0; font-size:16px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-surface));">Vos clients commandent, réservent et paient à toute heure, depuis leur téléphone.</p>
-        </div>
-        <div style="border-top:2px solid var(--color-text); padding-top:24px; display:flex; flex-direction:column; gap:14px;">
-          <span style="width:14px; height:14px; background:var(--color-text);"></span>
-          <h3 style="margin:0; font-size:clamp(28px, 2.8vw, 38px); line-height:1.05; letter-spacing:-0.02em;">Organisée.</h3>
-          <p style="margin:0; font-size:16px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-surface));">Clients, commandes et paiements suivis au même endroit, sans cahier ni fichier perdu.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="pour-qui" class="section"><div class="wrap">
+  <div class="head"><p class="eyebrow "><span class="n">05</span><span>Pour qui ?</span></p><h2 class="h2" style="max-width:24ch">Quel que soit votre secteur, nous construisons une solution adaptée à votre activité.</h2></div>
+  <div class="grid sectors">
+    <sc-for list="{{ sectors }}" as="sec"><div class="card sector"><h3>{{ sec.name }}</h3><p>{{ sec.hint }}</p></div></sc-for>
+    <button type="button" class="card sector cta" onClick="{{ goDevis }}"><span>Votre secteur n’est pas listé ?</span><span>Parlons-en<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></button>
+  </div>
+</div></section>
 
-  <section id="pour-qui" style="max-width:1280px; margin:0 auto; padding:clamp(64px, 9vw, 112px) clamp(20px, 5vw, 64px); width:100%;">
-    <div style="display:flex; flex-direction:column; gap:20px; margin-bottom:48px;">
-      <p style="margin:0; display:flex; gap:14px; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);"><span>05</span><span>Pour qui ?</span></p>
-      <h2 style="margin:0 0 0 -0.04em; font-size:clamp(30px, 3.6vw, 48px); line-height:1.06; letter-spacing:-0.02em; max-width:24ch;">Quel que soit votre secteur, nous construisons une solution adaptée à votre activité.</h2>
-    </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(max(calc(20% - 2px), min(34%, calc((980px - 100%) * 999))), 1fr)); padding:0 2px 2px 0;">
-      <sc-for list="{{ sectors }}" as="sec" hint-placeholder-count="9">
-        <div style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:22px 20px; min-height:160px; display:flex; flex-direction:column; gap:10px; min-width:0;">
-          <h3 style="margin:0; font-size:18px; line-height:1.2; overflow-wrap:break-word;">{{ sec.name }}</h3>
-          <p style="margin:auto 0 0; font-size:14px; line-height:1.5; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">{{ sec.hint }}</p>
-        </div>
-      </sc-for>
-      <button type="button" onClick="{{ goDevis }}" style="border:2px solid var(--color-text); margin:0 -2px -2px 0; padding:22px 20px; min-height:160px; display:flex; flex-direction:column; gap:10px; background:var(--color-text); color:var(--color-bg); text-align:left; font-family:inherit; cursor:pointer; position:relative; z-index:1;" style-hover="background:var(--color-accent-800);">
-        <span style="font-size:18px; font-weight:800; line-height:1.2;">Votre secteur n’est pas listé ?</span>
-        <span style="margin-top:auto; display:flex; align-items:center; gap:8px; font-size:15px; font-weight:600;">Parlons-en<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
-      </button>
-    </div>
-  </section>
+<section id="processus" class="section alt"><div class="wrap">
+  <div class="head"><p class="eyebrow "><span class="n">06</span><span>Comment ça marche ?</span></p><h2 class="h2">Un processus simple, de la première discussion à la mise en ligne.</h2></div>
+  <ol class="steps"><li><span class="no">01</span><h3>Échange</h3><p>Vous nous expliquez votre activité, vos clients et vos besoins.</p></li><li><span class="no">02</span><h3>Analyse</h3><p>Nous étudions votre activité et définissons la meilleure solution.</p></li><li><span class="no">03</span><h3>Création</h3><p>Nous concevons et développons votre solution, avec votre validation à chaque étape.</p></li><li><span class="no">04</span><h3>Lancement</h3><p>Votre solution est mise en ligne. Nous restons à vos côtés pour la faire évoluer.</p></li></ol>
+  <div style="margin-top:44px"><button type="button" class="btn btn-primary" onClick="{{ goDevis }}">Commencer par l’échange<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div>
+</div></section>
 
-  <section id="processus" style="border-top:2px solid var(--color-divider);">
-    <div style="max-width:1280px; margin:0 auto; padding:clamp(64px, 9vw, 112px) clamp(20px, 5vw, 64px);">
-      <div style="display:flex; flex-direction:column; gap:20px; margin-bottom:56px;">
-        <p style="margin:0; display:flex; gap:14px; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);"><span>06</span><span>Comment ça marche ?</span></p>
-        <h2 style="margin:0 0 0 -0.04em; font-size:clamp(30px, 3.6vw, 48px); line-height:1.06; letter-spacing:-0.02em; max-width:22ch;">Un processus simple, de la première discussion à la mise en ligne.</h2>
-      </div>
-      <ol style="list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(max(calc(25% - 24px), min(40%, calc((900px - 100%) * 999)), min(100%, calc((520px - 100%) * 999))), 1fr)); gap:40px 32px;">
-        <li style="border-top:2px solid var(--color-text); padding-top:20px; display:flex; flex-direction:column; gap:12px;">
-          <span style="font-size:clamp(44px, 4.4vw, 60px); font-weight:800; line-height:1; letter-spacing:-0.03em; color:var(--color-accent); font-variant-numeric:tabular-nums;">01</span>
-          <h3 style="margin:8px 0 0; font-size:22px; line-height:1.2;">Échange</h3>
-          <p style="margin:0; font-size:16px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Vous nous expliquez votre activité, vos clients et vos besoins.</p>
-        </li>
-        <li style="border-top:2px solid var(--color-text); padding-top:20px; display:flex; flex-direction:column; gap:12px;">
-          <span style="font-size:clamp(44px, 4.4vw, 60px); font-weight:800; line-height:1; letter-spacing:-0.03em; color:var(--color-accent); font-variant-numeric:tabular-nums;">02</span>
-          <h3 style="margin:8px 0 0; font-size:22px; line-height:1.2;">Analyse</h3>
-          <p style="margin:0; font-size:16px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Nous étudions votre activité et définissons la meilleure solution.</p>
-        </li>
-        <li style="border-top:2px solid var(--color-text); padding-top:20px; display:flex; flex-direction:column; gap:12px;">
-          <span style="font-size:clamp(44px, 4.4vw, 60px); font-weight:800; line-height:1; letter-spacing:-0.03em; color:var(--color-accent); font-variant-numeric:tabular-nums;">03</span>
-          <h3 style="margin:8px 0 0; font-size:22px; line-height:1.2;">Création</h3>
-          <p style="margin:0; font-size:16px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Nous concevons et développons votre solution, avec votre validation à chaque étape.</p>
-        </li>
-        <li style="border-top:2px solid var(--color-text); padding-top:20px; display:flex; flex-direction:column; gap:12px;">
-          <span style="font-size:clamp(44px, 4.4vw, 60px); font-weight:800; line-height:1; letter-spacing:-0.03em; color:var(--color-accent-2-600); font-variant-numeric:tabular-nums;">04</span>
-          <h3 style="margin:8px 0 0; font-size:22px; line-height:1.2;">Lancement</h3>
-          <p style="margin:0; font-size:16px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Votre solution est mise en ligne. Nous restons à vos côtés pour la faire évoluer.</p>
-        </li>
-      </ol>
-      <div style="margin-top:48px;">
-        <button type="button" class="btn btn-primary" onClick="{{ goDevis }}" style="min-height:52px; padding:14px 20px; font-size:16px; gap:10px; justify-content:flex-start;">Commencer par l’échange<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
-      </div>
-    </div>
-  </section>
-
-<section id="apercu-realisations" style="border-top:2px solid var(--color-divider);"><div style="max-width:1280px; margin:0 auto; padding-top:clamp(64px, 9vw, 112px); padding-bottom:clamp(64px, 9vw, 112px); padding-left:clamp(20px, 5vw, 64px); padding-right:clamp(20px, 5vw, 64px);">
-<div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px 40px; margin-bottom:48px;"><div style="display:flex; flex-direction:column; gap:20px; max-width:780px;"><p style="margin:0; display:flex; align-items:center; gap:14px; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);"><span>07</span><span>Réalisations</span></p><h2 style="margin:0 0 0 -0.04em; font-size:clamp(30px, 3.6vw, 48px); line-height:1.06; letter-spacing:-0.02em;">Des solutions pensées pour votre secteur.</h2></div><a class="btn btn-ghost" href="#/realisations" style="font-size:15px; min-height:44px; gap:8px; justify-content:flex-start;">Voir toutes les solutions<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap:48px 32px;">
-<article style="display:flex; flex-direction:column; gap:16px; min-width:0;"><div class="grayscale" style="aspect-ratio:4 / 3; background:var(--color-surface); border:2px solid var(--color-divider);"><image-slot id="real-salon" shape="rect" placeholder="Capture d’écran : réservation en ligne pour salon" style="display:block; width:100%; height:100%;"></image-slot></div><p style="margin:0; display:flex; align-items:center; gap:14px; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Solution type · Salon de coiffure</p><h3 style="margin:0; font-size:22px; line-height:1.2;">Réservation en ligne avec acompte</h3><a href="#/realisations" style="display:flex; align-items:center; gap:8px; font-size:15px; font-weight:600; text-decoration:none;">Voir la solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></article>
-<article style="display:flex; flex-direction:column; gap:16px; min-width:0;"><div class="grayscale" style="aspect-ratio:4 / 3; background:var(--color-surface); border:2px solid var(--color-divider);"><image-slot id="real-perruques" shape="rect" placeholder="Capture d’écran : boutique en ligne de perruques" style="display:block; width:100%; height:100%;"></image-slot></div><p style="margin:0; display:flex; align-items:center; gap:14px; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Solution type · Vendeuse de perruques</p><h3 style="margin:0; font-size:22px; line-height:1.2;">Boutique en ligne et commandes suivies</h3><a href="#/realisations" style="display:flex; align-items:center; gap:8px; font-size:15px; font-weight:600; text-decoration:none;">Voir la solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></article>
-<article style="display:flex; flex-direction:column; gap:16px; min-width:0;"><div class="grayscale" style="aspect-ratio:4 / 3; background:var(--color-surface); border:2px solid var(--color-divider);"><image-slot id="real-restaurant" shape="rect" placeholder="Capture d’écran : menu et commande en ligne" style="display:block; width:100%; height:100%;"></image-slot></div><p style="margin:0; display:flex; align-items:center; gap:14px; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Solution type · Restaurant</p><h3 style="margin:0; font-size:22px; line-height:1.2;">Menu en ligne et commande à emporter</h3><a href="#/realisations" style="display:flex; align-items:center; gap:8px; font-size:15px; font-weight:600; text-decoration:none;">Voir la solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round; flex:none;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></article>
-</div></div></section>
+<section id="apercu-realisations" class="section"><div class="wrap">
+  <div class="head row"><div><p class="eyebrow "><span class="n">07</span><span>Réalisations</span></p><h2 class="h2">Des solutions pensées pour votre secteur.</h2></div>
+    <a class="btn btn-outline btn-sm" href="#/realisations">Voir toutes les solutions<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+  <div class="grid cases"><article class="case"><div class="shot"><image-slot id="real-salon" placeholder="Capture d’écran : réservation en ligne pour salon"></image-slot></div><p class="kick">Solution type · Salon de coiffure</p><h3>Réservation en ligne avec acompte</h3><a class="btn-link btn" href="#/realisations" style="justify-content:flex-start;">Voir la solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></article><article class="case"><div class="shot"><image-slot id="real-perruques" placeholder="Capture d’écran : boutique en ligne de perruques"></image-slot></div><p class="kick">Solution type · Vendeuse de perruques</p><h3>Boutique en ligne et commandes suivies</h3><a class="btn-link btn" href="#/realisations" style="justify-content:flex-start;">Voir la solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></article><article class="case"><div class="shot"><image-slot id="real-restaurant" placeholder="Capture d’écran : menu et commande en ligne"></image-slot></div><p class="kick">Solution type · Restaurant</p><h3>Menu en ligne et commande à emporter</h3><a class="btn-link btn" href="#/realisations" style="justify-content:flex-start;">Voir la solution<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></article></div>
+</div></section>
 </main>
 </sc-if>
 
-<sc-if value="{{ isServices }}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{ isServices }}">
 <main data-screen-label="Services" style="flex:1;">
-  <section style="max-width:1280px; margin:0 auto; padding:clamp(56px, 8vw, 104px) clamp(20px, 5vw, 64px) clamp(40px, 5vw, 64px);">
-    <div style="display:flex; flex-direction:column; gap:24px;">
-      <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Services</p>
-      <h1 style="margin:0 0 0 -0.05em; font-size:clamp(36px, 5vw, 68px); line-height:1.04; letter-spacing:-0.025em; max-width:18ch;">Des solutions digitales pour votre croissance.</h1>
-      <p style="margin:0; font-size:clamp(17px, 1.5vw, 20px); line-height:1.6; max-width:56ch; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Du site vitrine à la plateforme sur mesure, nous concevons les outils qui aident votre entreprise à mieux vendre, mieux gérer ses clients et gagner du temps.</p>
-    </div>
-  </section>
-  <nav aria-label="Liste des services" style="max-width:1280px; margin:0 auto; padding:0 clamp(20px, 5vw, 64px) clamp(40px, 5vw, 64px); width:100%;">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(max(calc(25% - 2px), min(34%, calc((900px - 100%) * 999)), min(100%, calc((520px - 100%) * 999))), 1fr)); padding:0 2px 2px 0;">
-      <sc-for list="{{ svcIndex }}" as="ix" hint-placeholder-count="8">
-        <button type="button" onClick="{{ ix.jump }}" style="border:2px solid var(--color-divider); margin:0 -2px -2px 0; padding:16px 18px; min-height:64px; display:flex; align-items:center; gap:14px; background:transparent; color:var(--color-text); text-align:left; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer;" style-hover="background:var(--color-surface);">
-          <span style="font-size:13px; font-variant-numeric:tabular-nums; color:var(--color-accent-700);">{{ ix.num }}</span>
-          <span>{{ ix.title }}</span>
-        </button>
-      </sc-for>
-    </div>
+  <section class="pagehead"><div class="wrap"><p class="eyebrow "><span class="n">●</span><span>Services</span></p><h1>Des solutions digitales pour votre croissance.</h1>
+    <p class="lead">Du site vitrine à la plateforme sur mesure, nous concevons les outils qui aident votre entreprise à mieux vendre, mieux gérer ses clients et gagner du temps.</p></div></section>
+  <nav class="wrap" aria-label="Liste des services" style="padding-bottom:clamp(24px,4vw,40px)">
+    <div class="sindex"><sc-for list="{{ svcIndex }}" as="ix"><button type="button" onClick="{{ ix.jump }}"><span class="n">{{ ix.num }}</span><span>{{ ix.title }}</span></button></sc-for></div>
   </nav>
-  <div style="max-width:1280px; margin:0 auto; padding:0 clamp(20px, 5vw, 64px) clamp(64px, 8vw, 104px); width:100%;">
-    <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
-      <article id="{{ s.domId }}" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:28px clamp(32px, 5vw, 72px); padding:56px 0; border-top:2px solid var(--color-divider);">
-        <div style="display:flex; flex-direction:column; gap:16px; min-width:0;">
-          <span style="font-size:15px; font-weight:800; font-variant-numeric:tabular-nums; color:var(--color-accent);">{{ s.num }}</span>
-          <h2 style="margin:0; font-size:clamp(26px, 2.8vw, 36px); line-height:1.1; letter-spacing:-0.015em;">{{ s.title }}</h2>
-          <p style="margin:0; font-size:17px; line-height:1.65; max-width:48ch; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">{{ s.long }}</p>
-          <button type="button" class="btn btn-ghost" onClick="{{ s.devis }}" style="align-self:flex-start; margin-top:8px; min-height:44px; padding:10px 6px; font-size:15px; gap:8px; justify-content:flex-start;">Demander un devis pour ce service<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
-        </div>
-        <div style="min-width:0;">
-          <p style="margin:0 0 8px; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">{{ s.listTitle }}</p>
-          <ul style="list-style:none; margin:0; padding:0; border-top:2px solid var(--color-text);">
-            <sc-for list="{{ s.features }}" as="ft" hint-placeholder-count="4">
-              <li style="display:flex; gap:14px; align-items:center; padding:14px 0; border-bottom:1px solid var(--color-divider); font-size:16px; font-weight:600;"><span style="width:8px; height:8px; flex:none; background:var(--color-accent);"></span>{{ ft }}</li>
-            </sc-for>
-          </ul>
-        </div>
+  <div class="wrap" style="padding-bottom:clamp(64px,8vw,104px)">
+    <sc-for list="{{ services }}" as="s">
+      <article class="sdetail" id="{{ s.domId }}">
+        <div class="l"><span class="num">{{ s.num }}</span><h2>{{ s.title }}</h2><p class="long">{{ s.long }}</p>
+          <div><button type="button" class="btn btn-primary btn-sm" onClick="{{ s.devis }}">Demander un devis pour ce service<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div>
+        <div><p class="lt">{{ s.listTitle }}</p><ul><sc-for list="{{ s.features }}" as="ft"><li><i></i>{{ ft }}</li></sc-for></ul></div>
       </article>
     </sc-for>
   </div>
 </main>
 </sc-if>
 
-<sc-if value="{{ isReal }}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{ isReal }}">
 <main data-screen-label="Réalisations" style="flex:1;">
-  <section style="max-width:1280px; margin:0 auto; padding:clamp(56px, 8vw, 104px) clamp(20px, 5vw, 64px) clamp(40px, 5vw, 64px);">
-    <div style="display:flex; flex-direction:column; gap:24px;">
-      <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Réalisations</p>
-      <h1 style="margin:0 0 0 -0.05em; font-size:clamp(36px, 5vw, 68px); line-height:1.04; letter-spacing:-0.025em; max-width:18ch;">Des solutions concrètes, pensées pour chaque secteur.</h1>
-      <p style="margin:0; font-size:clamp(17px, 1.5vw, 20px); line-height:1.6; max-width:58ch; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Voici des exemples de solutions que DST Technologie conçoit pour les entreprises. Chaque projet part de votre activité réelle : vos clients, vos produits et votre façon de travailler.</p>
-    </div>
-  </section>
-  <section style="max-width:1280px; margin:0 auto; padding:0 clamp(20px, 5vw, 64px) clamp(64px, 8vw, 104px); width:100%;">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap:64px 40px; border-top:2px solid var(--color-divider); padding-top:48px;">
-      <article style="display:flex; flex-direction:column; gap:20px; min-width:0;">
-        <div class="grayscale" style="aspect-ratio:16 / 10; background:var(--color-surface); border:2px solid var(--color-divider);"><image-slot id="real-salon" shape="rect" placeholder="Capture d’écran : réservation en ligne pour salon" style="display:block; width:100%; height:100%;"></image-slot></div>
-        <div style="display:flex; flex-direction:column; gap:12px;">
-          <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Solution type · Salon de coiffure</p>
-          <h2 style="margin:0; font-size:clamp(22px, 2.2vw, 28px); line-height:1.15;">Réservation en ligne avec acompte</h2>
-          <p style="margin:0; font-size:16px; line-height:1.6; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Les clientes choisissent la prestation, la coiffeuse et le créneau, puis confirment avec un acompte Wave ou Orange Money.</p>
-          <div style="display:flex; flex-wrap:wrap; gap:8px;"><span class="tag tag-accent">Réservation</span><span class="tag tag-accent">Paiement</span><span class="tag tag-accent">CRM</span></div>
-          <button type="button" class="btn btn-ghost" onClick="{{ caseDevis.salon }}" style="align-self:flex-start; min-height:44px; padding:10px 6px; font-size:15px; gap:8px; justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
-        </div>
-      </article>
-      <article style="display:flex; flex-direction:column; gap:20px; min-width:0;">
-        <div class="grayscale" style="aspect-ratio:16 / 10; background:var(--color-surface); border:2px solid var(--color-divider);"><image-slot id="real-perruques" shape="rect" placeholder="Capture d’écran : boutique en ligne de perruques" style="display:block; width:100%; height:100%;"></image-slot></div>
-        <div style="display:flex; flex-direction:column; gap:12px;">
-          <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Solution type · Vendeuse de perruques</p>
-          <h2 style="margin:0; font-size:clamp(22px, 2.2vw, 28px); line-height:1.15;">Boutique en ligne et commandes suivies</h2>
-          <p style="margin:0; font-size:16px; line-height:1.6; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Un catalogue clair par longueur et texture, un panier, le paiement mobile money et une confirmation envoyée sur WhatsApp.</p>
-          <div style="display:flex; flex-wrap:wrap; gap:8px;"><span class="tag tag-accent">E-commerce</span><span class="tag tag-accent">Paiement</span></div>
-          <button type="button" class="btn btn-ghost" onClick="{{ caseDevis.perruques }}" style="align-self:flex-start; min-height:44px; padding:10px 6px; font-size:15px; gap:8px; justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
-        </div>
-      </article>
-      <article style="display:flex; flex-direction:column; gap:20px; min-width:0;">
-        <div class="grayscale" style="aspect-ratio:16 / 10; background:var(--color-surface); border:2px solid var(--color-divider);"><image-slot id="real-restaurant" shape="rect" placeholder="Capture d’écran : menu et commande en ligne" style="display:block; width:100%; height:100%;"></image-slot></div>
-        <div style="display:flex; flex-direction:column; gap:12px;">
-          <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Solution type · Restaurant</p>
-          <h2 style="margin:0; font-size:clamp(22px, 2.2vw, 28px); line-height:1.15;">Menu en ligne et commande à emporter</h2>
-          <p style="margin:0; font-size:16px; line-height:1.6; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Le menu toujours à jour, la commande en quelques clics et le paiement à la commande pour éviter les oublis.</p>
-          <div style="display:flex; flex-wrap:wrap; gap:8px;"><span class="tag tag-accent">E-commerce</span><span class="tag tag-accent">Paiement</span></div>
-          <button type="button" class="btn btn-ghost" onClick="{{ caseDevis.restaurant }}" style="align-self:flex-start; min-height:44px; padding:10px 6px; font-size:15px; gap:8px; justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
-        </div>
-      </article>
-      <article style="display:flex; flex-direction:column; gap:20px; min-width:0;">
-        <div class="grayscale" style="aspect-ratio:16 / 10; background:var(--color-surface); border:2px solid var(--color-divider);"><image-slot id="real-evenementiel" shape="rect" placeholder="Capture d’écran : vitrine d’un prestataire événementiel" style="display:block; width:100%; height:100%;"></image-slot></div>
-        <div style="display:flex; flex-direction:column; gap:12px;">
-          <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Solution type · Prestataire événementiel</p>
-          <h2 style="margin:0; font-size:clamp(22px, 2.2vw, 28px); line-height:1.15;">Vitrine, galerie et demandes de devis</h2>
-          <p style="margin:0; font-size:16px; line-height:1.6; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Une galerie de vos événements, un formulaire de devis structuré et le suivi de chaque demande dans un CRM.</p>
-          <div style="display:flex; flex-wrap:wrap; gap:8px;"><span class="tag tag-accent">Site web</span><span class="tag tag-accent">CRM</span></div>
-          <button type="button" class="btn btn-ghost" onClick="{{ caseDevis.evenementiel }}" style="align-self:flex-start; min-height:44px; padding:10px 6px; font-size:15px; gap:8px; justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
-        </div>
-      </article>
-      <article style="display:flex; flex-direction:column; gap:20px; min-width:0;">
-        <div class="grayscale" style="aspect-ratio:16 / 10; background:var(--color-surface); border:2px solid var(--color-divider);"><image-slot id="real-boutique" shape="rect" placeholder="Capture d’écran : gestion des ventes et des clients" style="display:block; width:100%; height:100%;"></image-slot></div>
-        <div style="display:flex; flex-direction:column; gap:12px;">
-          <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Solution type · Boutique</p>
-          <h2 style="margin:0; font-size:clamp(22px, 2.2vw, 28px); line-height:1.15;">Ventes et fichier clients centralisés</h2>
-          <p style="margin:0; font-size:16px; line-height:1.6; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Chaque vente enregistrée, chaque client retrouvé : historique d’achats, relances et offres de fidélité.</p>
-          <div style="display:flex; flex-wrap:wrap; gap:8px;"><span class="tag tag-accent">CRM</span><span class="tag tag-accent">Digitalisation</span></div>
-          <button type="button" class="btn btn-ghost" onClick="{{ caseDevis.boutique }}" style="align-self:flex-start; min-height:44px; padding:10px 6px; font-size:15px; gap:8px; justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
-        </div>
-      </article>
-      <article style="display:flex; flex-direction:column; gap:20px; min-width:0;">
-        <div class="grayscale" style="aspect-ratio:16 / 10; background:var(--color-surface); border:2px solid var(--color-divider);"><image-slot id="real-entreprise" shape="rect" placeholder="Capture d’écran : plateforme interne sur mesure" style="display:block; width:100%; height:100%;"></image-slot></div>
-        <div style="display:flex; flex-direction:column; gap:12px;">
-          <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Solution type · Entreprise</p>
-          <h2 style="margin:0; font-size:clamp(22px, 2.2vw, 28px); line-height:1.15;">Plateforme interne sur mesure</h2>
-          <p style="margin:0; font-size:16px; line-height:1.6; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Les demandes, validations et rapports qui circulaient sur papier ou par message passent sur une plateforme unique.</p>
-          <div style="display:flex; flex-wrap:wrap; gap:8px;"><span class="tag tag-accent">Sur mesure</span><span class="tag tag-accent">Digitalisation</span></div>
-          <button type="button" class="btn btn-ghost" onClick="{{ caseDevis.entreprise }}" style="align-self:flex-start; min-height:44px; padding:10px 6px; font-size:15px; gap:8px; justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
-        </div>
-      </article>
-    </div>
-  </section>
+  <section class="pagehead"><div class="wrap"><p class="eyebrow "><span class="n">●</span><span>Réalisations</span></p><h1>Des solutions concrètes, pensées pour chaque secteur.</h1>
+    <p class="lead">Voici des exemples de solutions que DST Technologie conçoit pour les entreprises. Chaque projet part de votre activité réelle : vos clients, vos produits et votre façon de travailler.</p></div></section>
+  <section class="wrap" style="padding-bottom:clamp(64px,8vw,104px)"><div class="grid cases" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px 40px"><article class="case big"><div class="shot"><image-slot id="real-salon" placeholder="Capture d’écran : réservation en ligne pour salon"></image-slot></div>
+  <div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Salon de coiffure</p><h2>Réservation en ligne avec acompte</h2><p class="desc">Les clientes choisissent la prestation, la coiffeuse et le créneau, puis confirment avec un acompte Wave ou Orange Money.</p>
+  <div class="tags"><span class="tag">Réservation</span><span class="tag">Paiement</span><span class="tag">CRM</span></div>
+  <div><button type="button" class="btn-link btn" onClick="{{ caseDevis.salon }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big"><div class="shot"><image-slot id="real-perruques" placeholder="Capture d’écran : boutique en ligne de perruques"></image-slot></div>
+  <div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Vendeuse de perruques</p><h2>Boutique en ligne et commandes suivies</h2><p class="desc">Un catalogue clair par longueur et texture, un panier, le paiement mobile money et une confirmation envoyée sur WhatsApp.</p>
+  <div class="tags"><span class="tag">E-commerce</span><span class="tag">Paiement</span></div>
+  <div><button type="button" class="btn-link btn" onClick="{{ caseDevis.perruques }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big"><div class="shot"><image-slot id="real-restaurant" placeholder="Capture d’écran : menu et commande en ligne"></image-slot></div>
+  <div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Restaurant</p><h2>Menu en ligne et commande à emporter</h2><p class="desc">Le menu toujours à jour, la commande en quelques clics et le paiement à la commande pour éviter les oublis.</p>
+  <div class="tags"><span class="tag">E-commerce</span><span class="tag">Paiement</span></div>
+  <div><button type="button" class="btn-link btn" onClick="{{ caseDevis.restaurant }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big"><div class="shot"><image-slot id="real-evenementiel" placeholder="Capture d’écran : vitrine d’un prestataire événementiel"></image-slot></div>
+  <div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Prestataire événementiel</p><h2>Vitrine, galerie et demandes de devis</h2><p class="desc">Une galerie de vos événements, un formulaire de devis structuré et le suivi de chaque demande dans un CRM.</p>
+  <div class="tags"><span class="tag">Site web</span><span class="tag">CRM</span></div>
+  <div><button type="button" class="btn-link btn" onClick="{{ caseDevis.evenementiel }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big"><div class="shot"><image-slot id="real-boutique" placeholder="Capture d’écran : gestion des ventes et des clients"></image-slot></div>
+  <div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Boutique</p><h2>Ventes et fichier clients centralisés</h2><p class="desc">Chaque vente enregistrée, chaque client retrouvé : historique d’achats, relances et offres de fidélité.</p>
+  <div class="tags"><span class="tag">CRM</span><span class="tag">Digitalisation</span></div>
+  <div><button type="button" class="btn-link btn" onClick="{{ caseDevis.boutique }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article><article class="case big"><div class="shot"><image-slot id="real-entreprise" placeholder="Capture d’écran : plateforme interne sur mesure"></image-slot></div>
+  <div style="display:flex;flex-direction:column;gap:12px"><p class="kick">Solution type · Entreprise</p><h2>Plateforme interne sur mesure</h2><p class="desc">Les demandes, validations et rapports qui circulaient sur papier ou par message passent sur une plateforme unique.</p>
+  <div class="tags"><span class="tag">Sur mesure</span><span class="tag">Digitalisation</span></div>
+  <div><button type="button" class="btn-link btn" onClick="{{ caseDevis.entreprise }}" style="justify-content:flex-start;">Je veux une solution similaire<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></article></div></section>
 </main>
 </sc-if>
 
-<sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{ isContact }}">
 <main data-screen-label="Contact" style="flex:1;">
-  <section style="max-width:1280px; margin:0 auto; padding:clamp(56px, 8vw, 104px) clamp(20px, 5vw, 64px) clamp(32px, 4vw, 56px);">
-    <div style="display:flex; flex-direction:column; gap:24px;">
-      <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Contact &amp; devis</p>
-      <h1 style="margin:0 0 0 -0.05em; font-size:clamp(36px, 5vw, 68px); line-height:1.04; letter-spacing:-0.025em;">Parlons de votre projet.</h1>
-      <p style="margin:0; font-size:clamp(17px, 1.5vw, 20px); line-height:1.6; max-width:56ch; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Répondez à quelques questions. Un conseiller DST Technologie revient vers vous avec une proposition adaptée à votre activité.</p>
-    </div>
-  </section>
+  <section class="pagehead"><div class="wrap"><p class="eyebrow "><span class="n">●</span><span>Contact &amp; devis</span></p><h1>Parlons de votre projet.</h1>
+    <p class="lead">Répondez à quelques questions. Un conseiller DST Technologie revient vers vous avec une proposition adaptée à votre activité.</p></div></section>
+  <section class="wrap contact">
+    <div class="formbox" ref="{{ formRef }}">
+      <sc-if value="{{ show.stepper }}"><div class="stepper">
+        <sc-for list="{{ steps }}" as="st"><div class="{{ st.cls }}"><span class="n">{{ st.num }}</span><span class="t">{{ st.label }}</span></div></sc-for></div></sc-if>
+      <div class="fbody">
+        <sc-if value="{{ show.s1 }}"><fieldset>
+          <legend>De quoi avez-vous besoin ?</legend><p class="hint">Plusieurs choix possibles.</p>
+          <div class="opts" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))">
+            <sc-for list="{{ svcOpts }}" as="o"><button type="button" role="checkbox" class="opt {{ o.cls }}" aria-checked="{{ o.aria }}" onClick="{{ o.toggle }}"><span class="mark"><sc-if value="{{ o.selected }}"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></sc-if></span><span>{{ o.label }}</span></button></sc-for>
+          </div><sc-if value="{{ hasErr.services }}"><p role="alert" class="err">{{ err.services }}</p></sc-if>
+        </fieldset></sc-if>
 
-  <section style="max-width:1280px; margin:0 auto; padding:0 clamp(20px, 5vw, 64px) clamp(64px, 8vw, 112px); display:flex; flex-wrap:wrap; gap:48px clamp(32px, 5vw, 72px); align-items:flex-start; width:100%;">
-    <div ref="{{ formRef }}" style="flex:7 1 540px; min-width:0; border:2px solid var(--color-text); background:var(--color-bg); scroll-margin-top:100px;">
+        <sc-if value="{{ show.s2 }}"><sc-if value="{{ single }}"><div class="sep"></div></sc-if><fieldset>
+          <legend>Parlez-nous de votre activité</legend>
+          <div class="opt-group"><p class="qt">Votre secteur *</p>
+            <div class="opts" role="radiogroup" aria-label="Votre secteur" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))">
+              <sc-for list="{{ sectorOpts }}" as="o"><label class="opt radio {{ o.cls }}"><input type="radio" name="secteur" checked="{{ o.checked }}" onChange="{{ o.pick }}"><span class="mark"></span><span>{{ o.label }}</span></label></sc-for>
+            </div><sc-if value="{{ hasErr.secteur }}"><p role="alert" class="err">{{ err.secteur }}</p></sc-if></div>
+          <div class="field"><label for="f-desc">Décrivez votre projet en quelques mots <small>(facultatif)</small></label>
+            <textarea id="f-desc" class="input" rows="4" placeholder="Ex. : je vends sur Instagram et je veux un site où mes clientes commandent et paient par Wave." value="{{ f.description }}" onChange="{{ on.description }}"></textarea></div>
+          <div class="opt-group"><p class="qt">Avez-vous déjà un site web ?</p>
+    <div class="opts" role="radiogroup" aria-label="Site web actuel" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr))">
+      <sc-for list="{{ siteOpts }}" as="o"><label class="opt radio {{ o.cls }}"><input type="radio" name="site" checked="{{ o.checked }}" onChange="{{ o.pick }}"><span class="mark"></span><span>{{ o.label }}</span></label></sc-for>
+    </div></div>
+        </fieldset></sc-if>
 
-      <sc-if value="{{ show.stepper }}" hint-placeholder-val="{{ true }}">
-        <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); border-bottom:2px solid var(--color-divider);">
-          <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
-            <div style="padding:14px 16px 16px; border-top:4px solid {{ st.bar }}; color:{{ st.fg }}; display:flex; flex-direction:column; gap:2px; min-width:0;">
-              <span style="font-size:12px; font-weight:600; font-variant-numeric:tabular-nums;">{{ st.num }}</span>
-              <span style="font-size:14px; font-weight:700; line-height:1.25; overflow-wrap:break-word;">{{ st.label }}</span>
-            </div>
-          </sc-for>
-        </div>
-      </sc-if>
+        <sc-if value="{{ show.s3 }}"><sc-if value="{{ single }}"><div class="sep"></div></sc-if><fieldset>
+          <legend>Budget et délai</legend><p class="hint" style="margin-top:-8px">Facultatif : nous affinerons ensemble.</p>
+          <div class="opt-group"><p class="qt">Budget envisagé</p>
+    <div class="opts" role="radiogroup" aria-label="Budget envisagé" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))">
+      <sc-for list="{{ budgetOpts }}" as="o"><label class="opt radio {{ o.cls }}"><input type="radio" name="budget" checked="{{ o.checked }}" onChange="{{ o.pick }}"><span class="mark"></span><span>{{ o.label }}</span></label></sc-for>
+    </div></div>
+          <div class="opt-group"><p class="qt">Délai souhaité</p>
+    <div class="opts" role="radiogroup" aria-label="Délai souhaité" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))">
+      <sc-for list="{{ delaiOpts }}" as="o"><label class="opt radio {{ o.cls }}"><input type="radio" name="delai" checked="{{ o.checked }}" onChange="{{ o.pick }}"><span class="mark"></span><span>{{ o.label }}</span></label></sc-for>
+    </div></div>
+        </fieldset></sc-if>
 
-      <div style="padding:clamp(20px, 3vw, 32px); display:flex; flex-direction:column; gap:36px;">
-        <sc-if value="{{ show.s1 }}" hint-placeholder-val="{{ true }}">
-          <fieldset style="border:0; margin:0; padding:0; min-width:0; display:flex; flex-direction:column; gap:16px;">
-            <legend style="padding:0; margin:0 0 4px; font-family:var(--font-heading); font-weight:800; font-size:clamp(22px, 2.2vw, 26px); line-height:1.2;">De quoi avez-vous besoin ?</legend>
-            <p style="margin:0; font-size:15px; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Plusieurs choix possibles.</p>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:10px;">
-              <sc-for list="{{ svcOpts }}" as="o" hint-placeholder-count="9">
-                <button type="button" role="checkbox" aria-checked="{{ o.aria }}" onClick="{{ o.toggle }}" style="display:flex; align-items:center; gap:12px; min-height:56px; padding:12px 14px; text-align:left; font-family:inherit; font-size:15px; font-weight:600; line-height:1.3; color:var(--color-text); cursor:pointer; border:2px solid {{ o.bd }}; background:{{ o.bg }};" style-hover="border-color:var(--color-accent);">
-                  <span style="width:20px; height:20px; flex:none; display:grid; place-items:center; border:2px solid {{ o.boxBd }}; background:{{ o.boxBg }}; color:var(--color-bg);">
-                    <sc-if value="{{ o.selected }}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:3.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M20 6 9 17l-5-5"></path></svg></sc-if>
-                  </span>
-                  <span>{{ o.label }}</span>
-                </button>
-              </sc-for>
-            </div>
-            <sc-if value="{{ hasErr.services }}" hint-placeholder-val="{{ false }}"><p role="alert" style="margin:0; font-size:14px; font-weight:600; color:var(--color-accent-700);">{{ err.services }}</p></sc-if>
-          </fieldset>
-        </sc-if>
-
-        <sc-if value="{{ show.s2 }}" hint-placeholder-val="{{ false }}">
-          <sc-if value="{{ single }}" hint-placeholder-val="{{ false }}"><div style="height:2px; background:var(--color-divider);"></div></sc-if>
-          <fieldset style="border:0; margin:0; padding:0; min-width:0; display:flex; flex-direction:column; gap:24px;">
-            <legend style="padding:0; margin:0 0 4px; font-family:var(--font-heading); font-weight:800; font-size:clamp(22px, 2.2vw, 26px); line-height:1.2;">Parlez-nous de votre activité</legend>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <p style="margin:0; font-size:15px; font-weight:600;">Votre secteur *</p>
-              <div role="radiogroup" aria-label="Votre secteur" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap:8px;">
-                <sc-for list="{{ sectorOpts }}" as="o" hint-placeholder-count="10">
-                  <label class="radio" style="display:flex; align-items:center; gap:12px; min-height:48px; padding:10px 14px; font-size:15px; border:2px solid {{ o.bd }}; background:{{ o.bg }};" style-hover="border-color:var(--color-accent);">
-                    <input type="radio" name="secteur" checked="{{ o.checked }}" onChange="{{ o.pick }}">
-                    <span class="dot"></span>
-                    <span>{{ o.label }}</span>
-                  </label>
-                </sc-for>
-              </div>
-              <sc-if value="{{ hasErr.secteur }}" hint-placeholder-val="{{ false }}"><p role="alert" style="margin:0; font-size:14px; font-weight:600; color:var(--color-accent-700);">{{ err.secteur }}</p></sc-if>
-            </div>
-            <div class="field">
-              <label for="f-desc" style="font-size:15px; font-weight:600; color:var(--color-text); margin-bottom:8px;">Décrivez votre projet en quelques mots <span style="font-weight:400; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">(facultatif)</span></label>
-              <textarea id="f-desc" class="input" rows="4" placeholder="Ex. : je vends sur Instagram et je veux un site où mes clientes commandent et paient par Wave." value="{{ f.description }}" onChange="{{ on.description }}" style="font-size:16px; min-height:120px; padding:12px;"></textarea>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <p style="margin:0; font-size:15px; font-weight:600;">Avez-vous déjà un site web ?</p>
-              <div role="radiogroup" aria-label="Site web actuel" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap:8px;">
-                <sc-for list="{{ siteOpts }}" as="o" hint-placeholder-count="3">
-                  <label class="radio" style="display:flex; align-items:center; gap:12px; min-height:48px; padding:10px 14px; font-size:15px; border:2px solid {{ o.bd }}; background:{{ o.bg }};" style-hover="border-color:var(--color-accent);">
-                    <input type="radio" name="site" checked="{{ o.checked }}" onChange="{{ o.pick }}">
-                    <span class="dot"></span>
-                    <span>{{ o.label }}</span>
-                  </label>
-                </sc-for>
-              </div>
-            </div>
-          </fieldset>
-        </sc-if>
-
-        <sc-if value="{{ show.s3 }}" hint-placeholder-val="{{ false }}">
-          <sc-if value="{{ single }}" hint-placeholder-val="{{ false }}"><div style="height:2px; background:var(--color-divider);"></div></sc-if>
-          <fieldset style="border:0; margin:0; padding:0; min-width:0; display:flex; flex-direction:column; gap:24px;">
-            <legend style="padding:0; margin:0 0 4px; font-family:var(--font-heading); font-weight:800; font-size:clamp(22px, 2.2vw, 26px); line-height:1.2;">Budget et délai</legend>
-            <p style="margin:-12px 0 0; font-size:15px; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Facultatif : nous affinerons ensemble.</p>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <p style="margin:0; font-size:15px; font-weight:600;">Budget envisagé</p>
-              <div role="radiogroup" aria-label="Budget envisagé" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap:8px;">
-                <sc-for list="{{ budgetOpts }}" as="o" hint-placeholder-count="5">
-                  <label class="radio" style="display:flex; align-items:center; gap:12px; min-height:48px; padding:10px 14px; font-size:15px; border:2px solid {{ o.bd }}; background:{{ o.bg }};" style-hover="border-color:var(--color-accent);">
-                    <input type="radio" name="budget" checked="{{ o.checked }}" onChange="{{ o.pick }}">
-                    <span class="dot"></span>
-                    <span>{{ o.label }}</span>
-                  </label>
-                </sc-for>
-              </div>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <p style="margin:0; font-size:15px; font-weight:600;">Délai souhaité</p>
-              <div role="radiogroup" aria-label="Délai souhaité" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap:8px;">
-                <sc-for list="{{ delaiOpts }}" as="o" hint-placeholder-count="4">
-                  <label class="radio" style="display:flex; align-items:center; gap:12px; min-height:48px; padding:10px 14px; font-size:15px; border:2px solid {{ o.bd }}; background:{{ o.bg }};" style-hover="border-color:var(--color-accent);">
-                    <input type="radio" name="delai" checked="{{ o.checked }}" onChange="{{ o.pick }}">
-                    <span class="dot"></span>
-                    <span>{{ o.label }}</span>
-                  </label>
-                </sc-for>
-              </div>
-            </div>
-          </fieldset>
-        </sc-if>
-
-        <sc-if value="{{ show.s4 }}" hint-placeholder-val="{{ false }}">
-          <sc-if value="{{ single }}" hint-placeholder-val="{{ false }}"><div style="height:2px; background:var(--color-divider);"></div></sc-if>
-          <fieldset style="border:0; margin:0; padding:0; min-width:0; display:flex; flex-direction:column; gap:20px;">
-            <legend style="padding:0; margin:0 0 4px; font-family:var(--font-heading); font-weight:800; font-size:clamp(22px, 2.2vw, 26px); line-height:1.2;">Vos coordonnées</legend>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap:20px;">
-              <div class="field">
-                <label for="f-nom" style="font-size:15px; font-weight:600; color:var(--color-text); margin-bottom:8px;">Nom complet *</label>
-                <input id="f-nom" class="input" type="text" autoComplete="name" value="{{ f.nom }}" onChange="{{ on.nom }}" style="font-size:16px; min-height:48px; padding:10px 12px; border-color:{{ bdr.nom }};">
-                <sc-if value="{{ hasErr.nom }}" hint-placeholder-val="{{ false }}"><p role="alert" style="margin:8px 0 0; font-size:14px; font-weight:600; color:var(--color-accent-700);">{{ err.nom }}</p></sc-if>
-              </div>
-              <div class="field">
-                <label for="f-ent" style="font-size:15px; font-weight:600; color:var(--color-text); margin-bottom:8px;">Entreprise <span style="font-weight:400; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">(facultatif)</span></label>
-                <input id="f-ent" class="input" type="text" autoComplete="organization" value="{{ f.entreprise }}" onChange="{{ on.entreprise }}" style="font-size:16px; min-height:48px; padding:10px 12px;">
-              </div>
-              <div class="field">
-                <label for="f-tel" style="font-size:15px; font-weight:600; color:var(--color-text); margin-bottom:8px;">Téléphone / WhatsApp *</label>
-                <input id="f-tel" class="input" type="tel" inputMode="tel" autoComplete="tel" placeholder="05 00 00 00 00" value="{{ f.tel }}" onChange="{{ on.tel }}" style="font-size:16px; min-height:48px; padding:10px 12px; border-color:{{ bdr.tel }};">
-                <sc-if value="{{ hasErr.tel }}" hint-placeholder-val="{{ false }}"><p role="alert" style="margin:8px 0 0; font-size:14px; font-weight:600; color:var(--color-accent-700);">{{ err.tel }}</p></sc-if>
-              </div>
-              <div class="field">
-                <label for="f-mail" style="font-size:15px; font-weight:600; color:var(--color-text); margin-bottom:8px;">Email <span style="font-weight:400; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">(facultatif)</span></label>
-                <input id="f-mail" class="input" type="email" autoComplete="email" value="{{ f.email }}" onChange="{{ on.email }}" style="font-size:16px; min-height:48px; padding:10px 12px; border-color:{{ bdr.email }};">
-                <sc-if value="{{ hasErr.email }}" hint-placeholder-val="{{ false }}"><p role="alert" style="margin:8px 0 0; font-size:14px; font-weight:600; color:var(--color-accent-700);">{{ err.email }}</p></sc-if>
-              </div>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <p style="margin:0; font-size:15px; font-weight:600;">Comment préférez-vous être contacté ?</p>
-              <div class="seg" role="radiogroup" aria-label="Moyen de contact préféré" style="align-self:flex-start;">
-                <sc-for list="{{ prefOpts }}" as="o" hint-placeholder-count="3">
-                  <label class="seg-opt" style="min-height:48px; padding:10px 18px; font-size:15px; font-weight:600;">
-                    <input type="radio" name="pref" checked="{{ o.checked }}" onChange="{{ o.pick }}">{{ o.label }}
-                  </label>
-                </sc-for>
-              </div>
-            </div>
-          </fieldset>
-        </sc-if>
-
-        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
-          <div style="display:flex; flex-direction:column; gap:20px;">
-            <span style="width:52px; height:52px; display:grid; place-items:center; background:var(--color-accent-2); color:var(--color-text);"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.75; stroke-linecap:round; stroke-linejoin:round;"><path d="M20 6 9 17l-5-5"></path></svg></span>
-            <h2 style="margin:0; font-size:clamp(26px, 3vw, 34px); line-height:1.1; letter-spacing:-0.015em;">Merci{{ greet }}. Votre demande est prête.</h2>
-            <p style="margin:0; font-size:17px; line-height:1.6; max-width:52ch;">Dernière étape : envoyez-la sur WhatsApp. Un conseiller DST Technologie vous répond et prépare votre devis.</p>
-            <div style="border-top:2px solid var(--color-text);">
-              <sc-for list="{{ recap }}" as="r" hint-placeholder-count="6">
-                <div style="display:grid; grid-template-columns:minmax(110px, 34%) minmax(0, 1fr); gap:12px; padding:11px 0; border-bottom:1px solid var(--color-divider); font-size:15px; line-height:1.45;">
-                  <span style="font-size:12px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; padding-top:2px; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">{{ r.k }}</span>
-                  <span style="overflow-wrap:anywhere;">{{ r.v }}</span>
-                </div>
-              </sc-for>
-            </div>
-            <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
-              <a class="btn btn-primary" href="{{ waDevis }}" target="_blank" rel="noopener" style="min-height:52px; padding:14px 20px; font-size:16px; gap:10px; justify-content:flex-start;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>Envoyer sur WhatsApp</a>
-              <a class="btn btn-secondary" href="tel:+2250503206666" style="min-height:52px; padding:14px 20px; font-size:16px; gap:10px; justify-content:flex-start;">Appeler le 05 03 20 66 66</a>
-              <button type="button" class="btn btn-ghost" onClick="{{ edit }}" style="min-height:44px; padding:10px 6px; font-size:15px;">Modifier ma demande</button>
-            </div>
+        <sc-if value="{{ show.s4 }}"><sc-if value="{{ single }}"><div class="sep"></div></sc-if><fieldset>
+          <legend>Vos coordonnées</legend>
+          <div class="cols">
+            <div class="field"><label for="f-nom">Nom complet *</label><input id="f-nom" class="input" type="text" autoComplete="name" value="{{ f.nom }}" onChange="{{ on.nom }}" style="border-color:{{ bdr.nom }}"><sc-if value="{{ hasErr.nom }}"><p role="alert" class="err">{{ err.nom }}</p></sc-if></div>
+            <div class="field"><label for="f-ent">Entreprise <small>(facultatif)</small></label><input id="f-ent" class="input" type="text" autoComplete="organization" value="{{ f.entreprise }}" onChange="{{ on.entreprise }}"></div>
+            <div class="field"><label for="f-tel">Téléphone / WhatsApp *</label><input id="f-tel" class="input" type="tel" inputMode="tel" autoComplete="tel" placeholder="05 00 00 00 00" value="{{ f.tel }}" onChange="{{ on.tel }}" style="border-color:{{ bdr.tel }}"><sc-if value="{{ hasErr.tel }}"><p role="alert" class="err">{{ err.tel }}</p></sc-if></div>
+            <div class="field"><label for="f-mail">Email <small>(facultatif)</small></label><input id="f-mail" class="input" type="email" autoComplete="email" value="{{ f.email }}" onChange="{{ on.email }}" style="border-color:{{ bdr.email }}"><sc-if value="{{ hasErr.email }}"><p role="alert" class="err">{{ err.email }}</p></sc-if></div>
           </div>
-        </sc-if>
-      </div>
+          <div class="opt-group"><p class="qt">Comment préférez-vous être contacté ?</p>
+            <div class="seg" role="radiogroup" aria-label="Moyen de contact préféré"><sc-for list="{{ prefOpts }}" as="o"><label class="opt radio {{ o.cls }}"><input type="radio" name="pref" checked="{{ o.checked }}" onChange="{{ o.pick }}"><span>{{ o.label }}</span></label></sc-for></div></div>
+        </fieldset></sc-if>
 
-      <sc-if value="{{ nav.bar }}" hint-placeholder-val="{{ true }}">
-        <div style="display:flex; flex-wrap:wrap; gap:12px 16px; align-items:center; justify-content:space-between; padding:18px clamp(20px, 3vw, 32px); border-top:2px solid var(--color-divider);">
-          <sc-if value="{{ nav.back }}" hint-placeholder-val="{{ false }}">
-            <button type="button" class="btn btn-secondary" onClick="{{ back }}" style="min-height:48px; padding:12px 18px; font-size:15px; gap:8px;"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Retour</button>
-          </sc-if>
-          <sc-if value="{{ nav.noBack }}" hint-placeholder-val="{{ true }}">
-            <span style="font-size:14px; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Vos informations servent uniquement à préparer votre devis.</span>
-          </sc-if>
-          <sc-if value="{{ nav.next }}" hint-placeholder-val="{{ true }}">
-            <button type="button" class="btn btn-primary" onClick="{{ next }}" style="min-height:48px; padding:12px 20px; font-size:15px; gap:10px; justify-content:flex-start;">Continuer<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
-          </sc-if>
-          <sc-if value="{{ nav.submit }}" hint-placeholder-val="{{ false }}">
-            <button type="button" class="btn btn-primary" onClick="{{ submit }}" style="min-height:48px; padding:12px 20px; font-size:15px; gap:10px; justify-content:flex-start;">Envoyer ma demande<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
-          </sc-if>
-        </div>
-      </sc-if>
+        <sc-if value="{{ sent }}"><div class="okbox">
+          <span class="bigtick"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <h2>Merci{{ greet }}. Votre demande est prête.</h2>
+          <p class="lead">Dernière étape : envoyez-la sur WhatsApp. Un conseiller DST Technologie vous répond et prépare votre devis.</p>
+          <div class="recap"><sc-for list="{{ recap }}" as="r"><div><span class="k">{{ r.k }}</span><span class="v">{{ r.v }}</span></div></sc-for></div>
+          <div class="row-btns" style="align-items:center">
+            <a class="btn btn-primary" href="{{ waDevis }}" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Envoyer sur WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+2250503206666">Appeler le 05 03 20 66 66</a>
+            <button type="button" class="btn btn-link" onClick="{{ edit }}">Modifier ma demande</button>
+          </div></div></sc-if>
+      </div>
+      <sc-if value="{{ nav.bar }}"><div class="fnav">
+        <sc-if value="{{ nav.back }}"><button type="button" class="btn btn-outline btn-sm" onClick="{{ back }}"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Retour</button></sc-if>
+        <sc-if value="{{ nav.noBack }}"><span class="note">Vos informations servent uniquement à préparer votre devis.</span></sc-if>
+        <sc-if value="{{ nav.next }}"><button type="button" class="btn btn-primary btn-sm" onClick="{{ next }}">Continuer<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></sc-if>
+        <sc-if value="{{ nav.submit }}"><button type="button" class="btn btn-primary btn-sm" onClick="{{ submit }}">Envoyer ma demande<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></sc-if>
+      </div></sc-if>
     </div>
 
-    <aside style="flex:5 1 300px; min-width:0; display:flex; flex-direction:column;">
-      <div style="border-top:2px solid var(--color-text); padding:20px 0 28px; display:flex; flex-direction:column; gap:12px;">
-        <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Téléphone &amp; WhatsApp</p>
-        <a href="tel:+2250503206666" style="font-size:clamp(28px, 3vw, 38px); font-weight:800; line-height:1.1; letter-spacing:-0.01em; color:var(--color-text); text-decoration:none; font-variant-numeric:tabular-nums;">05 03 20 66 66</a>
-        <p style="margin:0; font-size:15px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Vous préférez échanger directement ? Écrivez-nous ou appelez un conseiller.</p>
-        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:4px;">
-          <a class="btn btn-primary" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener" style="min-height:48px; padding:12px 18px; font-size:15px; gap:10px; justify-content:flex-start;"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>Écrire sur WhatsApp</a>
-          <a class="btn btn-secondary" href="tel:+2250503206666" style="min-height:48px; padding:12px 18px; font-size:15px; gap:10px; justify-content:flex-start;"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Appeler</a>
-        </div>
-      </div>
-      <div style="border-top:2px solid var(--color-divider); padding:20px 0 28px; display:flex; flex-direction:column; gap:8px;">
-        <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Site web</p>
-        <a href="https://dsttechnologie.com/" target="_blank" rel="noopener" style="font-size:18px; font-weight:700;">dsttechnologie.com</a>
-      </div>
-      <div style="border-top:2px solid var(--color-divider); padding:20px 0 0; display:flex; flex-direction:column; gap:14px;">
-        <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Et ensuite ?</p>
-        <ol style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column;">
-          <li style="display:grid; grid-template-columns:36px minmax(0, 1fr); gap:8px; padding:12px 0; border-bottom:1px solid var(--color-divider); font-size:15px; line-height:1.5;"><span style="font-weight:800; color:var(--color-accent); font-variant-numeric:tabular-nums;">01</span><span>Nous étudions votre demande.</span></li>
-          <li style="display:grid; grid-template-columns:36px minmax(0, 1fr); gap:8px; padding:12px 0; border-bottom:1px solid var(--color-divider); font-size:15px; line-height:1.5;"><span style="font-weight:800; color:var(--color-accent); font-variant-numeric:tabular-nums;">02</span><span>Un conseiller vous contacte pour préciser vos besoins.</span></li>
-          <li style="display:grid; grid-template-columns:36px minmax(0, 1fr); gap:8px; padding:12px 0; font-size:15px; line-height:1.5;"><span style="font-weight:800; color:var(--color-accent-2-600); font-variant-numeric:tabular-nums;">03</span><span>Vous recevez une proposition et un devis détaillé.</span></li>
-        </ol>
-      </div>
+    <aside class="aside">
+      <div class="card box"><p class="eyebrow">Téléphone &amp; WhatsApp</p><a class="tel" href="tel:+2250503206666">05 03 20 66 66</a>
+        <p class="sm">Vous préférez échanger directement ? Écrivez-nous ou appelez un conseiller.</p>
+        <div class="row-btns"><a class="btn btn-primary btn-sm" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Écrire sur WhatsApp</a><a class="btn btn-outline btn-sm" href="tel:+2250503206666"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Appeler</a></div></div>
+      <div class="card box"><p class="eyebrow">Site web</p><a href="https://dsttechnologie.com/" target="_blank" rel="noopener" style="font-size:18px;font-weight:700">dsttechnologie.com</a></div>
+      <div class="card box"><p class="eyebrow">Et ensuite ?</p><ol>
+        <li><b>01</b><span>Nous étudions votre demande.</span></li><li><b>02</b><span>Un conseiller vous contacte pour préciser vos besoins.</span></li><li><b>03</b><span>Vous recevez une proposition et un devis détaillé.</span></li></ol></div>
     </aside>
   </section>
 </main>
 </sc-if>
 
-<sc-if value="{{ showClose }}" hint-placeholder-val="{{ true }}">
-  <section style="background:var(--color-accent); color:var(--color-bg);">
-    <div style="max-width:1280px; margin:0 auto; padding:clamp(72px, 10vw, 128px) clamp(20px, 5vw, 64px); display:flex; flex-direction:column; gap:28px;">
-      <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">Vous avez un projet en tête ?</p>
-      <h2 style="margin:0 0 0 -0.05em; font-size:clamp(44px, 8vw, 112px); line-height:0.98; letter-spacing:-0.03em; color:var(--color-bg);">Votre partenaire digital.</h2>
-      <p style="margin:0; font-size:clamp(18px, 1.6vw, 21px); line-height:1.55; max-width:46ch;">Parlez-nous de votre activité : nous vous proposons la solution adaptée et un devis détaillé.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:8px;">
-        <button type="button" class="btn" onClick="{{ goDevis }}" style="min-height:56px; padding:14px 22px; font-size:16px; gap:10px; justify-content:flex-start; background:var(--color-bg); color:var(--color-text);" style-hover="background:var(--color-accent-100);">Demander un devis<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
-        <a class="btn" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener" style="min-height:56px; padding:14px 22px; font-size:16px; gap:10px; justify-content:flex-start; color:var(--color-bg); border:1px solid var(--color-bg);" style-hover="background:var(--color-accent-600);"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>WhatsApp · 05 03 20 66 66</a>
-      </div>
-    </div>
-  </section>
+<sc-if value="{{ showClose }}">
+<section class="closing"><div class="wrap">
+  <p class="eyebrow">Vous avez un projet en tête ?</p>
+  <h2>Votre partenaire digital.</h2>
+  <p class="l">Parlez-nous de votre activité : nous vous proposons la solution adaptée et un devis détaillé.</p>
+  <div class="btns"><button type="button" class="btn btn-light" onClick="{{ goDevis }}">Demander un devis<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button><a class="btn btn-ghost-light" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp · 05 03 20 66 66</a></div>
+</div></section>
 </sc-if>
 
-<footer style="border-top:2px solid var(--color-divider);">
-  <div style="max-width:1280px; margin:0 auto; padding:64px clamp(20px, 5vw, 64px) 40px; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap:40px 32px;">
-    <div style="display:flex; flex-direction:column; gap:16px;">
-      <img src="assets/logo-dst-technologie.png" alt="DST Technologie" style="width:180px; height:auto;">
-      <p style="margin:0; font-size:15px; line-height:1.55; max-width:28ch; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Votre partenaire digital pour la réussite de votre entreprise.</p>
-    </div>
-    <nav aria-label="Pied de page" style="display:flex; flex-direction:column; gap:14px;">
-      <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Navigation</p>
-      <a href="#/" style="font-size:15px; color:var(--color-text); text-decoration:none;" style-hover="color:var(--color-accent);">Accueil</a>
-      <a href="#/services" style="font-size:15px; color:var(--color-text); text-decoration:none;" style-hover="color:var(--color-accent);">Services</a>
-      <a href="#/realisations" style="font-size:15px; color:var(--color-text); text-decoration:none;" style-hover="color:var(--color-accent);">Réalisations</a>
-      <a href="#/contact" style="font-size:15px; color:var(--color-text); text-decoration:none;" style-hover="color:var(--color-accent);">Contact &amp; devis</a>
-    </nav>
-    <div style="display:flex; flex-direction:column; gap:14px;">
-      <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Services</p>
-      <a href="#/services" onClick="{{ open.web }}" style="font-size:15px; color:var(--color-text); text-decoration:none;" style-hover="color:var(--color-accent);">Création de sites web</a>
-      <a href="#/services" onClick="{{ open.ecommerce }}" style="font-size:15px; color:var(--color-text); text-decoration:none;" style-hover="color:var(--color-accent);">E-commerce</a>
-      <a href="#/services" onClick="{{ open.reservation }}" style="font-size:15px; color:var(--color-text); text-decoration:none;" style-hover="color:var(--color-accent);">Réservation en ligne</a>
-      <a href="#/services" onClick="{{ open.paiement }}" style="font-size:15px; color:var(--color-text); text-decoration:none;" style-hover="color:var(--color-accent);">Paiement en ligne</a>
-      <a href="#/services" onClick="{{ open.digitalisation }}" style="font-size:15px; color:var(--color-text); text-decoration:none;" style-hover="color:var(--color-accent);">Digitalisation</a>
-      <a href="#/services" onClick="{{ open.crm }}" style="font-size:15px; color:var(--color-text); text-decoration:none;" style-hover="color:var(--color-accent);">CRM &amp; gestion clients</a>
-      <a href="#/services" onClick="{{ open.surmesure }}" style="font-size:15px; color:var(--color-text); text-decoration:none;" style-hover="color:var(--color-accent);">Solutions sur mesure</a>
-      <a href="#/services" onClick="{{ open.seo }}" style="font-size:15px; color:var(--color-text); text-decoration:none;" style-hover="color:var(--color-accent);">SEO / Référencement</a>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:14px;">
-      <p style="margin:0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700);">Contact</p>
-      <span style="font-size:15px; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">Téléphone &amp; WhatsApp</span>
-      <a href="tel:+2250503206666" style="font-size:22px; font-weight:800; color:var(--color-text); text-decoration:none; font-variant-numeric:tabular-nums;">05 03 20 66 66</a>
-      <a href="https://dsttechnologie.com/" target="_blank" rel="noopener" style="font-size:15px;">dsttechnologie.com</a>
-      <button type="button" class="btn btn-primary" onClick="{{ goDevis }}" style="align-self:flex-start; margin-top:6px; min-height:44px; padding:10px 18px; font-size:15px; justify-content:flex-start;">Demander un devis</button>
-    </div>
+<footer class="foot"><div class="wrap">
+  <div class="cols4">
+    <div class="col"><img class="logoimg" src="assets/logo-dst-technologie.png" alt="DST Technologie"><p style="max-width:28ch">Votre partenaire digital pour la réussite de votre entreprise.</p></div>
+    <nav class="col" aria-label="Pied de page"><h4>Navigation</h4><a href="#/">Accueil</a><a href="#/services">Services</a><a href="#/realisations">Réalisations</a><a href="#/contact">Contact &amp; devis</a></nav>
+    <div class="col"><h4>Services</h4><a href="#/services" onClick="{{ open.web }}">Création de sites web</a><a href="#/services" onClick="{{ open.ecommerce }}">E-commerce</a><a href="#/services" onClick="{{ open.reservation }}">Réservation en ligne</a><a href="#/services" onClick="{{ open.paiement }}">Paiement en ligne</a><a href="#/services" onClick="{{ open.digitalisation }}">Digitalisation</a><a href="#/services" onClick="{{ open.crm }}">CRM &amp; gestion clients</a><a href="#/services" onClick="{{ open.surmesure }}">Solutions sur mesure</a><a href="#/services" onClick="{{ open.seo }}">SEO / Référencement</a></div>
+    <div class="col"><h4>Contact</h4><span>Téléphone &amp; WhatsApp</span><a class="tel" href="tel:+2250503206666">05 03 20 66 66</a><a href="https://dsttechnologie.com/" target="_blank" rel="noopener">dsttechnologie.com</a><button type="button" class="btn btn-primary btn-sm" onClick="{{ goDevis }}">Demander un devis</button></div>
   </div>
-  <div style="max-width:1280px; margin:0 auto; padding:0 clamp(20px, 5vw, 64px);">
-    <div style="border-top:2px solid var(--color-divider); padding:20px 0 28px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; font-size:13px; color:color-mix(in srgb, var(--color-text) 72%, var(--color-bg));">
-      <span>© 2026 DST Technologie. Tous droits réservés.</span>
-      <span>Agence digitale &amp; solutions technologiques</span>
-    </div>
-  </div>
-</footer>
-
-<sc-if value="{{ showMobileBar }}" hint-placeholder-val="{{ false }}">
-  <div style="height:62px;"></div>
-  <div style="position:fixed; left:0; right:0; bottom:0; z-index:45; display:grid; grid-template-columns:1fr 1fr; border-top:2px solid var(--color-divider); background:var(--color-bg);">
-    <button type="button" class="btn btn-primary" onClick="{{ goDevis }}" style="min-height:60px; padding:0 20px; font-size:15px; justify-content:flex-start;">Demander un devis</button>
-    <a class="btn" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener" style="min-height:60px; padding:0 20px; font-size:15px; gap:10px; justify-content:flex-start;" style-hover="background:var(--color-surface);"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>WhatsApp</a>
-  </div>
-</sc-if>
-
+  <div class="legal"><span>© 2026 DST Technologie. Tous droits réservés.</span><span>Agence digitale &amp; solutions technologiques</span></div>
+</div></footer>
+<sc-if value="{{ showMobileBar }}"><div style="height:72px"></div>
+  <div class="mbar"><button type="button" class="btn btn-primary" onClick="{{ goDevis }}">Demander un devis</button><a class="btn btn-outline" href="https://wa.me/2250503206666?text=Bonjour%20DST%20Technologie%2C%20je%20souhaite%20parler%20%C3%A0%20un%20conseiller." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp</a></div></sc-if>
 </div>
 </template>
 

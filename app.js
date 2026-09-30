@@ -188,10 +188,12 @@ function computeVals() {
     domId: 'svc-' + x.id,
     listTitle: x.listTitle || 'Ce que comprend ce service',
     devis: () => goDevis([x.id]),
+    open: (e) => { if (e && e.preventDefault) e.preventDefault(); openService(x.id); },
   }));
   const svcIndex = services.map(x => ({ num: x.num, title: x.title, jump: () => scrollToId(x.domId) }));
 
   const tile = (on) => ({
+    cls: on ? 'is-on' : '',
     bd: on ? 'var(--color-accent)' : 'var(--color-divider)',
     bg: on ? 'var(--color-accent-100)' : 'transparent',
   });
@@ -221,7 +223,7 @@ function computeVals() {
   const steps = STEP_LABELS.map((label, i) => {
     const now = i === s.step, done = i < s.step;
     return {
-      num: '0' + (i + 1), label,
+      num: '0' + (i + 1), label, cls: now ? 'is-now' : done ? 'is-done' : '',
       bar: now ? 'var(--color-accent)' : done ? 'var(--color-accent-2)' : 'var(--color-divider)',
       fg: now || done ? 'var(--color-text)' : 'var(--color-neutral-700)',
     };
@@ -233,7 +235,7 @@ function computeVals() {
   const firstName = f.nom.trim().split(/\s+/)[0] || '';
   const tabs = SERVICES.map((x, i) => {
     const a = i === s.tab;
-    return { num: String(i + 1).padStart(2, '0'), title: x.title, aria: a ? 'true' : 'false', bg: a ? 'var(--color-accent-100)' : 'transparent', fg: a ? 'var(--color-accent-800)' : 'var(--color-text)', bar: a ? 'inset 6px 0 0 var(--color-accent)' : 'none', pick: () => setState({ tab: i }) };
+    return { num: String(i + 1).padStart(2, '0'), title: x.title, cls: a ? 'is-on' : '', aria: a ? 'true' : 'false', bg: a ? 'var(--color-accent-100)' : 'transparent', fg: a ? 'var(--color-accent-800)' : 'var(--color-text)', bar: a ? 'inset 6px 0 0 var(--color-accent)' : 'none', pick: () => setState({ tab: i }) };
   });
   const tx = SERVICES[s.tab] || SERVICES[0];
 
@@ -257,7 +259,7 @@ function computeVals() {
     siteOpts: radios('site', SITES),
     budgetOpts: radios('budget', BUDGETS),
     delaiOpts: radios('delai', DELAIS),
-    prefOpts: PREFS.map(label => ({ label, checked: f.pref === label, pick: () => setFieldNow('pref', label) })),
+    prefOpts: PREFS.map(label => ({ label, cls: f.pref === label ? 'is-on' : '', checked: f.pref === label, pick: () => setFieldNow('pref', label) })),
     f, on, err, hasErr, bdr,
     nav: {
       bar: !s.sent,
