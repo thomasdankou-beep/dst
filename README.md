@@ -44,7 +44,3 @@ La démo du téléphone, la conversation WhatsApp et les cartes sur les photos d
 ## Mise en ligne
 
 Envoyez tout le dossier sur votre hébergement. Le formulaire de devis du site n'envoie pas d'e-mail : il prépare un message WhatsApp avec le récapitulatif. Seul le dossier `questionnaire/` a besoin de PHP.
-
-## Anciens fichiers
-
-`support.js`, `image-slot.js`, `DST Technologie.dc.html`, `DST Technologie v2.dc.html`, `_ds/`, `.thumbnail` et `uploads/` viennent de la maquette d'origine. Le site actuel n'en a plus besoin ; ils peuvent être supprimés.
