@@ -63,7 +63,7 @@ const SECTOR_ICONS = [
   ICO('<path d="M12 2c3 2 5 6 5 10l-2 3H9l-2-3c0-4 2-8 5-10z"/><circle cx="12" cy="9" r="1.5"/><path d="M9 15l-2 4 3-1"/><path d="M15 15l2 4-3-1"/>'),             // entrepreneurs
 ];
 SECTORS.forEach((x, i) => { x.icon = SECTOR_ICONS[i]; });
-const BUDGETS = ['Moins de 300 000 FCFA', '300 000 – 750 000 FCFA', '750 000 – 1 500 000 FCFA', 'Plus de 1 500 000 FCFA', 'Je ne sais pas encore'];
+const BUDGETS = ['Moins de 100 000 FCFA', '100 000 – 300 000 FCFA', '300 000 – 750 000 FCFA', '750 000 – 1 500 000 FCFA', 'Plus de 1 500 000 FCFA', 'Je ne sais pas encore'];
 const DELAIS = ['Dès que possible', 'Dans le mois', 'Dans les 3 mois', 'Pas de date précise'];
 const SITES = ['Oui', 'Non', 'Réseaux sociaux uniquement'];
 const PREFS = ['WhatsApp', 'Appel', 'Email'];
