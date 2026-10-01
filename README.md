@@ -10,6 +10,7 @@ Site vitrine (accueil, services, réalisations, contact & devis) et questionnair
 | `app.js` | Les données (services, secteurs, budgets…), le formulaire de devis, la démo interactive et le petit moteur qui affiche la page. |
 | `assets/logo-dst-technologie.png` | Le logo. |
 | `assets/images/` | Les photos du site (auteurs et licences dans `CREDITS.txt`). |
+| `demos/` | Les 3 démos interactives (`salon.html`, `boutique.html`, `restaurant.html`), liées depuis la page Réalisations. Styles communs : `demo.css`, `demo.js`. Tout y est fictif. |
 | `questionnaire/` | Le questionnaire client envoyé par e-mail (PHP) — voir `questionnaire/LISEZ-MOI.txt`. |
 
 ## Voir le site sur votre ordinateur

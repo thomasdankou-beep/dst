@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Démo boutique en ligne | DST Technologie</title>
+<meta name="description" content="Exemple de mini-site pour une boutique : catalogue, panier, livraison et paiement mobile. Site fictif réalisé par DST Technologie.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="demo.css">
+<style>
+:root { --accent:#0F7B6C; --accent-d:#0A5A4F; --accent-soft:#E2F3F0; }
+.filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; }
+.filters .pick { width:auto; padding:8px 16px; border-radius:99px; }
+.products { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:16px; }
+.prod { overflow:hidden; display:flex; flex-direction:column; }
+.prod .ph { aspect-ratio:4/3; display:grid; place-items:center; font-size:56px; background:var(--accent-soft); position:relative; }
+.prod .ph img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.prod .bd { padding:14px; display:flex; flex-direction:column; gap:6px; flex:1; }
+.prod h3 { font-size:16px; }
+.prod .btn { margin-top:auto; padding:10px 14px; }
+.badge { position:absolute; top:10px; left:10px; background:#fff; color:var(--accent-d); font-size:12px; font-weight:800; padding:4px 10px; border-radius:99px; z-index:1; }
+.qty { display:inline-flex; align-items:center; gap:8px; }
+.qty button { width:28px; height:28px; border-radius:50%; border:1.5px solid var(--line); background:#fff; font-weight:800; line-height:1; }
+.cartline { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 0; border-bottom:1px dashed var(--line); font-size:15px; }
+.cartline small { display:block; color:var(--ink-2); }
+.opts { display:grid; gap:8px; margin:12px 0; }
+.opts .pick { padding:10px 14px; }
+@media (min-width:861px){ </style>
+</head>
+<body>
+
+<div class="dst-bar"><div class="wrap">
+  <span>Exemple de démonstration : site <b>fictif</b> créé par DST Technologie</span>
+  <span style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><a class="back" href="../index.html#/realisations">← Autres exemples</a><a class="cta" href="../index.html#/contact">Je veux le même site</a></span>
+</div></div>
+
+<header class="site-head"><div class="wrap">
+  <a class="brand" href="#top">Maison Kora</a>
+  <nav aria-label="Navigation"><a href="#catalogue">Catalogue</a><a href="#panier">Panier</a><a href="#infos">Livraison</a></nav>
+  <a class="btn" href="#panier" style="padding:9px 18px">Panier (<span id="count">0</span>)</a>
+</div></header>
+
+<main id="top">
+<section class="hero" style="min-height:min(58vh,480px)">
+  <img src="../assets/images/real-boutique.jpg" alt="Intérieur d'une boutique" fetchpriority="high">
+  <div class="wrap">
+    <span class="chip">Boutique de mode & beauté · Abidjan</span>
+    <h1>Votre boutique ouverte 24 h sur 24.</h1>
+    <p>Catalogue à jour, panier, livraison et paiement mobile. Vos clientes commandent le soir, vous livrez le lendemain.</p>
+    <div class="row"><a class="btn" href="#catalogue">Voir le catalogue</a><span class="chip">Livraison à Abidjan</span></div>
+  </div>
+</section>
+
+<section class="block" id="catalogue"><div class="wrap">
+  <h2>Le catalogue</h2>
+  <p class="sub">Ajoutez des articles au panier : les totaux se mettent à jour tout de suite.</p>
+  <div class="filters" id="filters" role="group" aria-label="Catégories"></div>
+  <div class="products" id="products"></div>
+</div></section>
+
+<section class="block" id="panier" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap">
+  <h2>Votre panier</h2>
+  <p class="sub">Choisissez la livraison et le paiement, puis validez. Rien n'est réellement envoyé ni débité.</p>
+  <div class="card" style="padding:22px;max-width:640px" aria-live="polite" id="cart"></div>
+</div></section>
+
+<section class="block" id="infos"><div class="wrap">
+  <h2>Livraison & retours</h2>
+  <p class="sub">Les conditions sont écrites une fois, visibles par tous : moins de questions répétées en message privé.</p>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+    <div class="card" style="padding:20px"><h3 style="font-size:17px">Abidjan</h3><p class="muted">Livraison en 24 à 48 h, 1 500 FCFA. Offerte dès 50 000 FCFA d'achat.</p></div>
+    <div class="card" style="padding:20px"><h3 style="font-size:17px">Intérieur du pays</h3><p class="muted">Envoi par transporteur, 3 500 FCFA. Suivi par WhatsApp.</p></div>
+    <div class="card" style="padding:20px"><h3 style="font-size:17px">Paiement</h3><p class="muted">Wave, Orange Money, ou paiement à la livraison à Abidjan.</p></div>
+  </div>
+</div></section>
+</main>
+
+<section class="dst-end"><div class="wrap">
+  <div><h2>Votre boutique en ligne, prête à vendre.</h2><p>Catalogue, panier, paiement mobile et suivi des commandes, avec vos produits et vos couleurs.</p></div>
+  <div class="acts"><a class="btn" href="../index.html#/contact">Demander mon devis</a><a class="btn ghost" id="wa" href="#">Écrire sur WhatsApp</a></div>
+</div></section>
+<p class="foot">Exemple fictif : produits, prix et conditions sont inventés. Photos libres de droits (voir assets/images/CREDITS.txt).</p>
+
+<script src="demo.js"></script>
+<script>
+const CATS = ['Tous', 'Perruques', 'Soins', 'Accessoires'];
+const PRODUITS = [
+  { id: 1, nom: 'Perruque lace frontal 18"', cat: 'Perruques', prix: 65000, ico: '💇🏾‍♀️', img: 'real-perruques.jpg', tag: 'Nouveau' },
+  { id: 2, nom: 'Perruque bob courte', cat: 'Perruques', prix: 38000, ico: '💁🏾‍♀️', img: 'real-perruques.jpg' },
+  { id: 3, nom: 'Huile de karité pure 200 ml', cat: 'Soins', prix: 6500, ico: '🧴' },
+  { id: 4, nom: 'Masque capillaire nourrissant', cat: 'Soins', prix: 9000, ico: '🫙', tag: 'Promo' },
+  { id: 5, nom: 'Foulard en wax', cat: 'Accessoires', prix: 4500, ico: '🧣' },
+  { id: 6, nom: 'Boucles d\'oreilles dorées', cat: 'Accessoires', prix: 7500, ico: '✨' },
+];
+const LIVR = [
+  { id: 'abj', nom: 'Livraison Abidjan', prix: 1500, gratuitDes: 50000 },
+  { id: 'int', nom: 'Intérieur du pays', prix: 3500 },
+];
+const st = { cat: 'Tous', cart: {}, liv: 'abj', done: false, pay: '' };
+const sousTotal = () => Object.entries(st.cart).reduce((t, [id, q]) => t + PRODUITS.find((p) => p.id == id).prix * q, 0);
+const nbArticles = () => Object.values(st.cart).reduce((a, b) => a + b, 0);
+const fraisLiv = () => { const l = LIVR.find((x) => x.id === st.liv); return l.gratuitDes && sousTotal() >= l.gratuitDes ? 0 : l.prix; };
+
+function render() {
+  $('#filters').innerHTML = CATS.map((c) => `<button type="button" class="pick" data-cat="${c}" aria-pressed="${st.cat === c}">${c}</button>`).join('');
+  $('#products').innerHTML = PRODUITS.filter((p) => st.cat === 'Tous' || p.cat === st.cat).map((p) => `<article class="card prod"><div class="ph">${p.tag ? `<span class="badge">${p.tag}</span>` : ''}${p.img ? `<img src="../assets/images/${p.img}" alt="" loading="lazy">` : p.ico}</div><div class="bd"><h3>${p.nom}</h3><p class="price">${fmt(p.prix)}</p><button type="button" class="btn" data-add="${p.id}">Ajouter au panier</button></div></article>`).join('');
+  const n = nbArticles(); $('#count').textContent = n;
+  const c = $('#cart');
+  if (st.done) {
+    c.innerHTML = `<div class="done"><div class="tick">✓</div><h3>Commande enregistrée</h3><p class="muted">Merci ! Vous recevez la confirmation sur WhatsApp. Livraison ${st.liv === 'abj' ? 'sous 24 à 48 h' : 'par transporteur sous 3 à 5 jours'}. Paiement : ${esc(st.pay)}.</p><div class="simu">Simulation : aucun message envoyé, aucun paiement réel.</div><p><button type="button" class="btn ghost" id="again" style="margin-top:14px">Refaire un essai</button></p></div>`;
+    return;
+  }
+  if (!n) { c.innerHTML = '<p class="muted" style="margin:0">Votre panier est vide. Ajoutez un article depuis le catalogue ci-dessus.</p>'; return; }
+  const lignes = Object.entries(st.cart).map(([id, q]) => { const p = PRODUITS.find((x) => x.id == id); return `<div class="cartline"><span>${p.nom}<small>${fmt(p.prix)}</small></span><span class="qty"><button type="button" data-dec="${id}" aria-label="Moins">−</button><b>${q}</b><button type="button" data-inc="${id}" aria-label="Plus">+</button></span></div>`; }).join('');
+  const f = fraisLiv();
+  c.innerHTML = `${lignes}
+    <div class="opts" role="group" aria-label="Livraison">${LIVR.map((l) => `<button type="button" class="pick" data-liv="${l.id}" aria-pressed="${st.liv === l.id}"><span>${l.nom}${l.gratuitDes ? `<small>Offerte dès ${fmt(l.gratuitDes)}</small>` : ''}</span><span class="price">${fmt(l.prix)}</span></button>`).join('')}</div>
+    <div class="line"><span>Sous-total</span><span>${fmt(sousTotal())}</span></div>
+    <div class="line"><span>Livraison</span><span>${f ? fmt(f) : 'Offerte'}</span></div>
+    <div class="line total"><span>Total</span><span style="color:var(--accent-d)">${fmt(sousTotal() + f)}</span></div>
+    <div style="display:grid;gap:10px;margin-top:14px"><button type="button" class="btn wave" data-pay="Wave">Payer avec Wave</button><button type="button" class="btn om" data-pay="Orange Money">Payer avec Orange Money</button>${st.liv === 'abj' ? '<button type="button" class="btn ghost" data-pay="à la livraison">Payer à la livraison</button>' : ''}</div>`;
+}
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  const d = b.dataset;
+  if (d.cat) st.cat = d.cat;
+  else if (d.add) st.cart[d.add] = (st.cart[d.add] || 0) + 1;
+  else if (d.inc) st.cart[d.inc]++;
+  else if (d.dec) { if (--st.cart[d.dec] <= 0) delete st.cart[d.dec]; }
+  else if (d.liv) st.liv = d.liv;
+  else if (d.pay) { st.pay = d.pay; st.done = true; }
+  else if (b.id === 'again') { st.cart = {}; st.done = false; st.liv = 'abj'; }
+  else return;
+  render();
+});
+$('#wa').href = WA + encodeURIComponent('Bonjour DST Technologie, j\'ai vu la démo boutique en ligne et je souhaite un site similaire.');
+render();
+</script>
+</body>
+</html>

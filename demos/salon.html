@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Démo salon de coiffure | DST Technologie</title>
+<meta name="description" content="Exemple de mini-site pour un salon de coiffure : prestations, réservation en ligne et acompte Wave ou Orange Money. Site fictif réalisé par DST Technologie.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="demo.css">
+<style>
+:root { --accent:#B8336A; --accent-d:#8E1F50; --accent-soft:#FCE9F1; }
+.svc { display:grid; gap:10px; }
+.days, .slots { display:flex; flex-wrap:wrap; gap:8px; }
+.days .pick { width:auto; flex-direction:column; align-items:center; padding:10px 14px; min-width:74px; text-align:center; gap:2px; }
+.slots .pick { width:auto; padding:9px 16px; }
+.step { font-size:13px; font-weight:800; color:var(--accent-d); text-transform:uppercase; letter-spacing:.06em; margin:22px 0 10px; }
+.step:first-child { margin-top:0; }
+.about { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+@media (max-width:760px){ .about { grid-template-columns:1fr; } }
+.about .card { padding:20px; }
+.about h3 { font-size:17px; margin-bottom:6px; }
+</style>
+</head>
+<body>
+
+<div class="dst-bar"><div class="wrap">
+  <span>Exemple de démonstration : site <b>fictif</b> créé par DST Technologie</span>
+  <span style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><a class="back" href="../index.html#/realisations">← Autres exemples</a><a class="cta" href="../index.html#/contact">Je veux le même site</a></span>
+</div></div>
+
+<header class="site-head"><div class="wrap">
+  <a class="brand" href="#top">Belle Tresse</a>
+  <nav aria-label="Navigation"><a href="#prestations">Prestations</a><a href="#reserver">Réserver</a><a href="#infos">Infos</a></nav>
+  <a class="btn" href="#reserver" style="padding:9px 18px">Réserver</a>
+</div></header>
+
+<main id="top">
+<section class="hero">
+  <img src="../assets/images/real-salon.jpg" alt="Une cliente en tresses" fetchpriority="high">
+  <div class="wrap">
+    <span class="chip">Salon de coiffure · Cocody, Abidjan</span>
+    <h1>Vos tresses, sans attendre au salon.</h1>
+    <p>Choisissez votre coiffure, votre jour et votre heure. Confirmez avec un petit acompte par Wave ou Orange Money : votre place est réservée.</p>
+    <div class="row"><a class="btn" href="#reserver">Réserver maintenant</a><span class="chip">Acompte 5 000 FCFA</span></div>
+  </div>
+</section>
+
+<section class="block" id="prestations"><div class="wrap">
+  <h2>Nos prestations</h2>
+  <p class="sub">Les prix sont clairs, affichés avant de réserver. Plus de messages pour demander « c'est combien ? ».</p>
+  <div class="about" id="liste"></div>
+</div></section>
+
+<section class="block" id="reserver" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap">
+  <h2>Réserver en 1 minute</h2>
+  <p class="sub">Essayez : choisissez une prestation, un créneau, puis « payer l'acompte ». Rien n'est réellement envoyé ni débité.</p>
+  <div class="grid cols-2">
+    <div class="card" style="padding:22px">
+      <p class="step">1 · Prestation</p>
+      <div class="svc" id="svc" role="group" aria-label="Prestation"></div>
+      <p class="step">2 · Jour</p>
+      <div class="days" id="days" role="group" aria-label="Jour"></div>
+      <p class="step">3 · Heure</p>
+      <div class="slots" id="slots" role="group" aria-label="Heure"></div>
+      <p class="step">4 · Vos coordonnées</p>
+      <label class="f" for="nom">Votre prénom</label><input class="t" id="nom" autocomplete="given-name" placeholder="Ex. Awa">
+      <label class="f" for="tel">Téléphone (WhatsApp)</label><input class="t" id="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="Ex. 07 00 00 00 00">
+      <p class="err" id="err" role="alert"></p>
+    </div>
+    <aside class="card panel" aria-live="polite" id="panel"></aside>
+  </div>
+</div></section>
+
+<section class="block" id="infos"><div class="wrap">
+  <h2>Infos pratiques</h2>
+  <p class="sub">Adresse, horaires et contact, toujours à jour et faciles à trouver sur téléphone.</p>
+  <div class="about">
+    <div class="card"><h3>Adresse</h3><p class="muted">Rue des Jardins, Cocody<br>Abidjan, Côte d'Ivoire<br><em>(adresse fictive)</em></p></div>
+    <div class="card"><h3>Horaires</h3><p class="muted">Lundi – samedi : 8 h – 19 h<br>Dimanche : sur rendez-vous</p></div>
+    <div class="card"><h3>Paiement</h3><p class="muted">Wave, Orange Money, espèces sur place. L'acompte est déduit du total.</p></div>
+  </div>
+</div></section>
+</main>
+
+<section class="dst-end"><div class="wrap">
+  <div><h2>Votre salon mérite le même site.</h2><p>Réservation, acompte mobile et rappels, avec vos photos, vos prix et vos couleurs.</p></div>
+  <div class="acts"><a class="btn" href="../index.html#/contact">Demander mon devis</a><a class="btn ghost" id="wa" href="#">Écrire sur WhatsApp</a></div>
+</div></section>
+<p class="foot">Exemple fictif : noms, prix, adresse et horaires sont inventés. Photo libre de droits (voir assets/images/CREDITS.txt).</p>
+
+<script src="demo.js"></script>
+<script>
+const SERVICES = [
+  { id: 'tresses', nom: 'Tresses africaines', duree: '3 h', prix: 15000 },
+  { id: 'tissage', nom: 'Tissage & pose', duree: '2 h 30', prix: 20000 },
+  { id: 'colo', nom: 'Coloration', duree: '1 h 30', prix: 12000 },
+  { id: 'soin', nom: 'Soin profond', duree: '1 h', prix: 8000 },
+  { id: 'mariage', nom: 'Coiffure de mariage', duree: '3 h', prix: 35000 },
+];
+const ACOMPTE = 5000;
+const HEURES = ['08:00', '10:00', '12:00', '14:00', '16:00'];
+const JOURS = ['dim', 'lun', 'mar', 'mer', 'jeu', 'ven', 'sam'];
+const MOIS = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+const days = [];
+for (let i = 1; days.length < 6; i++) { const d = new Date(); d.setDate(d.getDate() + i); if (d.getDay() !== 0) days.push(d); }
+// créneaux déjà pris, pour la démonstration (ils changent selon le jour)
+const taken = (di, h) => (di * 3 + HEURES.indexOf(h) * 2) % 5 === 0;
+const st = { svc: null, day: null, hour: null, done: false };
+
+$('#liste').innerHTML = SERVICES.slice(0, 3).map((s) => `<div class="card" style="padding:20px"><h3>${s.nom}</h3><p class="muted" style="margin:6px 0 10px">Durée environ ${s.duree}</p><p class="price" style="color:var(--accent-d)">${fmt(s.prix)}</p></div>`).join('');
+
+function render() {
+  $('#svc').innerHTML = SERVICES.map((s) => `<button type="button" class="pick" data-svc="${s.id}" aria-pressed="${st.svc === s.id}"><span>${s.nom}<small>Durée environ ${s.duree}</small></span><span class="price">${fmt(s.prix)}</span></button>`).join('');
+  $('#days').innerHTML = days.map((d, i) => `<button type="button" class="pick" data-day="${i}" aria-pressed="${st.day === i}"><small style="text-transform:uppercase">${JOURS[d.getDay()]}</small><strong style="font-size:20px">${d.getDate()}</strong><small>${MOIS[d.getMonth()]}</small></button>`).join('');
+  $('#slots').innerHTML = st.day === null ? '<p class="muted" style="margin:0">Choisissez d\'abord un jour.</p>' : HEURES.map((h) => `<button type="button" class="pick" data-h="${h}" aria-pressed="${st.hour === h}" ${taken(st.day, h) ? 'disabled title="Déjà réservé"' : ''}>${h.replace(':', ' h ').replace(' h 00', ' h')}</button>`).join('');
+  const s = SERVICES.find((x) => x.id === st.svc);
+  const p = $('#panel');
+  if (st.done) {
+    p.innerHTML = `<div class="done"><div class="tick">✓</div><h3>Réservation confirmée</h3><p class="muted">${esc($('#nom').value.trim())}, nous vous attendons le ${days[st.day].getDate()} ${MOIS[days[st.day].getMonth()]} à ${st.hour.replace(':', ' h ').replace(' h 00', ' h')}.</p><p class="muted">Un message de confirmation part sur WhatsApp au ${esc($('#tel').value.trim())}.</p><div class="simu">Simulation : aucun message envoyé, aucun paiement réel.</div><p><button type="button" class="btn ghost" id="again" style="margin-top:14px">Refaire un essai</button></p></div>`;
+    return;
+  }
+  p.innerHTML = `<h3>Votre réservation</h3>
+    <div class="line"><span>Prestation</span><span>${s ? s.nom : '—'}</span></div>
+    <div class="line"><span>Date</span><span>${st.day === null ? '—' : days[st.day].getDate() + ' ' + MOIS[days[st.day].getMonth()]}</span></div>
+    <div class="line"><span>Heure</span><span>${st.hour ? st.hour.replace(':', ' h ').replace(' h 00', ' h') : '—'}</span></div>
+    <div class="line"><span>Total prestation</span><span>${s ? fmt(s.prix) : '—'}</span></div>
+    <div class="line total"><span>Acompte à payer</span><span style="color:var(--accent-d)">${fmt(ACOMPTE)}</span></div>
+    <div style="display:grid;gap:10px;margin-top:14px"><button type="button" class="btn wave" data-pay="Wave">Payer avec Wave</button><button type="button" class="btn om" data-pay="Orange Money">Payer avec Orange Money</button></div>`;
+}
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.svc) { st.svc = b.dataset.svc; $('#err').textContent = ''; }
+  else if (b.dataset.day) { st.day = +b.dataset.day; if (st.hour && taken(st.day, st.hour)) st.hour = null; }
+  else if (b.dataset.h) { st.hour = b.dataset.h; }
+  else if (b.dataset.pay) {
+    const nom = $('#nom').value.trim(), tel = $('#tel').value.trim();
+    const m = !st.svc ? 'Choisissez une prestation.' : st.day === null ? 'Choisissez un jour.' : !st.hour ? 'Choisissez une heure.' : nom.length < 2 ? 'Indiquez votre prénom.' : !validTel(tel) ? 'Indiquez un numéro de téléphone valide.' : '';
+    $('#err').textContent = m; if (m) return;
+    st.done = true;
+  }
+  else if (b.id === 'again') { Object.assign(st, { svc: null, day: null, hour: null, done: false }); $('#nom').value = ''; $('#tel').value = ''; }
+  else return;
+  render();
+});
+$('#wa').href = WA + encodeURIComponent('Bonjour DST Technologie, j\'ai vu la démo salon de coiffure et je souhaite un site similaire.');
+render();
+</script>
+</body>
+</html>
