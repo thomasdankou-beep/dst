@@ -6,7 +6,7 @@
 /* ============ 1. DONNÉES ============ */
 const WA_NUM = '2250503206666';
 const OPTIONS = { formMode: 'Multi-étapes', servicesLayout: 'Grille', mobileBar: true }; // formMode : 'Multi-étapes' | 'Page unique' ; servicesLayout : 'Grille' (cartes illustrées) | 'Onglets'
-const PRICE_WEB = '50 000 FCFA'; // prix promotionnel d'un site vitrine (affiché : carte du service, page Services, FAQ)
+const PRICE_WEB = '50 000 FCFA'; // prix promotionnel d'un site vitrine (affiché : carte du service et page Services)
 const IMG_EXT = ['jpg', 'jpeg', 'png', 'webp']; // photos : assets/images/<id>.jpg (voir LISEZ-MOI)
 
 const SERVICES = [
