@@ -24,7 +24,7 @@ Puis ouvrez `http://localhost:8080/index.html`.
 
 - **Un texte** : faites Ctrl+F dans `index.html`, puis modifiez-le.
 - **Services, secteurs, budgets, délais, questions du devis** : en haut de `app.js`.
-- **Prix de départ d'un site vitrine** : `PRICE_WEB` en haut de `app.js` (affiché sur la carte du service, la page Services et la FAQ).
+- **Prix promotionnel d'un site vitrine** : `PRICE_WEB` en haut de `app.js` (affiché sur la carte du service, la page Services et la FAQ).
 - **Numéro WhatsApp** : `WA_NUM` en haut de `app.js`, et les liens `wa.me` dans `index.html`.
 - **Présentation des services** : `OPTIONS.servicesLayout` dans `app.js` (`'Grille'` = cartes illustrées, `'Onglets'` = liste à onglets).
 - **Après avoir modifié `app.js`** : changez le texte qui suit `app.js?v=` dans `index.html` (n'importe quelle nouvelle valeur). Sinon les navigateurs gardent l'ancienne version du script en mémoire et le site se comporte mal.
