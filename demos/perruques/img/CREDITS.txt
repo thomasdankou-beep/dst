@@ -1,0 +1,3 @@
+Photos libres de droits (licence Pexels : usage commercial autorise, attribution non obligatoire).
+Source : https://www.pexels.com  (identifiants des photos = noms des fichiers .jpg, ex. https://www.pexels.com/photo/<id>/)
+Ces photos sont des illustrations de demonstration. Sur le vrai site de la boutique, remplacez-les par ses propres photos de perruques.

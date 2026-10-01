@@ -11,6 +11,7 @@ Site vitrine (accueil, services, réalisations, contact & devis) et questionnair
 | `assets/logo-dst-technologie.png` | Le logo. |
 | `assets/images/` | Les photos du site (auteurs et licences dans `CREDITS.txt`). |
 | `demos/` | Les 4 démos interactives (`salon.html`, `boutique.html`, `restaurant.html`, `gestion.html` = stock, rendez-vous, caisse et admin), liées depuis la page Réalisations. Styles communs : `demo.css`, `demo.js`. Tout y est fictif. |
+| `demos/perruques/` | Démo complète d'une boutique de perruques (accueil, boutique, filtres, fiche produit, panier, commande, WhatsApp, rendez-vous, espace admin). Ouvrir `demos/perruques/index.html` ; l'admin est à `#/admin`. Données fictives conservées dans le navigateur (bouton « Réinitialiser » dans Admin > Paramètres). |
 | `questionnaire/` | Le questionnaire client envoyé par e-mail (PHP) — voir `questionnaire/LISEZ-MOI.txt`. |
 
 ## Voir le site sur votre ordinateur
