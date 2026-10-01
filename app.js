@@ -6,6 +6,7 @@
 /* ============ 1. DONNÉES ============ */
 const WA_NUM = '2250503206666';
 const OPTIONS = { formMode: 'Multi-étapes', servicesLayout: 'Grille', mobileBar: true }; // formMode : 'Multi-étapes' | 'Page unique' ; servicesLayout : 'Grille' (cartes illustrées) | 'Onglets'
+const PRICE_WEB_UNTIL = '31 décembre 2026'; // date de fin de l'offre promotionnelle
 const PRICE_WEB = '50 000 FCFA'; // prix promotionnel d'un site vitrine (affiché : carte du service et page Services)
 const IMG_EXT = ['jpg', 'jpeg', 'png', 'webp']; // photos : assets/images/<id>.jpg (voir LISEZ-MOI)
 
@@ -323,7 +324,7 @@ function computeVals() {
     pays: PAYS.map(x => ({ label: x.label, color: x.color, pick: () => { demoManual = true; demoSet(2, x.label); } })),
   };
 
-  const price = { web: PRICE_WEB };
+  const price = { web: PRICE_WEB, until: PRICE_WEB_UNTIL };
 
   return {
     demo, price,
@@ -374,7 +375,7 @@ function computeVals() {
     svcTabs: OPTIONS.servicesLayout === 'Onglets',
     svcGrid: OPTIONS.servicesLayout !== 'Onglets',
     tabs,
-    tabSel: { num: String((s.tab || 0) + 1).padStart(2, '0'), title: tx.title, long: tx.long, price: tx.price || '', features: tx.features, devis: () => goDevis([tx.id]), more: (e) => { if (e && e.preventDefault) e.preventDefault(); openService(tx.id); } },
+    tabSel: { num: String((s.tab || 0) + 1).padStart(2, '0'), title: tx.title, long: tx.long, price: tx.price || '', priceUntil: tx.price ? PRICE_WEB_UNTIL : '', features: tx.features, devis: () => goDevis([tx.id]), more: (e) => { if (e && e.preventDefault) e.preventDefault(); openService(tx.id); } },
     showMobileBar: OPTIONS.mobileBar && !desktop,
   };
 }
