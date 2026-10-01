@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Démo gestion de boutique | DST Technologie</title>
+<meta name="description" content="Exemple de mini-site avec catalogue par catégorie et stock, prise de rendez-vous, caisse et espace administrateur pour ajouter ou retirer des articles. Site fictif réalisé par DST Technologie.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="demo.css">
+<style>
+:root { --accent:#4338CA; --accent-d:#312E81; --accent-soft:#EEF0FF; --warn:#B45309; --bad:#B3261E; }
+.tabs { display:flex; gap:6px; flex-wrap:wrap; background:#fff; border:1px solid var(--line); border-radius:99px; padding:5px; width:fit-content; max-width:100%; margin-bottom:24px; }
+.tabs button { border:0; background:transparent; padding:10px 20px; border-radius:99px; font-weight:700; color:var(--ink-2); }
+.tabs button[aria-selected="true"] { background:var(--accent); color:#fff; }
+.chips { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+.chips .pick { width:auto; padding:7px 14px; border-radius:99px; gap:8px; }
+.chips .n { background:#fff; border:1px solid var(--line); border-radius:99px; padding:0 8px; font-size:12px; font-weight:800; }
+.products { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:14px; }
+.prod { padding:16px; display:flex; flex-direction:column; gap:6px; }
+.prod .cat { font-size:12px; font-weight:800; color:var(--accent-d); text-transform:uppercase; letter-spacing:.05em; }
+.prod h3 { font-size:16px; }
+.stock { font-size:13.5px; font-weight:700; color:var(--ok); }
+.stock.low { color:var(--warn); } .stock.out { color:var(--bad); }
+.bar { height:6px; border-radius:6px; background:#EEE; overflow:hidden; } .bar i { display:block; height:100%; background:var(--ok); }
+.bar.low i { background:var(--warn); } .bar.out i { background:var(--bad); }
+.pos { display:grid; grid-template-columns:1.4fr 1fr; gap:24px; align-items:start; }
+@media (max-width:900px){ .pos, .rdvgrid { grid-template-columns:1fr !important; } }
+.posgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; }
+.posgrid .pick { flex-direction:column; align-items:flex-start; gap:4px; }
+.qty { display:inline-flex; align-items:center; gap:8px; }
+.qty button { width:28px; height:28px; border-radius:50%; border:1.5px solid var(--line); background:#fff; font-weight:800; line-height:1; }
+.cartline { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:9px 0; border-bottom:1px dashed var(--line); font-size:15px; }
+.tbl { width:100%; border-collapse:collapse; font-size:14.5px; }
+.tbl th { text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-2); padding:8px 10px; border-bottom:2px solid var(--line); }
+.tbl td { padding:10px; border-bottom:1px solid var(--line); vertical-align:middle; }
+.tblwrap { overflow-x:auto; }
+.sm { padding:7px 12px; font-size:13.5px; }
+.btn.danger { background:#fff; color:var(--bad); border:1.5px solid #E7B4B0; }
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:12px; margin-bottom:20px; }
+.stats .card { padding:16px; } .stats b { display:block; font-size:24px; letter-spacing:-.02em; color:var(--accent-d); } .stats span { font-size:13px; color:var(--ink-2); }
+.formgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; align-items:end; }
+select.t { appearance:auto; }
+.rdvgrid { display:grid; grid-template-columns:1fr 1.1fr; gap:24px; align-items:start; }
+.rdv { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:12px 0; border-bottom:1px dashed var(--line); }
+.rdv small { color:var(--ink-2); display:block; }
+.ok { color:var(--ok); font-weight:700; font-size:14px; min-height:1.3em; margin:8px 0 0; }
+.hint { background:#FFF8EA; border:1px solid #FFD99A; color:#6B4300; border-radius:12px; padding:10px 14px; font-size:14px; margin-bottom:16px; }
+.empty { color:var(--ink-2); padding:14px 0; margin:0; }
+.sale { padding:8px 0; border-bottom:1px dashed var(--line); font-size:14px; display:flex; justify-content:space-between; gap:10px; }
+</style>
+</head>
+<body>
+
+<div class="dst-bar"><div class="wrap">
+  <span>Exemple de démonstration : site <b>fictif</b> créé par DST Technologie</span>
+  <span style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><a class="back" href="../index.html#/realisations">← Autres exemples</a><a class="cta" href="../index.html#/contact">Je veux le même site</a></span>
+</div></div>
+
+<header class="site-head"><div class="wrap">
+  <a class="brand" href="#top">Espace Mode & Beauté</a>
+  <span class="muted" style="font-size:14px">Catalogue · Rendez-vous · Caisse · Admin</span>
+</div></header>
+
+<main id="top"><section class="block" style="padding-top:36px"><div class="wrap">
+  <h1 style="font-size:clamp(28px,4vw,44px);max-width:20ch">Votre boutique, du stock à la caisse.</h1>
+  <p class="muted" style="max-width:62ch;margin:10px 0 24px">Testez comme un vrai commerçant : consultez le catalogue par catégorie, prenez un rendez-vous, encaissez une vente (le stock baisse tout seul), puis ajoutez ou retirez des articles dans l'espace admin.</p>
+  <div class="tabs" role="tablist" aria-label="Sections" id="tabs"></div>
+  <div id="view" aria-live="polite"></div>
+</div></section></main>
+
+<section class="dst-end"><div class="wrap">
+  <div><h2>Un outil sur mesure pour votre commerce.</h2><p>Stock, caisse, rendez-vous et espace admin protégé par mot de passe, avec vos produits et vos couleurs.</p></div>
+  <div class="acts"><a class="btn" href="../index.html#/contact">Demander mon devis</a><a class="btn ghost" id="wa" href="#">Écrire sur WhatsApp</a></div>
+</div></section>
+<p class="foot">Exemple fictif : articles, prix, clients et stocks sont inventés. Les données restent dans votre navigateur ; « Réinitialiser » les efface. Dans un vrai site, l'espace admin demande un mot de passe.</p>
+
+<script src="demo.js"></script>
+<script>
+const KEY = 'dst-demo-gestion-v1';
+const SEED = () => ({
+  produits: [
+    { id: 1, nom: 'Perruque lace frontal 18"', cat: 'Perruques', prix: 65000, stock: 6, max: 10 },
+    { id: 2, nom: 'Perruque bob courte', cat: 'Perruques', prix: 38000, stock: 3, max: 10 },
+    { id: 3, nom: 'Huile de karité pure 200 ml', cat: 'Soins', prix: 6500, stock: 24, max: 30 },
+    { id: 4, nom: 'Masque capillaire nourrissant', cat: 'Soins', prix: 9000, stock: 2, max: 20 },
+    { id: 5, nom: 'Foulard en wax', cat: 'Accessoires', prix: 4500, stock: 15, max: 20 },
+    { id: 6, nom: 'Boucles d\'oreilles dorées', cat: 'Accessoires', prix: 7500, stock: 0, max: 12 },
+  ],
+  rdv: [{ id: 1, nom: 'Aïcha K.', tel: '07 00 00 00 01', motif: 'Essayage de perruque', date: dateIn(1), heure: '10:00' }],
+  ventes: [], next: 10,
+});
+function dateIn(n) { const d = new Date(); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); }
+let db;
+try { db = JSON.parse(localStorage.getItem(KEY)); } catch (e) { db = null; }
+if (!db || !Array.isArray(db.produits)) db = SEED();
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(db)); } catch (e) {} };
+const ui = { tab: 'catalogue', cat: 'Tous', posCat: 'Tous', cart: {}, pay: 'Espèces', recu: '', msg: '', receipt: null };
+const MOTIFS = ['Essayage de perruque', 'Conseil beauté', 'Retrait de commande', 'Commande sur mesure'];
+const HEURES = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'];
+const TABS = [['catalogue', 'Catalogue'], ['rdv', 'Rendez-vous'], ['caisse', 'Caisse'], ['admin', 'Admin']];
+const cats = () => [...new Set(db.produits.map((p) => p.cat))].sort();
+const prod = (id) => db.produits.find((p) => p.id == id);
+const niveau = (p) => (p.stock <= 0 ? 'out' : p.stock <= 3 ? 'low' : '');
+const libStock = (p) => (p.stock <= 0 ? 'Rupture de stock' : p.stock <= 3 ? `Dernières pièces : ${p.stock}` : `En stock : ${p.stock}`);
+const hh = (h) => h.replace(':', ' h ').replace(' h 00', ' h');
+const dFr = (iso) => { const [y, m, d] = iso.split('-'); return `${d}/${m}/${y}`; };
+const chipRow = (list, cur, attr) => ['Tous', ...list].map((c) => { const n = c === 'Tous' ? db.produits.length : db.produits.filter((p) => p.cat === c).length; return `<button type="button" class="pick" ${attr}="${esc(c)}" aria-pressed="${cur === c}">${esc(c)} <span class="n">${n}</span></button>`; }).join('');
+
+function vCatalogue() {
+  const list = db.produits.filter((p) => ui.cat === 'Tous' || p.cat === ui.cat);
+  return `<div class="chips" role="group" aria-label="Catégories">${chipRow(cats(), ui.cat, 'data-cat')}</div>
+  <div class="products">${list.map((p) => `<article class="card prod"><span class="cat">${esc(p.cat)}</span><h3>${esc(p.nom)}</h3><p class="price" style="margin:0">${fmt(p.prix)}</p><div class="bar ${niveau(p)}"><i style="width:${Math.min(100, Math.round((p.stock / (p.max || 10)) * 100))}%"></i></div><span class="stock ${niveau(p)}">${libStock(p)}</span></article>`).join('') || '<p class="empty">Aucun article dans cette catégorie.</p>'}</div>`;
+}
+
+function vRdv() {
+  const liste = [...db.rdv].sort((a, b) => (a.date + a.heure).localeCompare(b.date + b.heure));
+  return `<div class="rdvgrid">
+  <form class="card" style="padding:22px" id="rdvForm" novalidate>
+    <h2 style="font-size:22px">Prendre rendez-vous</h2>
+    <label class="f" for="rn">Nom</label><input class="t" id="rn" autocomplete="name" placeholder="Ex. Awa K.">
+    <label class="f" for="rt">Téléphone</label><input class="t" id="rt" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ex. 07 00 00 00 00">
+    <label class="f" for="rm">Motif</label><select class="t" id="rm">${MOTIFS.map((m) => `<option>${m}</option>`).join('')}</select>
+    <label class="f" for="rd">Date</label><input class="t" id="rd" type="date" min="${dateIn(0)}" value="${dateIn(1)}">
+    <label class="f" for="rh">Heure</label><select class="t" id="rh">${HEURES.map((h) => `<option value="${h}">${hh(h)}</option>`).join('')}</select>
+    <p class="err" id="rerr" role="alert"></p>
+    <button class="btn" type="submit" style="width:100%">Confirmer le rendez-vous</button>
+    <p class="ok" id="rok">${esc(ui.msg)}</p>
+  </form>
+  <div class="card" style="padding:22px"><h2 style="font-size:22px">Agenda <span class="muted" style="font-size:15px;font-weight:600">(vue du commerçant)</span></h2>
+    ${liste.map((r) => `<div class="rdv"><div><b>${dFr(r.date)} · ${hh(r.heure)}</b><small>${esc(r.nom)} · ${esc(r.tel)} · ${esc(r.motif)}</small></div><button type="button" class="btn danger sm" data-delrdv="${r.id}" aria-label="Annuler le rendez-vous de ${esc(r.nom)}">Annuler</button></div>`).join('') || '<p class="empty">Aucun rendez-vous pour le moment.</p>'}
+  </div></div>`;
+}
+
+const totalCart = () => Object.entries(ui.cart).reduce((t, [id, q]) => t + prod(id).prix * q, 0);
+function vCaisse() {
+  const list = db.produits.filter((p) => ui.posCat === 'Tous' || p.cat === ui.posCat);
+  const total = totalCart(), recu = parseInt(String(ui.recu).replace(/\D/g, ''), 10) || 0;
+  const aujour = db.ventes.filter((v) => v.date === dateIn(0));
+  const ticket = ui.receipt;
+  return `<div class="pos"><div>
+    <div class="chips" role="group" aria-label="Catégories">${chipRow(cats(), ui.posCat, 'data-poscat')}</div>
+    <div class="posgrid">${list.map((p) => `<button type="button" class="pick" data-sell="${p.id}" ${p.stock - (ui.cart[p.id] || 0) <= 0 ? 'disabled' : ''}><b>${esc(p.nom)}</b><span class="price">${fmt(p.prix)}</span><small>Stock : ${p.stock - (ui.cart[p.id] || 0)}</small></button>`).join('')}</div>
+    <div class="card" style="padding:18px;margin-top:20px"><h3 style="font-size:17px;margin-bottom:6px">Ventes d'aujourd'hui · ${fmt(aujour.reduce((t, v) => t + v.total, 0))}</h3>
+      ${aujour.slice().reverse().map((v) => `<div class="sale"><span>${esc(v.heure)} · ${v.lignes.map((l) => `${l.q}× ${esc(l.nom)}`).join(', ')}<br><small class="muted">${esc(v.pay)}</small></span><b>${fmt(v.total)}</b></div>`).join('') || '<p class="empty" style="padding:6px 0">Aucune vente pour le moment.</p>'}</div>
+  </div>
+  <aside class="card panel" style="top:16px">
+    ${ticket ? `<div class="done"><div class="tick">✓</div><h3>Vente enregistrée</h3><p class="muted">${fmt(ticket.total)} · ${esc(ticket.pay)}${ticket.rendu ? `<br>Monnaie à rendre : <b>${fmt(ticket.rendu)}</b>` : ''}</p><p class="muted">Le stock a été mis à jour.</p><button type="button" class="btn" data-newsale="1" style="margin-top:8px">Nouvelle vente</button></div>` : `
+    <h3>Ticket en cours</h3>
+    ${Object.entries(ui.cart).map(([id, q]) => { const p = prod(id); return `<div class="cartline"><span>${esc(p.nom)}<br><small class="muted">${fmt(p.prix)}</small></span><span class="qty"><button type="button" data-dec="${id}" aria-label="Moins">−</button><b>${q}</b><button type="button" data-inc="${id}" aria-label="Plus" ${q >= p.stock ? 'disabled' : ''}>+</button></span></div>`; }).join('') || '<p class="empty">Touchez un article pour l\'ajouter.</p>'}
+    <div class="line total"><span>Total</span><span style="color:var(--accent-d)">${fmt(total)}</span></div>
+    <div class="chips" role="group" aria-label="Paiement" style="margin:8px 0">${['Espèces', 'Wave', 'Orange Money'].map((m) => `<button type="button" class="pick" data-pay="${m}" aria-pressed="${ui.pay === m}">${m}</button>`).join('')}</div>
+    ${ui.pay === 'Espèces' ? `<label class="f" for="recu">Montant reçu (FCFA)</label><input class="t" id="recu" inputmode="numeric" value="${esc(ui.recu)}" placeholder="Ex. 70000"><p class="muted" style="margin:6px 0 0">${recu >= total && total ? 'Monnaie à rendre : <b>' + fmt(recu - total) + '</b>' : ''}</p>` : ''}
+    <p class="err" id="perr" role="alert">${esc(ui.msg)}</p>
+    <button type="button" class="btn" data-encaisser="1" style="width:100%" ${total ? '' : 'disabled'}>Encaisser ${total ? fmt(total) : ''}</button>`}
+  </aside></div>`;
+}
+
+function vAdmin() {
+  const val = db.produits.reduce((t, p) => t + p.prix * p.stock, 0);
+  const alertes = db.produits.filter((p) => p.stock <= 3).length;
+  return `<p class="hint">Espace administrateur. Dans un vrai site, il est protégé par un mot de passe.</p>
+  <div class="stats"><div class="card"><b>${db.produits.length}</b><span>articles au catalogue</span></div><div class="card"><b>${fmt(val)}</b><span>valeur du stock</span></div><div class="card"><b>${alertes}</b><span>articles à réapprovisionner</span></div><div class="card"><b>${db.rdv.length}</b><span>rendez-vous à venir</span></div></div>
+  <form class="card" style="padding:20px;margin-bottom:20px" id="addForm" novalidate>
+    <h2 style="font-size:20px;margin-bottom:6px">Ajouter un article</h2>
+    <div class="formgrid">
+      <div><label class="f" for="an">Nom</label><input class="t" id="an" placeholder="Ex. Brosse démêlante"></div>
+      <div><label class="f" for="ac">Catégorie</label><input class="t" id="ac" list="catlist" placeholder="Ex. Accessoires"><datalist id="catlist">${cats().map((c) => `<option value="${esc(c)}">`).join('')}</datalist></div>
+      <div><label class="f" for="ap">Prix (FCFA)</label><input class="t" id="ap" inputmode="numeric" placeholder="Ex. 3500"></div>
+      <div><label class="f" for="as">Quantité</label><input class="t" id="as" inputmode="numeric" placeholder="Ex. 10"></div>
+      <button class="btn" type="submit">Ajouter</button>
+    </div>
+    <p class="err" id="aerr" role="alert"></p><p class="ok" id="aok">${esc(ui.msg)}</p>
+  </form>
+  <div class="card tblwrap" style="padding:8px 14px"><table class="tbl"><thead><tr><th>Article</th><th>Catégorie</th><th>Prix</th><th>Stock</th><th>Actions</th></tr></thead><tbody>
+  ${db.produits.map((p) => `<tr><td><b>${esc(p.nom)}</b></td><td>${esc(p.cat)}</td><td class="price">${fmt(p.prix)}</td><td><span class="qty"><button type="button" data-stk="-1:${p.id}" aria-label="Retirer une unité de ${esc(p.nom)}">−</button><b class="stock ${niveau(p)}">${p.stock}</b><button type="button" data-stk="1:${p.id}" aria-label="Ajouter une unité de ${esc(p.nom)}">+</button></span></td><td><button type="button" class="btn danger sm" data-delprod="${p.id}" aria-label="Retirer ${esc(p.nom)} du catalogue">Retirer</button></td></tr>`).join('') || '<tr><td colspan="5" class="empty">Le catalogue est vide. Ajoutez un article ci-dessus.</td></tr>'}
+  </tbody></table></div>
+  <p style="margin-top:18px"><button type="button" class="btn ghost sm" data-reset="1">Réinitialiser la démo</button></p>`;
+}
+
+function render() {
+  $('#tabs').innerHTML = TABS.map(([k, l]) => `<button type="button" role="tab" data-tab="${k}" aria-selected="${ui.tab === k}">${l}</button>`).join('');
+  const keepFocus = document.activeElement && document.activeElement.id;
+  $('#view').innerHTML = { catalogue: vCatalogue, rdv: vRdv, caisse: vCaisse, admin: vAdmin }[ui.tab]();
+  if (keepFocus && keepFocus === 'recu') { const el = $('#recu'); if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); } }
+}
+const go = (t) => { ui.tab = t; ui.msg = ''; ui.receipt = null; render(); };
+
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b || b.type === 'submit') return;
+  const d = b.dataset;
+  if (d.tab) return go(d.tab);
+  if (d.cat) ui.cat = d.cat;
+  else if (d.poscat) ui.posCat = d.poscat;
+  else if (d.sell) { const id = d.sell, p = prod(id); if ((ui.cart[id] || 0) < p.stock) ui.cart[id] = (ui.cart[id] || 0) + 1; ui.msg = ''; }
+  else if (d.inc) { if (ui.cart[d.inc] < prod(d.inc).stock) ui.cart[d.inc]++; }
+  else if (d.dec) { if (--ui.cart[d.dec] <= 0) delete ui.cart[d.dec]; }
+  else if (d.pay) { ui.pay = d.pay; ui.msg = ''; }
+  else if (d.newsale) { ui.receipt = null; ui.recu = ''; }
+  else if (d.encaisser) {
+    const total = totalCart(), recu = parseInt(String(ui.recu).replace(/\D/g, ''), 10) || 0;
+    if (ui.pay === 'Espèces' && recu < total) { ui.msg = 'Le montant reçu est inférieur au total.'; return render(); }
+    const lignes = Object.entries(ui.cart).map(([id, q]) => ({ nom: prod(id).nom, q, prix: prod(id).prix }));
+    Object.entries(ui.cart).forEach(([id, q]) => { prod(id).stock -= q; });
+    const n = new Date();
+    db.ventes.push({ date: dateIn(0), heure: n.getHours() + ' h ' + String(n.getMinutes()).padStart(2, '0'), lignes, total, pay: ui.pay });
+    ui.receipt = { total, pay: ui.pay, rendu: ui.pay === 'Espèces' ? recu - total : 0 };
+    ui.cart = {}; ui.recu = ''; ui.msg = ''; save();
+  }
+  else if (d.delrdv) { db.rdv = db.rdv.filter((r) => r.id != d.delrdv); ui.msg = ''; save(); }
+  else if (d.stk) { const [dl, id] = d.stk.split(':'); const p = prod(id); p.stock = Math.max(0, p.stock + +dl); p.max = Math.max(p.max || 10, p.stock); save(); }
+  else if (d.delprod) { const p = prod(d.delprod); if (p && confirm(`Retirer « ${p.nom} » du catalogue ?`)) { db.produits = db.produits.filter((x) => x.id != p.id); delete ui.cart[p.id]; save(); } else return; }
+  else if (d.reset) { if (!confirm('Remettre la démo dans son état de départ ?')) return; db = SEED(); ui.cart = {}; ui.receipt = null; save(); }
+  else return;
+  render();
+});
+document.addEventListener('input', (e) => { if (e.target.id === 'recu') { ui.recu = e.target.value; const t = totalCart(), r = parseInt(ui.recu.replace(/\D/g, ''), 10) || 0; const p = e.target.nextElementSibling; if (p) p.innerHTML = r >= t && t ? 'Monnaie à rendre : <b>' + fmt(r - t) + '</b>' : ''; } });
+document.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (e.target.id === 'rdvForm') {
+    const nom = $('#rn').value.trim(), tel = $('#rt').value.trim(), motif = $('#rm').value, date = $('#rd').value, heure = $('#rh').value;
+    const m = nom.length < 2 ? 'Indiquez le nom.' : !validTel(tel) ? 'Indiquez un numéro de téléphone valide.' : !date || date < dateIn(0) ? 'Choisissez une date à venir.' : db.rdv.some((r) => r.date === date && r.heure === heure) ? 'Ce créneau est déjà pris, choisissez une autre heure.' : '';
+    if (m) { $('#rerr').textContent = m; return; }
+    db.rdv.push({ id: db.next++, nom, tel, motif, date, heure }); save();
+    ui.msg = `Rendez-vous confirmé le ${dFr(date)} à ${hh(heure)}. (Simulation : aucun SMS envoyé)`; render();
+  } else if (e.target.id === 'addForm') {
+    const nom = $('#an').value.trim(), cat = $('#ac').value.trim(), prix = parseInt($('#ap').value.replace(/\D/g, ''), 10), stock = parseInt($('#as').value.replace(/\D/g, ''), 10);
+    const m = nom.length < 2 ? 'Indiquez le nom de l\'article.' : cat.length < 2 ? 'Indiquez une catégorie.' : !(prix > 0) ? 'Indiquez un prix.' : !(stock >= 0) ? 'Indiquez la quantité.' : '';
+    if (m) { $('#aerr').textContent = m; return; }
+    db.produits.push({ id: db.next++, nom, cat, prix, stock, max: Math.max(stock, 10) }); save();
+    ui.msg = `« ${nom} » ajouté au catalogue.`; render();
+  }
+});
+$('#wa').href = WA + encodeURIComponent('Bonjour DST Technologie, j\'ai vu la démo gestion de boutique (stock, caisse, rendez-vous) et je souhaite un outil similaire.');
+render();
+</script>
+</body>
+</html>
