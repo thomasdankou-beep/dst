@@ -3,8 +3,8 @@
   --black:#0B0B0C; --ink:#1C1A18; --ink-2:#5E5750; --cream:#F8F4EE; --nude:#EADFD2; --nude-2:#D8C3AE; --white:#FFFFFF;
   --gold:#B8954F; --gold-2:#D6B66E; --line:#E4DACD; --ok:#2E7D4F; --warn:#C27A12; --bad:#B3261E;
   --serif:"Cormorant Garamond","Playfair Display",Georgia,"Times New Roman",serif;
-  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  --r:16px; --shadow:0 18px 40px -22px rgba(11,11,12,.35);
+  --sans:"Plus Jakarta Sans","Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --r:16px; --shadow:0 24px 48px -26px rgba(70,45,20,.38); --ease:cubic-bezier(.32,.72,0,1);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -335,3 +335,47 @@ body.adm{background:#F2EFEA}
 .offers .btn.line{color:#fff;border-color:rgba(255,255,255,.6)}
 .offers .btn.line:hover{background:#fff;color:var(--black)}
 .offers .fav{background:rgba(255,255,255,.95)}
+
+/* ===== Améliorations de design ===== */
+h1,h2,h3{text-wrap:balance}
+p,figcaption,q{text-wrap:pretty}
+.price,.cd,.sum,.kpi b,.tbl,.stats b,.qty b{font-variant-numeric:tabular-nums}
+.btn,.pc,.cat img,.thumbs button,.fav,.ibtn,.gal .main img,.shots img{transition-timing-function:var(--ease)}
+.btn{transition-duration:.45s}
+.btn:active{transform:scale(.98)}
+.drawer,.mnav,.filters{transition-timing-function:var(--ease);transition-duration:.55s}
+.rv{transition-timing-function:var(--ease);transition-duration:1s;transform:translateY(34px)}
+.hero{min-height:calc(100dvh - 104px)}
+.btn .arr{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;transition:transform .5s var(--ease);margin-right:-10px}
+.btn.line .arr,.btn.light .arr{background:rgba(0,0,0,.08)}
+.btn:hover .arr{transform:translate(2px,-2px) scale(1.08)}
+.btn .arr svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+/* grain discret sur les fonds sombres */
+.offers,.dstbox,footer.bot{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+/* badges carrés plutôt que pilules */
+.tag{border-radius:4px;letter-spacing:.1em}
+.cd{border-radius:8px}
+.price em{border-radius:4px}
+/* catégories : mosaïque asymétrique */
+@media(min-width:760px){
+  .cats{grid-auto-rows:minmax(210px,21vw)}
+  .cat{aspect-ratio:auto}
+  .cat:first-child{grid-column:span 2;grid-row:span 2}
+  .cat:first-child span{font-size:clamp(28px,3.4vw,44px)}
+  .cat:last-child{grid-column:span 2}
+}
+/* étapes : liste éditoriale au lieu de 3 cartes identiques */
+.steps{grid-template-columns:1fr!important;gap:0;border-bottom:1px solid var(--line)}
+.step{background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:28px 0;display:grid;grid-template-columns:64px 1fr;gap:6px 18px;align-items:baseline}
+.step .n{font-size:clamp(40px,5vw,64px)}
+.step h3{margin:0;font-size:clamp(24px,3vw,34px)}
+.step p{grid-column:1/-1;max-width:56ch}
+@media(min-width:860px){.step{grid-template-columns:110px 1fr 1.3fr;gap:24px}.step p{grid-column:auto}}
+/* avis : décalage vertical, citations plus grandes */
+@media(min-width:800px){.reviews .rev:nth-child(2){margin-top:44px}.reviews .rev:nth-child(3){margin-top:16px}}
+.rev{border-radius:var(--r) var(--r) var(--r) 4px}
+.rev q{font-size:clamp(22px,2.4vw,28px)}
+/* accessibilité */
+.skip{position:absolute;left:12px;top:-60px;background:var(--black);color:#fff;padding:10px 16px;border-radius:8px;z-index:200;text-decoration:none;transition:top .3s var(--ease)}
+.skip:focus{top:10px}
+.rev{margin:0}

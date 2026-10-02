@@ -179,7 +179,7 @@ function pageHome() {
     <div class="wrap"><span class="eyebrow">Perruques &amp; extensions · Abidjan</span>
       <h1 id="h1">Révélez votre beauté avec nos <em>collections exclusives</em></h1>
       <p class="lead">Découvrez des perruques et extensions soigneusement sélectionnées pour sublimer votre style.</p>
-      <div class="cta"><a class="btn gold" href="#/boutique">Découvrir la collection</a><a class="btn wa" href="${waGeneric()}" target="_blank" rel="noopener">Commander sur WhatsApp</a></div>
+      <div class="cta"><a class="btn gold" href="#/boutique">Découvrir la collection<span class="arr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a><a class="btn wa" href="${waGeneric()}" target="_blank" rel="noopener">Commander sur WhatsApp</a></div>
       <p class="deliv"><i></i>Livraison disponible en Côte d'Ivoire</p></div></section>
   <section class="trust" aria-label="Nos engagements"><div class="wrap">
     <div>${svg('truck')}<span><b>Livraison partout</b>Abidjan et intérieur du pays</span></div>
@@ -190,7 +190,7 @@ function pageHome() {
     <div class="cats">${CATEGORIES.map((c) => `<a class="cat rv" href="#/boutique?cat=${encodeURIComponent(c.id)}"><img src="img/${c.img}.jpg" alt="Collection ${esc(c.id)}" loading="lazy"><span>${c.id}<small>${c.sub}</small></span></a>`).join('')}</div></div></section>
   <section class="sec" style="padding-top:0"><div class="wrap"><div class="sechead rv"><div><span class="eyebrow">Sélection</span><h2>Nos pièces favorites</h2></div><p>Prix, disponibilité et photos toujours à jour : vos clientes voient tout, sans vous écrire.</p></div>
     <div class="grid g4">${vedettes.map((p) => card(p, { rv: 1 })).join('')}</div>
-    <p style="text-align:center;margin-top:36px"><a class="btn line" href="#/boutique">Voir toute la boutique</a></p></div></section>
+    <p style="text-align:center;margin-top:36px"><a class="btn line" href="#/boutique">Voir toute la boutique<span class="arr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></p></div></section>
   ${offres.length ? `<section class="sec offers" id="offres"><div class="wrap"><div class="sechead rv"><div><span class="eyebrow">Offres du moment</span><h2>Jusqu'à -${Math.max(...offres.map(pct))} % sur une sélection</h2></div><p style="color:#B9B0A2">Des promotions à durée limitée, avec compte à rebours.</p></div>
     <div class="grid g4">${offres.map((p) => card(p, { rv: 1, cd: 1 })).join('')}</div></div></section>` : '<span id="offres"></span>'}
   <section class="sec"><div class="wrap"><div class="sechead rv"><div><span class="eyebrow">Simple comme bonjour</span><h2>Commander en 3 étapes</h2></div></div>
@@ -201,7 +201,7 @@ function pageHome() {
     <div class="svcs">${SERVICES_RDV.map((s) => `<div><span>${esc(s)}</span><span class="gold">✓</span></div>`).join('')}</div></div>
     <div class="card rv" data-rdvbox>${rdvForm()}</div></div></section>
   <section class="sec" id="avis"><div class="wrap"><div class="sechead rv"><div><span class="eyebrow">Avis clientes</span><h2>Elles nous font confiance</h2></div></div>
-    <div class="reviews">${avis.map((a) => `<figure class="rev rv" style="margin:0"><div class="stars" aria-label="${a.note} étoiles sur 5">${'★'.repeat(a.note)}${'☆'.repeat(5 - a.note)}</div><q>${esc(a.texte)}</q><small>${esc(a.nom)} · ${esc(a.ville)}</small></figure>`).join('')}</div></div></section>
+    <div class="reviews">${avis.map((a) => `<figure class="rev rv"><div class="stars" aria-label="${a.note} étoiles sur 5">${'★'.repeat(a.note)}${'☆'.repeat(5 - a.note)}</div><q>${esc(a.texte)}</q><small>${esc(a.nom)} · ${esc(a.ville)}</small></figure>`).join('')}</div></div></section>
   <section class="sec social"><div class="wrap"><div class="sechead rv"><div><span class="eyebrow">Réseaux sociaux</span><h2>Suivez-nous sur Instagram et TikTok</h2><p>Nouveautés, avant/après et coulisses de la boutique. Votre site complète vos réseaux au lieu de dépendre d'eux.</p></div></div>
     <div class="shots rv">${shots.map((s) => `<a href="#" data-a="soc" aria-label="Voir sur Instagram"><img src="img/${s}.jpg" alt="Publication Instagram de la boutique" loading="lazy"></a>`).join('')}</div>
     <div class="soc rv"><a class="btn" href="#" data-a="soc">Instagram</a><a class="btn" href="#" data-a="soc">TikTok</a><a class="btn line" href="#" data-a="soc">Facebook</a><a class="btn wa" href="${waGeneric()}" target="_blank" rel="noopener">WhatsApp</a></div></div></section>
