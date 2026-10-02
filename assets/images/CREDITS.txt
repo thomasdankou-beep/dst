@@ -1,5 +1,4 @@
-Photos libres de droits (licence CC0 / domaine public pour real-restaurant et real-evenementiel, trouvées via Openverse ;
-licence Pexels, usage commercial autorisé et attribution non obligatoire, pour les autres).
+Photos libres de droits (licence Pexels : usage commercial autorisé, attribution non obligatoire).
 Vous pouvez remplacer chaque photo par la vôtre en gardant le même nom de fichier.
 
 hero-banner.jpg, closing-photo.jpg, demo-product.jpg, real-salon.jpg, real-perruques.jpg, real-boutique.jpg
@@ -7,14 +6,5 @@ hero-banner.jpg, closing-photo.jpg, demo-product.jpg, real-salon.jpg, real-perru
   (les identifiants Pexels sont les noms de fichiers là-bas : hero-banner = 32213600, closing-photo = 33141463,
   demo-product = 17320163, real-salon = 37600597, real-perruques = 11757361, real-boutique = 12618341).
 
-real-restaurant.jpg
-  Titre : Restaurant Kitchen
-  Auteur : Michael Browning
-  Licence : CC0 (domaine public)
-  Source : https://stocksnap.io/photo/restaurant-kitchen-0HCMIT272C
-
-real-evenementiel.jpg
-  Titre : Night Sparklers
-  Auteur : Andreas Rønningen
-  Licence : CC0 (domaine public)
-  Source : https://stocksnap.io/photo/night-sparklers-JYTTZMY9SC
+real-restaurant.jpg  = photo Pexels n° 36750260 (https://www.pexels.com/photo/36750260/)
+real-evenementiel.jpg = photo Pexels n° 35985211 (https://www.pexels.com/photo/35985211/)

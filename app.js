@@ -8,7 +8,7 @@ const WA_NUM = '2250503206666';
 const OPTIONS = { formMode: 'Multi-étapes', servicesLayout: 'Grille', mobileBar: true }; // formMode : 'Multi-étapes' | 'Page unique' ; servicesLayout : 'Grille' (cartes illustrées) | 'Onglets'
 const PRICE_WEB_UNTIL = '31 décembre 2026'; // date de fin de l'offre promotionnelle
 const PRICE_WEB = '50 000 FCFA'; // prix promotionnel d'un site vitrine (affiché : carte du service et page Services)
-const IMG_V = '2'; // changez ce chiffre après avoir remplacé une photo (évite l'ancienne image en mémoire)
+const IMG_V = '3'; // changez ce chiffre après avoir remplacé une photo (évite l'ancienne image en mémoire)
 const IMG_EXT = ['jpg', 'jpeg', 'png', 'webp']; // photos : assets/images/<id>.jpg (voir LISEZ-MOI)
 
 const SERVICES = [
