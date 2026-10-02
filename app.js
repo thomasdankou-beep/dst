@@ -8,6 +8,7 @@ const WA_NUM = '2250503206666';
 const OPTIONS = { formMode: 'Multi-étapes', servicesLayout: 'Grille', mobileBar: true }; // formMode : 'Multi-étapes' | 'Page unique' ; servicesLayout : 'Grille' (cartes illustrées) | 'Onglets'
 const PRICE_WEB_UNTIL = '31 décembre 2026'; // date de fin de l'offre promotionnelle
 const PRICE_WEB = '50 000 FCFA'; // prix promotionnel d'un site vitrine (affiché : carte du service et page Services)
+const IMG_V = '2'; // changez ce chiffre après avoir remplacé une photo (évite l'ancienne image en mémoire)
 const IMG_EXT = ['jpg', 'jpeg', 'png', 'webp']; // photos : assets/images/<id>.jpg (voir LISEZ-MOI)
 
 const SERVICES = [
@@ -414,8 +415,8 @@ function makeSlot(el, id) { // remplace <image-slot id="…"> : affiche assets/i
   if (el.getAttribute('pos')) img.style.objectPosition = el.getAttribute('pos');
   let i = 0;
   img.onload = () => { img.style.opacity = '1'; cap.style.display = 'none'; };
-  img.onerror = () => { i++; if (i < IMG_EXT.length) img.src = 'assets/images/' + id + '.' + IMG_EXT[i]; };
-  img.src = 'assets/images/' + id + '.' + IMG_EXT[0];
+  img.onerror = () => { i++; if (i < IMG_EXT.length) img.src = 'assets/images/' + id + '.' + IMG_EXT[i] + '?v=' + IMG_V; };
+  img.src = 'assets/images/' + id + '.' + IMG_EXT[0] + '?v=' + IMG_V;
   box.appendChild(img);
   return box;
 }

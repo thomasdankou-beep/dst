@@ -1,18 +1,11 @@
-Photos libres de droits (licence CC0 / domaine public), trouvées via Openverse.
-Aucune attribution n'est obligatoire ; les auteurs sont cités par courtoisie.
+Photos libres de droits (licence CC0 / domaine public pour real-restaurant et real-evenementiel, trouvées via Openverse ;
+licence Pexels, usage commercial autorisé et attribution non obligatoire, pour les autres).
 Vous pouvez remplacer chaque photo par la vôtre en gardant le même nom de fichier.
 
-hero-banner.jpg
-  Titre : Smiling Woman
-  Auteur : Matt Moloney
-  Licence : CC0 (domaine public)
-  Source : https://stocksnap.io/photo/smiling-woman-W6GFOSFAXA
-
-real-salon.jpg
-  Titre : Braided Hair
-  Auteur : Candace McDaniel
-  Licence : CC0 (domaine public)
-  Source : https://stocksnap.io/photo/braided-hair-HUJXWX58V4
+hero-banner.jpg, closing-photo.jpg, demo-product.jpg, real-salon.jpg, real-perruques.jpg, real-boutique.jpg
+  Source : Pexels (https://www.pexels.com). Les mêmes photos sont utilisées dans demos/perruques/img/
+  (les identifiants Pexels sont les noms de fichiers là-bas : hero-banner = 32213600, closing-photo = 33141463,
+  demo-product = 17320163, real-salon = 37600597, real-perruques = 11757361, real-boutique = 12618341).
 
 real-restaurant.jpg
   Titre : Restaurant Kitchen
@@ -25,21 +18,3 @@ real-evenementiel.jpg
   Auteur : Andreas Rønningen
   Licence : CC0 (domaine public)
   Source : https://stocksnap.io/photo/night-sparklers-JYTTZMY9SC
-
-real-boutique.jpg
-  Titre : Market Store
-  Auteur : Jerry Kiesewetter
-  Licence : CC0 (domaine public)
-  Source : https://stocksnap.io/photo/market-store-DO8KTRN3OF
-
-real-perruques.jpg et demo-product.jpg (recadrage de la même photo)
-  Titre : Colorful wigs
-  Auteur : inconnu (Rawpixel)
-  Licence : CC0 (domaine public)
-  Source : https://www.rawpixel.com/image/6029747/colorful-wigs-free-public-domain-cc0-photo
-
-closing-photo.jpg
-  Titre : Browsing Smartphone
-  Auteur : Kristin Hardwick
-  Licence : CC0 (domaine public)
-  Source : https://stocksnap.io/photo/browsing-smartphone-NPZ8V3BNYB
