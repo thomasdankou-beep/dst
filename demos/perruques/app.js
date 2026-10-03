@@ -145,9 +145,9 @@ function pageFoot() {
   return `<section class="dstbox"><div class="wrap"><p class="k">Cette solution a été conçue par DST Technologie</p><p class="s">Votre partenaire digital pour développer votre entreprise.</p><div class="row"><a class="btn gold" href="../../index.html#/contact">Créer mon site web</a><a class="btn ghost-w" href="#/admin">Voir l'espace administrateur</a><a class="btn ghost-w" href="../../index.html#/realisations">Autres exemples</a></div></div></section>
   <footer class="bot"><div class="wrap">
     <div><a class="logo" href="#/" style="color:#fff">ÉCLAT<span>·</span>HAIR</a><p style="margin-top:12px;max-width:34ch">Perruques et extensions capillaires de qualité, livrées partout en Côte d'Ivoire.</p></div>
-    <div><h4>Boutique</h4><a href="#/boutique">Toutes les perruques</a><a href="#/boutique?cat=Extensions">Extensions</a><a href="#/boutique?cat=Perruques%20HD">Perruques HD</a><a href="#/favoris">Mes favoris</a></div>
-    <div><h4>Services</h4><a href="#/rendez-vous">Prendre rendez-vous</a><a href="#/#offres">Offres du moment</a><a href="#/a-propos">À propos</a></div>
-    <div><h4>Contact</h4><a href="${waGeneric()}" target="_blank" rel="noopener">WhatsApp</a><a href="#" data-a="soc">Instagram</a><a href="#" data-a="soc">TikTok</a><a href="#" data-a="soc">Facebook</a><span>${esc(db.settings.adresse)}</span></div>
+    <div><h2 class="fh">Boutique</h2><a href="#/boutique">Toutes les perruques</a><a href="#/boutique?cat=Extensions">Extensions</a><a href="#/boutique?cat=Perruques%20HD">Perruques HD</a><a href="#/favoris">Mes favoris</a></div>
+    <div><h2 class="fh">Services</h2><a href="#/rendez-vous">Prendre rendez-vous</a><a href="#/#offres">Offres du moment</a><a href="#/a-propos">À propos</a></div>
+    <div><h2 class="fh">Contact</h2><a href="${waGeneric()}" target="_blank" rel="noopener">WhatsApp</a><a href="#" data-a="soc">Instagram</a><a href="#" data-a="soc">TikTok</a><a href="#" data-a="soc">Facebook</a><span>${esc(db.settings.adresse)}</span></div>
     <p class="legal">Site de démonstration réalisé par DST Technologie. Boutique, produits, prix, avis et clients fictifs. Photos libres de droits (Pexels), à remplacer par vos propres photos.</p></div></footer>`;
 }
 
@@ -242,15 +242,15 @@ function pageShop() {
   parseHash(); resetF(route.q);
   setMeta(F.cat ? `${F.cat} | Boutique ÉCLAT HAIR` : 'Boutique perruques et extensions | ÉCLAT HAIR', 'Toutes nos perruques HD, Body Wave, Deep Wave, Straight et extensions. Filtrez par prix, longueur, texture, couleur et disponibilité.');
   return `<div class="pagehead"><div class="wrap"><p class="crumbs"><a href="#/">Accueil</a> / Boutique${F.cat ? ' / ' + esc(F.cat) : ''}</p><h1>${F.cat ? esc(F.cat) : 'Toute la collection'}</h1></div></div>
-  <div class="wrap shop"><aside class="filters" id="filters" aria-label="Filtres"><div style="display:flex;justify-content:space-between;align-items:center"><h3>Filtres</h3><button class="ibtn xf" data-a="filters" aria-label="Fermer les filtres">${svg('x')}</button></div>
-    <div class="fset"><h4>Recherche</h4><input class="t" type="search" id="fq" placeholder="Nom du produit…" value="${esc(F.q)}" aria-label="Rechercher un produit"></div>
-    <div class="fset"><h4>Catégorie</h4><select class="t" id="fcat"><option value="">Toutes</option>${CATEGORIES.concat([EXTRA_CAT]).map((c) => `<option ${F.cat === c.id ? 'selected' : ''}>${c.id}</option>`).join('')}</select></div>
-    <div class="fset"><h4>Prix : <span id="plab"></span></h4><label class="sr" for="pmin">Prix minimum</label><input class="range" type="range" id="pmin" min="0" max="250000" step="5000" value="${F.min}"><label class="sr" for="pmax">Prix maximum</label><input class="range" type="range" id="pmax" min="0" max="250000" step="5000" value="${F.max}"></div>
-    <div class="fset"><h4>Longueur</h4>${chk('len', LENS, F.len)}</div>
-    <div class="fset"><h4>Texture</h4>${chk('tex', TEXTURES, F.tex)}</div>
-    <div class="fset"><h4>Couleur</h4>${chk('col', COULEURS, F.col)}</div>
-    <div class="fset"><h4>Type de cheveux</h4>${chk('hair', CHEVEUX, F.hair)}</div>
-    <div class="fset"><h4>Disponibilité</h4><select class="t" id="fdispo"><option value="">Toutes</option><option value="stock">En stock</option><option value="ok">Disponible</option><option value="warn">Stock limité</option><option value="bad">Rupture de stock</option></select></div>
+  <div class="wrap shop"><aside class="filters" id="filters" aria-label="Filtres"><div style="display:flex;justify-content:space-between;align-items:center"><h2 class="fh">Filtres</h2><button class="ibtn xf" data-a="filters" aria-label="Fermer les filtres">${svg('x')}</button></div>
+    <div class="fset"><h3>Recherche</h3><input class="t" type="search" id="fq" placeholder="Nom du produit…" value="${esc(F.q)}" aria-label="Rechercher un produit"></div>
+    <div class="fset"><h3>Catégorie</h3><select class="t" id="fcat" aria-label="Catégorie"><option value="">Toutes</option>${CATEGORIES.concat([EXTRA_CAT]).map((c) => `<option ${F.cat === c.id ? 'selected' : ''}>${c.id}</option>`).join('')}</select></div>
+    <div class="fset"><h3>Prix : <span id="plab"></span></h3><label class="sr" for="pmin">Prix minimum</label><input class="range" type="range" id="pmin" min="0" max="250000" step="5000" value="${F.min}"><label class="sr" for="pmax">Prix maximum</label><input class="range" type="range" id="pmax" min="0" max="250000" step="5000" value="${F.max}"></div>
+    <div class="fset"><h3>Longueur</h3>${chk('len', LENS, F.len)}</div>
+    <div class="fset"><h3>Texture</h3>${chk('tex', TEXTURES, F.tex)}</div>
+    <div class="fset"><h3>Couleur</h3>${chk('col', COULEURS, F.col)}</div>
+    <div class="fset"><h3>Type de cheveux</h3>${chk('hair', CHEVEUX, F.hair)}</div>
+    <div class="fset"><h3>Disponibilité</h3><select class="t" id="fdispo" aria-label="Disponibilité"><option value="">Toutes</option><option value="stock">En stock</option><option value="ok">Disponible</option><option value="warn">Stock limité</option><option value="bad">Rupture de stock</option></select></div>
     <button class="btn line block" data-a="resetF">Réinitialiser</button><button class="btn block xf" style="margin-top:10px" data-a="filters">Voir les résultats</button></aside>
     <div><div class="toolbar"><button class="btn line sm fbtn" data-a="filters">Filtrer</button><p id="rcount" class="muted"></p>
       <label class="sr" for="fsort">Trier</label><select class="sel" id="fsort"><option value="pertinence">Pertinence</option><option value="prix-asc">Prix croissant</option><option value="prix-desc">Prix décroissant</option><option value="nouveautes">Nouveautés</option><option value="promos">Promotions</option></select></div>
@@ -345,7 +345,7 @@ function pageFavs() {
 function refreshCart() {
   const sous = cartSous(), f = fee(sous, 'Livraison à domicile', 'Abidjan'), n = cartCount();
   $('#drawer').innerHTML = `<header><h2 style="font-size:28px">Mon panier <small class="muted" style="font-size:15px">(${n})</small></h2><button class="ibtn" data-a="closeAll" aria-label="Fermer le panier">${svg('x')}</button></header>
-  <div class="body">${db.cart.length ? db.cart.map((l) => { const p = prod(l.id); if (!p) return ''; return `<div class="cl"><img src="${imgSrc(p.imgs[0])}" alt=""><div><h4>${esc(p.nom)}</h4><p class="muted" style="font-size:13px">${fmt(p.prix)}</p><div class="qty" style="margin-top:6px"><button data-a="cq" data-id="${p.id}" data-d="-1" aria-label="Moins">−</button><b>${l.q}</b><button data-a="cq" data-id="${p.id}" data-d="1" aria-label="Plus">+</button></div><button class="rm" data-a="crm" data-id="${p.id}">Supprimer</button></div><b>${fmt(p.prix * l.q)}</b></div>`; }).join('') : `<div class="empty"><p>Votre panier est vide.</p><p style="margin-top:14px"><a class="btn sm" href="#/boutique" data-a="closeAll">Découvrir la collection</a></p></div>`}</div>
+  <div class="body">${db.cart.length ? db.cart.map((l) => { const p = prod(l.id); if (!p) return ''; return `<div class="cl"><img src="${imgSrc(p.imgs[0])}" alt=""><div><h3 class="ct">${esc(p.nom)}</h3><p class="muted" style="font-size:13px">${fmt(p.prix)}</p><div class="qty" style="margin-top:6px"><button data-a="cq" data-id="${p.id}" data-d="-1" aria-label="Moins">−</button><b>${l.q}</b><button data-a="cq" data-id="${p.id}" data-d="1" aria-label="Plus">+</button></div><button class="rm" data-a="crm" data-id="${p.id}">Supprimer</button></div><b>${fmt(p.prix * l.q)}</b></div>`; }).join('') : `<div class="empty"><p>Votre panier est vide.</p><p style="margin-top:14px"><a class="btn sm" href="#/boutique" data-a="closeAll">Découvrir la collection</a></p></div>`}</div>
   ${db.cart.length ? `<footer><div class="sum"><div><span>Sous-total</span><b>${fmt(sous)}</b></div><div><span>Livraison (Abidjan)</span><b>${f ? fmt(f) : 'Offerte'}</b></div><div class="tot"><span>Total</span><span>${fmt(sous + f)}</span></div></div>
   <p class="muted" style="font-size:12.5px;margin:8px 0 12px">Frais définitifs calculés selon votre ville à l'étape suivante.${sous < db.settings.gratuitDes ? ` Livraison offerte dès ${fmt(db.settings.gratuitDes)}.` : ''}</p><a class="btn block" href="#/commande" data-a="closeAll">Passer la commande</a></footer>` : ''}`;
   refreshHeader();
@@ -371,7 +371,7 @@ function pageCheckout() {
     <fieldset style="border:0;padding:0;margin:14px 0 0"><legend class="f" style="padding:0">Mode de livraison</legend><div class="radios"><label><input type="radio" name="livraison" value="Livraison à domicile" checked><span>Livraison à domicile<br><small class="muted">Abidjan et intérieur du pays</small></span></label><label><input type="radio" name="livraison" value="Retrait en boutique"><span>Retrait en boutique<br><small class="muted">Gratuit · Cocody</small></span></label></div></fieldset>
     <label class="f" for="ocom2">Commentaire (facultatif)</label><textarea class="t" id="ocom2" name="commentaire" placeholder="Précisions pour la livraison, couleur, coupe…"></textarea>
     <p class="err" id="oerr" role="alert"></p><button class="btn gold block" type="submit" style="margin-top:8px">Valider la commande</button><p class="muted" style="font-size:12.5px;margin-top:10px">Paiement à la livraison, Wave ou Orange Money : la boutique vous confirme par WhatsApp.</p></form>
-  <aside class="card"><h2 style="font-size:26px;margin-bottom:8px">Récapitulatif</h2>${db.cart.map((l) => { const p = prod(l.id); return p ? `<div class="cl"><img src="${imgSrc(p.imgs[0])}" alt=""><div><h4>${esc(p.nom)}</h4><p class="muted" style="font-size:13px">Quantité : ${l.q}</p></div><b>${fmt(p.prix * l.q)}</b></div>` : ''; }).join('')}<div class="sum" id="osum" style="margin-top:14px"></div></aside></div>${pageFoot()}`;
+  <aside class="card"><h2 style="font-size:26px;margin-bottom:8px">Récapitulatif</h2>${db.cart.map((l) => { const p = prod(l.id); return p ? `<div class="cl"><img src="${imgSrc(p.imgs[0])}" alt=""><div><h3 class="ct">${esc(p.nom)}</h3><p class="muted" style="font-size:13px">Quantité : ${l.q}</p></div><b>${fmt(p.prix * l.q)}</b></div>` : ''; }).join('')}<div class="sum" id="osum" style="margin-top:14px"></div></aside></div>${pageFoot()}`;
 }
 function checkoutSum() {
   const el = $('#osum'); if (!el) return;
@@ -404,7 +404,7 @@ function pageConfirm() {
   const m = msgOrder(o.lignes, { nom: o.nom, tel: o.tel, commune: o.commune, ville: o.ville, adresse: o.adresse, livraison: o.livraison }, o.total);
   return `<div class="wrap recap" style="padding:44px 0 80px;max-width:760px"><div class="ok">✓</div><h1 style="font-size:clamp(32px,5vw,52px)">Merci ${esc(o.nom.split(' ')[0])}, commande enregistrée</h1>
   <p class="muted" style="margin:10px 0 24px">Commande n° <b>${o.id}</b> · La boutique vous confirme par WhatsApp. (Démonstration : aucune commande réelle n'est transmise.)</p>
-  <div class="card"><h2 style="font-size:26px;margin-bottom:6px">Récapitulatif</h2>${o.lignes.map((l) => `<div class="cl" style="grid-template-columns:1fr auto"><div><h4>${esc(l.nom)}</h4><p class="muted" style="font-size:13px">${fmt(l.prix)} × ${l.q}</p></div><b>${fmt(l.prix * l.q)}</b></div>`).join('')}
+  <div class="card"><h2 style="font-size:26px;margin-bottom:6px">Récapitulatif</h2>${o.lignes.map((l) => `<div class="cl" style="grid-template-columns:1fr auto"><div><h3 class="ct">${esc(l.nom)}</h3><p class="muted" style="font-size:13px">${fmt(l.prix)} × ${l.q}</p></div><b>${fmt(l.prix * l.q)}</b></div>`).join('')}
     <div class="sum" style="margin-top:14px"><div><span>Sous-total</span><b>${fmt(o.sous)}</b></div><div><span>Livraison</span><b>${o.frais ? fmt(o.frais) : 'Offerte / retrait'}</b></div><div class="tot"><span>Total</span><span>${fmt(o.total)}</span></div></div>
     <p class="muted" style="margin-top:14px;font-size:14px"><b>${esc(o.livraison)}</b> · ${esc([o.commune, o.ville, o.adresse].filter((x) => x && x !== '—').join(', ') || '—')}<br>Téléphone : ${esc(o.tel)} · WhatsApp : ${esc(o.whatsapp)}</p></div>
   <h2 style="font-size:26px;margin:26px 0 6px">Accélérez avec WhatsApp</h2><div class="wapre">${esc(m)}</div>
@@ -447,6 +447,7 @@ function pageRdv() {
 /* ---------- Actions (clics) ---------- */
 const A = {
   menu() { $('#mnav').classList.add('open'); },
+  skip() { const m = $('#admin').hidden ? $('#page') : $('#amain'); if (m) m.focus(); },
   closeAll() { closeAll(); },
   search() { openSearch(); },
   cart() { openDrawer(); },

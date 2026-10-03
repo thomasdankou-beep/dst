@@ -15,7 +15,7 @@ h2 { font-size:clamp(24px,3vw,34px); }
 .dst-bar { position:sticky; top:0; z-index:50; background:#061340; color:#fff; font-size:13.5px; }
 .dst-bar .wrap { display:flex; align-items:center; gap:12px; justify-content:space-between; padding:9px 0; flex-wrap:wrap; }
 .dst-bar b { color:#7CC4FF; }
-.dst-bar a.cta { background:#47B73F; color:#fff; text-decoration:none; font-weight:700; padding:7px 14px; border-radius:99px; white-space:nowrap; }
+.dst-bar a.cta { background:#1E7F43; color:#fff; text-decoration:none; font-weight:700; padding:7px 14px; border-radius:99px; white-space:nowrap; }
 .dst-bar a.back { color:#B8C6F0; text-decoration:none; }
 .dst-bar a:hover { filter:brightness(1.1); }
 
@@ -33,7 +33,7 @@ h2 { font-size:clamp(24px,3vw,34px); }
 .btn:disabled, .btn[aria-disabled="true"] { background:#C9C6C0; cursor:not-allowed; transform:none; filter:none; }
 .btn.ghost { background:transparent; color:var(--accent-d); border:1.5px solid var(--accent); }
 .btn.wave { background:#1DC8F2; color:#04323f; }
-.btn.om { background:#FF7900; color:#fff; }
+.btn.om { background:#FF7900; color:#1a1a1a; }
 
 /* Hero */
 .hero { position:relative; color:#fff; min-height:min(68vh,560px); display:flex; align-items:flex-end; overflow:hidden; background:#222; }
@@ -81,7 +81,12 @@ input.t:focus-visible, button:focus-visible, a:focus-visible { outline:3px solid
 .dst-end h2 { font-size:clamp(22px,3vw,32px); max-width:22ch; }
 .dst-end p { color:#B8C6F0; margin:8px 0 0; max-width:48ch; }
 .dst-end .acts { display:flex; gap:12px; flex-wrap:wrap; }
-.dst-end .btn { background:#47B73F; }
+.dst-end .btn { background:#1E7F43; }
 .dst-end .btn.ghost { background:transparent; color:#fff; border-color:#fff; }
 .foot { font-size:13px; color:var(--ink-2); padding:22px 0 34px; text-align:center; }
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .btn{transition:none} }
+
+/* Accessibilité */
+[hidden] { display:none !important; }
+.skip { position:fixed; left:12px; top:-60px; z-index:300; background:#061340; color:#fff; padding:10px 16px; border-radius:8px; font-weight:700; text-decoration:none; transition:top .25s; }
+.skip:focus { top:12px; }

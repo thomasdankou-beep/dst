@@ -15,10 +15,12 @@ $NOM_ENTREPRISE = "DST TECHNOLOGIE";        // nom affiché dans le message envo
 $COPIE_CLIENT = true;                       // true = le client reçoit une confirmation s'il a donné son e-mail
 $COPIE_MAX_PAR_JOUR = 50;                   // plafond de confirmations par jour (protection anti-abus)
 $LIMITE = 5;                                // demandes maximum par visiteur toutes les 10 minutes
+$MAX_PAR_JOUR = 150;                        // demandes maximum par jour, tous visiteurs confondus (anti-robot)
 // ========================
 
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
+header('X-Content-Type-Options: nosniff');
 
 function reponse($ok, $message = null, $code = 200, $extra = array()) {
     http_response_code($code);
@@ -85,6 +87,10 @@ if (strlen($brut) > 50000) { reponse(false, 'Message trop volumineux', 413); }
 $d = json_decode($brut, true);
 if (!is_array($d) || empty($d['rows']) || !is_array($d['rows'])) { reponse(false, 'Données incomplètes', 400); }
 
+// Anti-robot : champ caché qui doit rester vide, et formulaire rempli en plus de 3 secondes
+if (!empty($d['site_web'])) { reponse(true); }               // robot : on fait semblant d'accepter, rien n'est envoyé
+if (!isset($d['dt']) || (int)$d['dt'] < 3) { reponse(false, 'Envoi trop rapide, réessayez', 400); }
+
 $nom = propre($d['nom'] ?? '', 120);
 $tel = propre($d['telephone'] ?? '', 40);
 $email = propre($d['email'] ?? '', 120);
@@ -98,7 +104,8 @@ $recents = array();
 foreach (($anciens ? $anciens : array()) as $t) { if ((int)$t > time() - 600) { $recents[] = (int)$t; } }
 if (count($recents) >= $LIMITE) { reponse(false, 'Trop de tentatives, réessayez dans quelques minutes', 429); }
 $recents[] = time();
-@file_put_contents($fichierLimite, implode("\n", $recents));
+@file_put_contents($fichierLimite, implode("\n", $recents), LOCK_EX);
+if (!compter('total', $MAX_PAR_JOUR)) { reponse(false, 'Service momentanément saturé, contactez-nous sur WhatsApp', 429); }
 
 // Récapitulatif (50 lignes maximum)
 $lignes = array();

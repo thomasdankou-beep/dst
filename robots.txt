@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /questionnaire/
+Disallow: /devis.php
+
+Sitemap: https://dsttechnologie.com/sitemap.xml

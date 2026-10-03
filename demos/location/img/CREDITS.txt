@@ -1,0 +1,3 @@
+Photos libres de droits (licence Pexels : usage commercial autorisé, attribution non obligatoire).
+Source : https://www.pexels.com/photo/<identifiant>/ (l'identifiant est le nom du fichier .jpg).
+Ce sont des illustrations de démonstration : sur le vrai site, remplacez-les par les photos de la flotte de l'agence.

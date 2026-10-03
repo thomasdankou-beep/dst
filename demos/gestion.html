@@ -50,11 +50,12 @@ select.t { appearance:auto; }
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Aller au contenu</a>
 
-<div class="dst-bar"><div class="wrap">
+<aside class="dst-bar" aria-label="Démonstration DST Technologie"><div class="wrap">
   <span>Exemple de démonstration : site <b>fictif</b> créé par DST Technologie</span>
   <span style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><a class="back" href="../index.html#/realisations">← Autres exemples</a><a class="cta" href="../index.html#/contact">Je veux le même site</a></span>
-</div></div>
+</div></aside>
 
 <header class="site-head"><div class="wrap">
   <a class="brand" href="#top">Espace Mode & Beauté</a>
@@ -68,11 +69,11 @@ select.t { appearance:auto; }
   <div id="view" aria-live="polite"></div>
 </div></section></main>
 
-<section class="dst-end"><div class="wrap">
+<section class="dst-end" aria-label="Créer le même site"><div class="wrap">
   <div><h2>Un outil sur mesure pour votre commerce.</h2><p>Stock, caisse, rendez-vous et espace admin protégé par mot de passe, avec vos produits et vos couleurs.</p></div>
   <div class="acts"><a class="btn" href="../index.html#/contact">Demander mon devis</a><a class="btn ghost" id="wa" href="#">Écrire sur WhatsApp</a></div>
 </div></section>
-<p class="foot">Exemple fictif : articles, prix, clients et stocks sont inventés. Les données restent dans votre navigateur ; « Réinitialiser » les efface. Dans un vrai site, l'espace admin demande un mot de passe.</p>
+<footer class="foot"><p>Exemple fictif : articles, prix, clients et stocks sont inventés. Les données restent dans votre navigateur ; « Réinitialiser » les efface. Dans un vrai site, l'espace admin demande un mot de passe.</p></footer>
 
 <script src="demo.js"></script>
 <script>
@@ -180,7 +181,7 @@ function vAdmin() {
 function render() {
   $('#tabs').innerHTML = TABS.map(([k, l]) => `<button type="button" role="tab" data-tab="${k}" aria-selected="${ui.tab === k}">${l}</button>`).join('');
   const keepFocus = document.activeElement && document.activeElement.id;
-  $('#view').innerHTML = { catalogue: vCatalogue, rdv: vRdv, caisse: vCaisse, admin: vAdmin }[ui.tab]();
+  $('#view').innerHTML = `<h2 class="sr">${TABS.find(([k]) => k === ui.tab)[1]}</h2>` + { catalogue: vCatalogue, rdv: vRdv, caisse: vCaisse, admin: vAdmin }[ui.tab]();
   if (keepFocus && keepFocus === 'recu') { const el = $('#recu'); if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); } }
 }
 const go = (t) => { ui.tab = t; ui.msg = ''; ui.receipt = null; render(); };

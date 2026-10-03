@@ -1,0 +1,53 @@
+# DST Technologie — configuration du serveur (Hostinger / Apache / LiteSpeed)
+# Sécurité, page d'erreur et mise en cache. Si votre hébergement avait déjà un fichier .htaccess,
+# gardez aussi ses lignes (par exemple celles ajoutées par hPanel).
+
+Options -Indexes
+ErrorDocument 404 /404.html
+
+# --- Toujours en HTTPS (sans boucle derrière le CDN de Hostinger) ---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # Interdit les fichiers et dossiers cachés (.git, .env…), sauf .well-known
+  RewriteRule (^|/)\.(?!well-known/) - [F,L]
+</IfModule>
+
+# --- Fichiers internes à ne pas publier (notes, sauvegardes, scripts) ---
+<FilesMatch "(?i)(^README|^LISEZ-MOI|\.(md|bak|old|orig|log|sql|sh|py|ini|env|lock|zip|tar|gz)$)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# --- En-têtes de sécurité ---
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+  Header unset X-Powered-By
+
+  # Cache : les pages, styles et scripts sont revérifiés à chaque visite (mises à jour visibles tout de suite),
+  # les images sont gardées 7 jours.
+  <FilesMatch "\.(html|css|js|json|xml|txt|php)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(jpe?g|png|webp|gif|svg|ico|avif|woff2?)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+# --- Compression ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>

@@ -12,10 +12,12 @@ $EXPEDITEUR   = "infos@dsttechnologie.com"; // une adresse de VOTRE nom de domai
                                             // vous pouvez mettre la même adresse que ci-dessus)
 $OBJET        = "Nouveau questionnaire client";
 $LIMITE       = 10;                         // nombre maximum d'envois par visiteur toutes les 10 minutes
+$MAX_PAR_JOUR = 60;                         // nombre maximum d'envois par jour, tous visiteurs confondus
 // ========================
 
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
+header('X-Content-Type-Options: nosniff');
 
 function reponse($ok, $message = null, $code = 200) {
     http_response_code($code);
@@ -66,7 +68,12 @@ $recents = array();
 foreach (($anciens ? $anciens : array()) as $t) { if ((int)$t > time() - 600) { $recents[] = (int)$t; } }
 if (count($recents) >= $LIMITE) { reponse(false, 'Trop de tentatives, réessayez dans quelques minutes', 429); }
 $recents[] = time();
-@file_put_contents($fichierLimite, implode("\n", $recents));
+@file_put_contents($fichierLimite, implode("\n", $recents), LOCK_EX);
+// Plafond journalier global (évite qu'un robot remplisse votre boîte mail)
+$fichierJour = sys_get_temp_dir() . '/dst_q_total_' . date('Ymd');
+$total = (int)@file_get_contents($fichierJour);
+if ($total >= $MAX_PAR_JOUR) { reponse(false, 'Service momentanément saturé, réessayez demain', 429); }
+@file_put_contents($fichierJour, (string)($total + 1), LOCK_EX);
 
 // Construction de l'e-mail (texte + PDF en pièce jointe)
 $entreprise = propre($d['entreprise'], 120);

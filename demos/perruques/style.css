@@ -379,3 +379,23 @@ p,figcaption,q{text-wrap:pretty}
 .skip{position:absolute;left:12px;top:-60px;background:var(--black);color:#fff;padding:10px 16px;border-radius:8px;z-index:200;text-decoration:none;transition:top .3s var(--ease)}
 .skip:focus{top:10px}
 .rev{margin:0}
+[hidden]{display:none!important}
+
+/* ===== Contrastes renforcés (accessibilité) ===== */
+.eyebrow{color:#7A5C24}
+.hero .eyebrow,.offers .eyebrow,.dark .eyebrow{color:var(--gold-2)}
+.gold{color:#7A5C24}
+.btn.gold,.tag.gold{background:#8B6A2B;border-color:#8B6A2B}
+.btn.gold:hover{background:#765A23}
+.st.warn{color:#9A5B00}
+.offers .st.ok{color:#5FD38D}.offers .st.warn{color:#FFC46B}
+.btn.wa,.wafloat{background:#1E7F43;border-color:#1E7F43}
+.btn.wa:hover{background:#17693A}
+.side a[aria-current=page]{background:#8B6A2B}
+.filters h2.fh{font-size:22px;margin-bottom:6px}
+.fset h3{font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;color:var(--ink-2);font-weight:600}
+footer.bot h2.fh{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#E9DCC3;margin-bottom:12px}
+.amain:focus{outline:none}
+.cl h3.ct{font-family:var(--sans);font-size:14.5px;font-weight:600;letter-spacing:0;line-height:1.3}
+.skip{border:0;font-weight:700;cursor:pointer;position:fixed}
+.tag.gold{color:#fff}

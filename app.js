@@ -8,7 +8,7 @@ const WA_NUM = '2250503206666';
 const OPTIONS = { formMode: 'Multi-étapes', servicesLayout: 'Grille', mobileBar: true }; // formMode : 'Multi-étapes' | 'Page unique' ; servicesLayout : 'Grille' (cartes illustrées) | 'Onglets'
 const PRICE_WEB_UNTIL = '31 décembre 2026'; // date de fin de l'offre promotionnelle
 const PRICE_WEB = '50 000 FCFA'; // prix promotionnel d'un site vitrine (affiché : carte du service et page Services)
-const IMG_V = '3'; // changez ce chiffre après avoir remplacé une photo (évite l'ancienne image en mémoire)
+const IMG_V = '4'; // changez ce chiffre après avoir remplacé une photo (évite l'ancienne image en mémoire)
 const IMG_EXT = ['jpg', 'jpeg', 'png', 'webp']; // photos : assets/images/<id>.jpg (voir LISEZ-MOI)
 
 const SERVICES = [
@@ -49,6 +49,7 @@ const SECTORS = [
   { name: 'Prestataires événementiels', hint: 'Vitrine, galerie et demandes de devis' },
   { name: 'Entreprises', hint: 'Digitalisation et outils sur mesure' },
   { name: 'Restaurateurs', hint: 'Menu en ligne et commandes' },
+  { name: 'Loueurs de véhicules', hint: 'Réservation par dates, caution et planning' },
   { name: 'Professionnels indépendants', hint: 'Site vitrine et prise de rendez-vous' },
   { name: 'Entrepreneurs', hint: 'Lancement de votre activité en ligne' },
 ];
@@ -61,6 +62,7 @@ const SECTOR_ICONS = [
   ICO('<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/>'),                            // événementiel
   ICO('<rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/><path d="M10 21v-3h4v3"/>'),                     // entreprises
   ICO('<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>'),                        // restaurateurs
+  ICO('<path d="M5 17h14v-5l-2-5H7l-2 5z"/><path d="M5 12h14"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/>'),                              // loueurs de véhicules
   ICO('<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>'),                                                // indépendants
   ICO('<path d="M12 2c3 2 5 6 5 10l-2 3H9l-2-3c0-4 2-8 5-10z"/><circle cx="12" cy="9" r="1.5"/><path d="M9 15l-2 4 3-1"/><path d="M15 15l2 4-3-1"/>'),             // entrepreneurs
 ];
@@ -70,12 +72,13 @@ const DELAIS = ['Dès que possible', 'Dans le mois', 'Dans les 3 mois', 'Pas de 
 const SITES = ['Oui', 'Non', 'Réseaux sociaux uniquement'];
 const PREFS = ['WhatsApp', 'Appel', 'Email'];
 const STEP_LABELS = ['Besoin', 'Activité', 'Budget', 'Coordonnées'];
-const PAGES = ['accueil', 'services', 'realisations', 'contact'];
+const PAGES = ['accueil', 'services', 'realisations', 'contact', 'confidentialite'];
 const TITLES = {
   accueil: 'DST Technologie — Votre partenaire digital',
   services: 'Services — DST Technologie',
   realisations: 'Réalisations — DST Technologie',
   contact: 'Contact & devis — DST Technologie',
+  confidentialite: 'Confidentialité — DST Technologie',
 };
 const CASES = {
   salon: ['reservation', 'paiement', 'crm'],
@@ -84,13 +87,25 @@ const CASES = {
   evenementiel: ['web', 'crm'],
   boutique: ['crm', 'digitalisation'],
   entreprise: ['surmesure', 'digitalisation'],
+  location: ['reservation', 'paiement', 'crm'],
 };
+// Démos interactives présentées sur l'accueil et la page Réalisations (s'ouvrent dans un nouvel onglet)
+const DEMOS = [
+  { name: 'Boutique de perruques', sector: 'E-commerce premium', desc: 'Catalogue filtrable, fiche produit, panier, commande WhatsApp, rendez-vous et espace administrateur complet.', tags: ['Panier', 'Stock', 'WhatsApp', 'Admin'], img: 'demos/perruques/img/32213600.jpg', href: 'demos/perruques/index.html', badge: 'Démo complète', cls: 'dfeat' },
+  { name: 'Location de véhicules', sector: 'Réservation & flotte', desc: 'Recherche par dates, prix calculé automatiquement, options, caution et planning de la flotte.', tags: ['Réservation', 'Planning', 'Admin'], img: 'demos/location/img/18029645.jpg', href: 'demos/location/index.html', badge: 'Nouveau', cls: '' },
+  { name: 'Salon de coiffure', sector: 'Rendez-vous', desc: 'Prestations, créneaux libres et acompte Wave ou Orange Money.', tags: ['Réservation', 'Acompte'], img: 'assets/images/real-salon.jpg', href: 'demos/salon.html', badge: 'Démo', cls: '' },
+  { name: 'Restaurant', sector: 'Commande en ligne', desc: 'Menu par catégories, commande à emporter ou en livraison.', tags: ['Menu', 'Commande'], img: 'assets/images/real-restaurant.jpg', href: 'demos/restaurant.html', badge: 'Démo', cls: '' },
+  { name: 'Gestion de boutique', sector: 'Stock & caisse', desc: 'Stock par catégorie, caisse, rendez-vous et espace administrateur.', tags: ['Stock', 'Caisse', 'Admin'], img: 'assets/images/real-boutique.jpg', href: 'demos/gestion.html', badge: 'Démo', cls: '' },
+  { name: 'Boutique en ligne', sector: 'Vente simple', desc: 'Catalogue, panier et livraison : l’essentiel pour vendre vite.', tags: ['Catalogue', 'Panier'], img: 'demos/perruques/img/14730872.jpg', href: 'demos/boutique.html', badge: 'Démo', cls: '' },
+];
+DEMOS.forEach((d) => { if (d.img.indexOf('assets/') === 0) d.img += '?v=' + IMG_V; });
 const emptyForm = () => ({ services: [], secteur: '', description: '', site: '', budget: '', delai: '', nom: '', entreprise: '', tel: '', email: '', pref: 'WhatsApp' });
 
 /* ============ 2. ÉTAT ============ */
 let state = { tab: 0, page: 'accueil', w: window.innerWidth || 1280, menuOpen: false, step: 0, sent: false, errors: {}, form: emptyForm(), demo: { step: 0, pay: '' }, mail: { status: '' } };
 const formRef = { current: null };
 let pendingScroll = null;
+let formStart = 0; // moment où le formulaire de devis est affiché (contrôle anti-robot côté serveur)
 
 function setState(patch, after) {
   state = Object.assign({}, state, typeof patch === 'function' ? patch(state) : patch);
@@ -106,6 +121,7 @@ function route() {
 function syncRoute(scroll) {
   const page = route();
   document.title = TITLES[page];
+  if (page === 'contact' && !formStart) formStart = Date.now();
   setState({ page, menuOpen: false }, () => {
     if (pendingScroll) {
       const id = pendingScroll;
@@ -199,7 +215,8 @@ async function sendDevisMail() {
   const f = state.form;
   try {
     const res = await fetch('devis.php', { method: 'POST', body: JSON.stringify({
-      nom: f.nom.trim(), entreprise: f.entreprise.trim(), telephone: f.tel.trim(), email: f.email.trim(), rows: recapRows()
+      nom: f.nom.trim(), entreprise: f.entreprise.trim(), telephone: f.tel.trim(), email: f.email.trim(), rows: recapRows(),
+      dt: Math.round((Date.now() - (formStart || Date.now())) / 1000), site_web: ''
     }) });
     let r = null; try { r = await res.json(); } catch (e) { /* réponse non JSON : pas de PHP */ }
     if (res.ok && r && r.ok === true) { setState({ mail: { status: 'sent', copie: r.copie === true } }); return; }
@@ -329,8 +346,10 @@ function computeVals() {
 
   return {
     demo, price,
-    isHome: p === 'accueil', isServices: p === 'services', isReal: p === 'realisations', isContact: p === 'contact',
-    showClose: p !== 'contact',
+    isHome: p === 'accueil', isServices: p === 'services', isReal: p === 'realisations', isContact: p === 'contact', isPrivacy: p === 'confidentialite',
+    showClose: p !== 'contact' && p !== 'confidentialite',
+    demos: DEMOS,
+    skip: () => { const m = document.getElementById('contenu'); if (m) { m.focus(); m.scrollIntoView({ block: 'start' }); } },
     desktop, mobile: !desktop,
     menuOpen: s.menuOpen, menuClosed: !s.menuOpen, menuPanel: s.menuOpen && !desktop, menuAria: s.menuOpen ? 'true' : 'false',
     toggleMenu: () => setState(st => ({ menuOpen: !st.menuOpen })),
